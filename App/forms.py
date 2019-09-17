@@ -9,13 +9,16 @@ from App.models import User
 def check_password(password):
     if re.search(r'\d', password) and \
             re.search(r'[a-z]', password):
-        print('check_password')
-        return password
+            print('check_password')
+            return password
     raise ValidationError('密码必须包含小写字母，数字')
+
+
 
 
 class RegisterForm(forms.Form):
     mobile = forms.CharField(label='电话',
+
 
                              error_messages={
 

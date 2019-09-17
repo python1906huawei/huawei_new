@@ -35,16 +35,14 @@ class IndexView(ListView):
 
 def yzm(request):
     # 将验证码保存到session
-    print(11111111111111111)
-    print(request.POST.get('mobile'))
-    res = send_sms(request.POST.get('mobile'), {'number': str(randint(1009, 9999))})
-
-    request.session['code'] = res
+    a=str(randint(1009, 9999))
+    res = send_sms(request.POST.get('mobile'), {'number': a})
+    print(res)
+    request.session['code'] = a
 
     return HttpResponse(request)
 
 
-# 注册
 class RegisterView(ListView):
     template_name = 'register.html'
 
@@ -57,31 +55,35 @@ class RegisterView(ListView):
         form = RegisterForm(request.POST)
 
         # 验证码验证
-        yzm1 = request.POST.get('yzm')
+
+        yzm1 = request.POST.get('message')
         yzm2 = request.session.get('code')
         # 判定验证码是否匹配
+        print(yzm1, yzm2)
         res = (yzm1 == yzm2)
         # 如果验证码不匹配
         if not res:
             form.errors['yzm'] = "验证码不匹配,请重新验证"
-
+        print(form,form.is_valid())
         if res and form.is_valid():
-            print('==========')  # 验证通过
+            print('==========')# 验证通过
             request.session.clear()
-            user = User()
-            userinfo = Userinfo()
-            user.username = form.cleaned_data.get('mobile')
-            user.password = form.cleaned_data.get('password')
-            user.birthday = form.cleaned_data.get('birthday')
-            User.objects.create_user(user.username, None, user.password)
 
-            userinfo.user_id = user
-            userinfo.save()
+
+            username = form.cleaned_data.get('mobile')
+
+            password = form.cleaned_data.get('password')
+
+            birthday = form.cleaned_data.get('birthday')
+            print(000000000000000000000000)
+            User.objects.create_user(username=username,email=None,password=password)
+            user=User.objects.get(username=username)
+            user.birthday=birthday
+            user.save()
             login(request, user)
             return redirect(reverse('app:index'))
 
-        return redirect(reverse('app:index'))
-
+        return render(request,'register.html')
 
 # 登录华为
 class LoginHuaweiView(ListView):
