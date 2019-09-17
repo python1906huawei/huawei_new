@@ -1,0 +1,25 @@
+.mod-eqfooter .footer {
+  text-align: center;
+  padding: 90px 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+.mod-eqfooter .footer .div {
+  display: inline-block;
+  margin: 0 45px;
+}
+.mod-eqfooter .footer .div a {
+  display: block;
+  width: 182px;
+  height: 46px;
+  border: 2px solid #f73d3d;
+  line-height: 46px;
+  color: #f73d3d;
+  font-size: 20px;
+  transition: all .25s;
+}
+.mod-eqfooter .footer .div a:hover {
+  background: #f73d3d;
+  color: #fff;
+  text-decoration: none;
+}

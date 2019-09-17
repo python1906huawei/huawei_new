@@ -1,0 +1,231 @@
+.mod-prize-flip-cards {
+    width: 1920px;
+    height: 575px;
+    position: relative;
+    left: 50%;
+    margin-left: -960px;
+}
+
+.mod-prize-flip-cards .Y-content {
+    height: 508px;
+    font-size: 0;
+    position: relative;
+    margin-left: 46px;
+}
+
+.mod-prize-flip-cards .Y-content .item {
+    width: 220px;
+    height: 160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -110px;
+    margin-top: -80px;
+    z-index: 10;
+}
+
+.mod-prize-flip-cards .Y-content .item .parent {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective-origin: center;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    perspective: 500px;
+    -webkit-perspective: 500px;
+    position: relative;
+}
+
+.mod-prize-flip-cards .Y-content .item .parent .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(248, 113, 13, 0.1);
+    transform: rotateY(0deg);
+    border-radius: 9px;
+}
+
+.mod-prize-flip-cards .Y-content .item .parent .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotateY(0deg) translateZ(-1px);
+    border-radius: 9px;
+}
+
+
+.mod-prize-flip-cards .Y-content .selectBox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 144px;
+    height: 144px;
+}
+
+.mod-prize-flip-cards .vip-member {
+    top: 88px;
+}
+
+
+.mod-prize-flip-cards .v-desc {
+    position: absolute;
+    left: 71px;
+    right: 40px;
+    width: 269px;
+    top: 221px;
+}
+
+.mod-prize-flip-cards .vip-Flip-content {
+    position: absolute;
+    left: 71px;
+    right: 40px;
+    width: 267px;
+    height: 140px;
+       font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #908C8A;
+    letter-spacing: 0;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.mod-prize-flip-cards .v-rule {
+    font-family: SourceHanSansCN-Normal;
+    font-size: 14px;
+    color: #ea380f;
+    cursor: pointer;
+}
+
+.mod-prize-flip-cards .vip-member .v-desc ul {
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3a3a3a;
+    word-break: break-word
+}
+
+.mod-prize-flip-cards .vip-member .v-desc ul .text-left {
+    width: 123px;
+    overflow: hidden;
+    float: left;
+}
+
+.mod-prize-flip-cards .vip-member .v-desc ul .text-right {
+    width: 137px;
+    float: right;
+    text-align: left !important;
+}
+
+
+.mod-prize-flip-cards .selectBox .active .face {
+    display: none;
+}
+
+.mod-prize-flip-cards .selectBox .face {
+    display: block;
+}
+
+.mod-prize-flip-cards .selectBox .active .back {
+    display: block;
+}
+
+.mod-prize-flip-cards .selectBox .back {
+    display: none;
+}
+
+/* 弹窗活动规格 */
+#flipCards {
+    width: 698px;
+    border-radius: 10px;
+}
+
+#flipCards .box-ct {
+    width: 698px;
+    height: 590px;
+    background: url(../img/pc01.png) center center / cover no-repeat;
+    border-radius: 10px;
+    border: none;
+}
+
+#flipCards .box-header {
+    padding-bottom: 15px;
+}
+
+#flipCards .box-content {
+    text-align: left;
+    word-break: break-word;
+    height: 352px !important;
+    overflow: hidden;
+    margin: 26px 35px 25px 35px;
+    padding: 0 30px 0px 30px;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #908C8A;
+    letter-spacing: 0;
+    text-align: justify;
+    line-height: 2;
+}
+
+#flipCards .box-ok {
+    min-width: 256px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 22px;
+    color: #FFFFFF;
+    letter-spacing: -0.27px;
+    text-align: center;
+    background: #CDA782;
+    border: 1px solid #CDA782;
+    background-image: linear-gradient(-90deg, #CDA782 1%, #C9A880 98%);
+    border-radius: 28px;
+}
+
+#flipCards .box-content::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#flipCards.ol_box_4 .box-header .box-title {
+    padding-top: 43px;
+    color: #444444;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 450px;
+    text-align: center;
+    margin-left: 125px;
+    font-family: PingFang-SC-Bold;
+    font-size: 30px;
+    color: #C9A782;
+    letter-spacing: 0;
+}
+
+#flipCards.ol_box_4 .box-header .box-title:before,
+.ol_box_4 .box-header .box-title:after {
+    display: none;
+}
+
+#flipCards.ol_box_4 .box-header .box-close {
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: -54px;
+    z-index: 2;
+    top: 0px;
+    background: url(../img/close.png) center center / cover no-repeat;
+}
+
+#flipCards.ol_box_4 .box-header .box-close:before {
+    display: none;
+}

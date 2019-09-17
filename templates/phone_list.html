@@ -1,0 +1,1083 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>华为商城 - 手机</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="hr-10"></div>
+    <div class="g">
+        <!--面包屑 -->
+        <div class="breadcrumb-area fcn"><a href="{% url 'app:index' %}" title="首页">首页</a>&nbsp;&gt;&nbsp;<a
+                href="{% url 'app:phonelist' %}" title="手机">手机</a>&nbsp;&nbsp;
+        </div>
+    </div>
+    <div class="hr-10"></div>
+    <div class="layout">
+
+
+        <div class="hr-20"></div>
+    </div>
+
+    <!--到货通知弹出框-->
+    <textarea id="product-arrival-html" class="hide">	&lt;div class="arrival-remind-area"&gt;
+		&lt;ul class="clearfix"&gt;
+			&lt;li id="arrival-email"&gt;
+				&lt;p class="a-title"&gt;邮件通知&lt;/p&gt;
+				&lt;p id="account-email" class="a-txt"&gt;xxxxxxxxxxxxxxxxxxxx@huawei.com&lt;/p&gt;
+				&lt;s&gt;&lt;/s&gt;
+			&lt;/li&gt;
+			&lt;li id="arrival-mobile"&gt;
+				&lt;p class="a-title"&gt;短信通知&lt;/p&gt;
+				&lt;p id="account-mobile" class="a-txt"&gt;185&nbsp;6644&nbsp;5856&lt;/p&gt;
+				&lt;s&gt;&lt;/s&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="box-button"&gt;
+		&lt;input type="submit" class="box-ok" value="提交"/&gt;
+	&lt;/div&gt;
+	&lt;div id="arrival-error" class="box-form-tips hide"&gt;
+		&lt;span class="icon-error"&gt;输入有误&lt;/span&gt;
+	&lt;/div&gt;
+</textarea>
+    <input id="sField" type="hidden" value="3">
+    <input id="sType" type="hidden" value="0">
+    <script src="{% static 'js/new_list.js' %}"></script>
+    <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+            src="{% static 'js/jquery.js' %}"
+            charset="utf-8"></script>
+    <script>(function () {
+        var time = 0, el = document.getElementById('jsapi_loader7');
+        if (!el || (el.readyState && 'complete' != el.readyState)) {
+            if (time < 10) {
+                setTimeout(arguments.callee, 30);
+                time++;
+            } else {
+                logger.error('load the script of id jsapi_loader7 fail!');
+            }
+            return;
+        }
+        ol._setLoadStatus("jquery.form", "complete");
+    })();</script>
+    <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+            src="{% static 'js/ajax.js' %}"
+            charset="utf-8"></script>
+    <script>(function () {
+        var time = 0, el = document.getElementById('jsapi_loader8');
+        if (!el || (el.readyState && 'complete' != el.readyState)) {
+            if (time < 10) {
+                setTimeout(arguments.callee, 30);
+                time++;
+            } else {
+                logger.error('load the script of id jsapi_loader8 fail!');
+            }
+            return;
+        }
+        ol._setLoadStatus("ajax", "complete");
+    })();</script>
+    <script>
+        ec.load("ec.pager");
+    </script>
+    <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
+            src="{% static 'js/pager-min.js' %}"
+            charset="gbk"></script>
+    <script>(function () {
+        var time = 0, el = document.getElementById('jsapi_loader9');
+        if (!el || (el.readyState && 'complete' != el.readyState)) {
+            if (time < 10) {
+                setTimeout(arguments.callee, 30);
+                time++;
+            } else {
+                logger.error('load the script of id jsapi_loader9 fail!');
+            }
+            return;
+        }
+        ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+    })();</script>
+    <div class="layout">
+        <!-- 20140726-频道-列表-start -->
+        <div class="channel-list">
+            <!-- 20140727-商品列表-start -->
+            <div class="pro-list clearfix">
+                <ul>
+                    <li data-pid="10086387384591" data-scode="2601010133204" data-sname="荣耀Play3e">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086387384591.html"
+                                                title="荣耀Play3e"><img alt="荣耀Play3e 全网通 2GB+32GB 幻夜黑"
+                                                                      src="{% static 'images/428_428_837FE17EEC9C71B32F0D9F6CFE528C6AB5B43482B20CA340mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086387384591.html"
+                                   title="荣耀Play3e">
+                                    <span>荣耀Play3e</span>
+                                    <span class="red">新品上市赠礼包</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥699</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086387384591.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>0人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086551008145" data-scode="2601010132801" data-sname="荣耀20 PRO">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086551008145.html"
+                                                title="荣耀20 PRO"><img alt="【荣耀20 PRO × MOSCHINO联名版】全网通版8GB+256GB"
+                                                                      src="{% static 'images/428_428_1561792736678mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086551008145.html"
+                                   title="荣耀20 PRO">
+                                    <span>荣耀20 PRO</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥3799</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086551008145.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>1人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086693893548" data-scode="2601010131101" data-sname="荣耀Play3">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086693893548.html"
+                                                title="荣耀Play3"><img alt="荣耀Play3 全网通4GB+64GB （幻夜黑）"
+                                                                     src="{% static 'images/428_428_FFF52FC8300511223A30ED8401D76D30BCBDBC5A3F75596Amp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086693893548.html"
+                                   title="荣耀Play3">
+                                    <span>荣耀Play3</span>
+                                    <span class="red">4800万直出三摄</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥999</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086693893548.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>0人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <s class="p-tag"><img
+                                    alt="荣耀Play3 6.39英寸魅眼全视屏 4000mAh大电池 真4800万AI三摄 麒麟710F自研芯片 全网通4GB+64GB （幻夜黑）"
+                                    src="{% static 'images/1497576023361.png' %}"></s>
+                        </div>
+                    </li>
+                    <li data-pid="10086452612142" data-scode="2601010128902" data-sname="荣耀20S">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086452612142.html"
+                                                title="荣耀20S"><img alt="荣耀20S 6GB+128GB 全网通版 蝶羽蓝"
+                                                                   src="{% static 'images/428_428_189FA79392B572C21EE009917E689200B6B6089FEB1C4ED9mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086452612142.html"
+                                   title="荣耀20S">
+                                    <span>荣耀20S</span>
+                                    <span class="red">新机开售享6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥1899</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086452612142.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>2767人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <s class="p-tag"><img alt="荣耀20S 3200万人像超级夜景 4800万超广角AI三摄 麒麟810旗舰级芯片 全网通版6GB+128GB 蝶羽蓝"
+                                                  src="{% static 'images/1497576023361.png' %}"></s>
+                        </div>
+                    </li>
+                    <li data-pid="10086718678107" data-scode="2601010128202" data-sname="HUAWEI nova 5i Pro">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086718678107.html"
+                                                title="HUAWEI nova 5i Pro"><img
+                                    alt="HUAWEI nova 5i Pro 6GB+128GB 全网通版（翡冷翠）"
+                                    src="{% static 'images/428_428_1563762865294mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086718678107.html"
+                                   title="HUAWEI nova 5i Pro">
+                                    <span>HUAWEI nova 5i Pro</span>
+                                    <span class="red">赠配件好礼 6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2199</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086718678107.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>4488人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086912255346" data-scode="2601010124002" data-sname="荣耀9X">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086912255346.html"
+                                                title="荣耀9X"><img alt="荣耀9X 全网通 4GB+64GB（魅海蓝）"
+                                                                  src="{% static 'images/428_428_1563503515663mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086912255346.html"
+                                   title="荣耀9X">
+                                    <span>荣耀9X</span>
+                                    <span class="red">V1以上会员送耳机</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥1399</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086912255346.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>50185人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <s class="p-tag"><img alt="荣耀9X 麒麟810 4000mAh超强续航 4800万超清夜拍 6.59英寸升降全面屏 全网通 4GB+64GB（魅海蓝）"
+                                                  src="{% static 'images/1497576023361.png' %}"></s>
+                        </div>
+                    </li>
+                    <li data-pid="10086533947561" data-scode="2601010122202" data-sname="HUAWEI Mate 20 X 5G版">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086533947561.html"
+                                                title="HUAWEI Mate 20 X 5G版"><img
+                                    alt="HUAWEI Mate 20 X (5G) 8GB+256GB 全网通版 (宝石蓝)"
+                                    src="{% static 'images/428_428_8B3334C6C3CF84495775E9D6CFFFF15D2AD64AA924A09AB5mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086533947561.html"
+                                   title="HUAWEI Mate 20 X 5G版">
+                                    <span>HUAWEI Mate 20 X 5G版</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥6199</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086533947561.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>2548人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086466602618" data-scode="2601010125502" data-sname="荣耀9X PRO">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086466602618.html"
+                                                title="荣耀9X PRO"><img alt="荣耀9X PRO 全网通 8GB+128GB（幻影紫）"
+                                                                      src="{% static 'images/428_428_1563504284133mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086466602618.html"
+                                   title="荣耀9X PRO">
+                                    <span>荣耀9X PRO</span>
+                                    <span class="red">送手环 享6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2199</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086466602618.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>7699人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <s class="p-tag"><img
+                                    alt="荣耀9X PRO 麒麟810液冷散热 4000mAh超强续航 4800万超广角夜拍三摄 6.59英寸升降全面屏 全网通 8GB+128GB（幻影紫）"
+                                    src="{% static 'images/1497576023361.png' %}"></s>
+                        </div>
+                    </li>
+                    <li data-pid="10086557556421" data-scode="2601010121301" data-sname="荣耀畅玩8">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086557556421.html"
+                                                title="荣耀畅玩8"><img alt="荣耀畅玩8 2GB+32GB 全网通 幻夜黑"
+                                                                   src="{% static 'images/428_428_1562638774891mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086557556421.html"
+                                   title="荣耀畅玩8">
+                                    <span>荣耀畅玩8</span>
+                                    <span class="red">购机赠礼包</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥599</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086557556421.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>4117人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086191812395" data-scode="2601010119802" data-sname="HUAWEI nova 5i">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086191812395.html"
+                                                title="HUAWEI nova 5i"><img alt="HUAWEI nova 5i 6GB+128GB 全网通版（苏音蓝）"
+                                                                            src="{% static 'images/428_428_1560916037515mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086191812395.html"
+                                   title="HUAWEI nova 5i">
+                                    <span>HUAWEI nova 5i</span>
+                                    <span class="red">赠配件好礼 6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥1999</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086191812395.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>5901人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086855769756" data-scode="2601010120102" data-sname="HUAWEI nova 5">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086855769756.html"
+                                                title="HUAWEI nova 5"><img alt="HUAWEI nova 5 8GB+128GB 全网通版（仲夏紫）"
+                                                                           src="{% static 'images/428_428_1561434028202mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086855769756.html"
+                                   title="HUAWEI nova 5">
+                                    <span>HUAWEI nova 5</span>
+                                    <span class="red">赠配件好礼 6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2799</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086855769756.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>1361人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086985360457" data-scode="2601010118111" data-sname="HUAWEI nova 5 Pro">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086985360457.html"
+                                                title="HUAWEI nova 5 Pro"><img
+                                    alt="HUAWEI nova 5 Pro 8GB+128GB 全网通版（苏音蓝）"
+                                    src="{% static 'images/428_428_C1BD04C38EB887D9B1C911881CD34BAB44FF95CD90558E39mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086985360457.html"
+                                   title="HUAWEI nova 5 Pro">
+                                    <span>HUAWEI nova 5 Pro</span>
+                                    <span class="red">赠配件好礼 6期免息</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2999</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086985360457.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>22090人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086500150623" data-scode="2601010115703" data-sname="华为麦芒8">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086500150623.html"
+                                                title="华为麦芒8"><img alt="华为麦芒8 6G+128G 全网通版（极光蓝）"
+                                                                   src="{% static 'images/428_428_7C1CB8972D5541B58EAD394BB2686BE3897353C35C1603FFmp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086500150623.html"
+                                   title="华为麦芒8">
+                                    <span>华为麦芒8</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥1699</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086500150623.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>2065人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086779543890" data-scode="2601010116521" data-sname="荣耀20 PRO">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086779543890.html"
+                                                title="荣耀20 PRO"><img alt="荣耀20 PRO 全网通版8GB+128GB 冰岛幻境"
+                                                                      src="{% static 'images/428_428_1563876645993mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086779543890.html"
+                                   title="荣耀20 PRO">
+                                    <span>荣耀20 PRO</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2899</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086779543890.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>22699人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086244199203" data-scode="2601010113425" data-sname="荣耀20">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086244199203.html"
+                                                title="荣耀20"><img alt="荣耀20 全网通版8GB+128GB 蓝水翡翠"
+                                                                  src="{% static 'images/428_428_1562914659034mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086244199203.html"
+                                   title="荣耀20">
+                                    <span>荣耀20</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2499</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086244199203.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>58952人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086226569988" data-scode="2601010113507" data-sname="荣耀20">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086226569988.html"
+                                                title="荣耀20"><img alt="荣耀20 全网通版8GB+128GB 蓝水翡翠"
+                                                                  src="{% static 'images/428_428_1562914659034mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086226569988.html"
+                                   title="荣耀20">
+                                    <span>荣耀20</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2499</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086226569988.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>58952人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086286769025" data-scode="2601010058777" data-sname="荣耀8X">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086286769025.html"
+                                                title="荣耀8X"><img alt="荣耀8X 全网通 4GB+64GB（幻影蓝）"
+                                                                  src="{% static 'images/428_428_1540987820121mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086286769025.html"
+                                   title="荣耀8X">
+                                    <span>荣耀8X</span>
+                                    <span class="red">最高降400元</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥999</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086286769025.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>290811人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086134839130" data-scode="2601010087402" data-sname="荣耀V20">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086134839130.html"
+                                                title="荣耀V20"><img alt="荣耀V20 全网通6GB+128GB 标配版 幻夜黑"
+                                                                   src="{% static 'images/428_428_1545877216682mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086134839130.html"
+                                   title="荣耀V20">
+                                    <span>荣耀V20</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥2099</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086134839130.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>116505人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086905978384" data-scode="2601010109301" data-sname="荣耀20i">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086905978384.html"
+                                                title="荣耀20i"><img alt="荣耀20i 全网通 6GB+64GB（渐变蓝）"
+                                                                   src="{% static 'images/428_428_1557820413121mp.jpg' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086905978384.html"
+                                   title="荣耀20i">
+                                    <span>荣耀20i</span>
+                                    <span class="red">最高降300元</span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥1299</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086905978384.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>45891人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li data-pid="10086211949427" data-scode="2601010067401" data-sname="HUAWEI Mate 20 X">
+                        <div class="pro-panels">
+                            <p class="p-img"><a target="_blank" href="https://www.vmall.com/product/10086211949427.html"
+                                                title="HUAWEI Mate 20 X"><img alt="HUAWEI Mate 20 X 6GB+128GB 全网通版（宝石蓝）"
+                                                                              src="{% static 'images/428_428_1542769704670mp.png' %}"></a>
+                            </p>
+                            <p class="p-name">
+                                <a target="_blank" href="https://www.vmall.com/product/10086211949427.html"
+                                   title="HUAWEI Mate 20 X">
+                                    <span>HUAWEI Mate 20 X</span>
+                                    <span class="red"></span>
+                                </a>
+                            </p>
+                            <p class="p-price"><b>¥4099</b></p>
+                            <div class="p-button clearfix">
+                                <table colspan="0" rowspan="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td><a target="_blank" href="https://www.vmall.com/product/10086211949427.html"
+                                               class="p-button-cart"><span>选购</span></a></td>
+                                        <td><label class="p-button-score"><span>27234人评价</span></label></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 20140727-商品列表-end -->
+            <!-- 分页-start -->
+            <div id="list-pager-36" class="pager">
+                <input id="pageTotal" value="3" type="hidden">
+                <ul id="page_ul">
+                    <li class="pgNext link first first-empty">|&lt;</li>
+                    <li class="pgNext link pre pre-empty">&lt;</li>
+
+                    <a id="page_1" href="https://www.vmall.com/list-36-1-3-0" title="第1页">
+                        <li class="page-number link pgCurrent">1</li>
+                    </a>
+                    <a id="page_2" href="https://www.vmall.com/list-36-2-3-0" title="第2页">
+                        <li class="page-number link">2</li>
+                    </a>
+                    <a id="page_3" href="https://www.vmall.com/list-36-3-3-0" title="第3页">
+                        <li class="page-number link">3</li>
+                    </a>
+                    <li class="pgNext link next">&gt;</li>
+                    <li class="pgNext link last">&gt;|</li>
+                    <li class="text quickPager"><select id="pageChecked">
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                    </select></li>
+                </ul>
+            </div>
+        </div><!-- 20140726-频道-列表-end -->
+
+    </div>
+
+    <!--弹出层-成功添加到购物车 -->
+    <textarea id="cart-tips" class="hide">&lt;div class="pro-add-success"
+style="margin:-14px -30px 0;"&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;&lt;s&gt;&lt;/s&gt;&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;div id="cart-briefName" class="pro-add-success-name"&gt;华为 Ascend
+ P1 U9200 3G手机（晶钻黑）WCDMA&lt;/div&gt;
+			&lt;div class="pro-add-success-msg"&gt;成功加入购物车!&lt;/div&gt;
+			&lt;div class="pro-add-success-total"&gt;购物车中共&nbsp;&lt;b
+id="cart-total"&gt;0&lt;/b&gt;&nbsp;件商品，金额合计&nbsp;&lt;b
+id="cart-price"&gt;¥&nbsp;2699&lt;/b&gt;&lt;/div&gt;
+			&lt;div class="pro-add-success-button"&gt;&lt;a href="javascript:;"
+class="box-ok button-style-1 button-go-cart"&gt;去结算&lt;/a&gt;&lt;a
+class="box-cancel button-style-4 button-walking"
+href="javascript:;"&gt;继续逛逛&nbsp;&gt;&gt;&lt;/a&gt;&lt;/div&gt;
+		&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;
+</textarea>
+    <!-- 20131218-商品简介-弹出层-成功添加到购物车-end -->
+
+    <!--弹出层-添加到购物车失败 -->
+    <textarea id="popup-tips" class="hide">    &lt;!--
+20131230-商品简介-弹出层-添加到购物车失败-start --&gt;
+	&lt;div class="pro-add-error" style="margin-top:-40px;"&gt;
+		&lt;i&gt;&lt;/i&gt;
+		&lt;div id="popup-tips-msg"
+class="pro-add-error-msg"&gt;非常抱歉！该商品不能单独销售！&lt;/div&gt;
+		&lt;div class="pro-add-error-button"&gt;&lt;a href="javascript:;"
+title="知道了" class="box-cancel button-style-4
+button-par-define"&gt;知道了&lt;/a&gt;&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+    <!-- 20131230-商品简介-弹出层-添加到购物车失败-end -->
+    <div class="hr-40"></div>
+    <script>
+        ec.ready(function () {
+            //封装已选属性列表
+            var attrList = [];
+            ec.product.renderPage(36, attrList, $("#sField").val(), $("#sType").val(), {
+                pageNumber: 1,
+                totalPage: 3,
+                recordCount: 43
+            });
+        });
+
+        /**
+         *描述：当点击一级分类，在展现属性中，可能出在存在相同的属性名称。
+         *所以现在暂时弥补的方法  当点击分类---"全部"的时候，隐藏下面属性的列
+         *@lifeng
+         */
+        ec.ready(function () {
+            var result = $("#first-category").attr("class");
+            if (result == "selected") {
+                //把分类下面的属性全部隐藏
+                $(".pro-cate-area").find("div[id^='pro-cate-attr-']").hide();
+            }
+
+            //分页链接重新赋值
+            var cid = ec.product.cid;
+            var pageTotal = $("#pageTotal").val();
+            for (var i = 0; i < pageTotal; i++) {
+                $("#page_" + (i + 1)).attr("href", "list-" + cid + "-" + (i + 1) + "-" + ec.product.sortField + "-" + ec.product.sortType);
+            }
+
+        })
+    </script><!--口号-20121025 -->
+
+
+    <script>
+        new Slider({//友情链接
+            objid: '#serverlink',
+            listname: '.service-list',
+            listitem: 'ol',
+            shownum: 1
+        }).init();
+
+        ec.load("ec.box", {loadType: "lazy"});
+        /**
+         *功能：给鼠标移动到s-dropdown上面的时候，记得给他多添加一个hover类样式
+         *目的是兼容ie6
+         *@author 李峰
+         */
+        $(function () {
+            $(".s-dropdown").hover(function () {
+                var jTpl = $(this).attr('data-tpl');
+                if (jTpl && $(this).find('.b').length < 1) {
+                    $(this).append($('#' + jTpl).val());
+                    $(this).removeAttr('data-tpl');
+                }
+                $(this).addClass("hover");
+            }, function () {
+                $(this).removeClass("hover");
+            });
+            var maxcolor = $('.top-banner-max').find('p').children('a').css("background-color");
+            var mincolor = $('.top-banner-min').find('p').children('a').css("background-color");
+
+            $('.top-banner-max').css({"background-color": maxcolor, overflow: "hidden"});
+            $('.top-banner-min').css({"background-color": mincolor, overflow: "hidden"});
+        });
+
+        //显示全球导航选择层
+        function showSelectRegion() {
+            var box = new ec.box($("#selectRegion-tips").val(),
+                {
+                    boxid: "region-select-box",
+                    boxclass: "ol_box_4",
+                    title: "Please select your country or region",
+                    width: 700,
+                    showButton: false,
+                    autoPosition: false,
+                    onopen: function (box) {
+                    },
+                    onok: function (box) {
+                    },
+                    oncancel: function (box) {
+                        box.close();
+                        $(".ol_box_mask").remove();
+                    },
+                    onclose: function (box) {
+                        $(".ol_box_mask").remove();
+                    }
+                });
+
+            box.open();
+
+            $(".box-title").css("font-size", "24px");
+            $("#region-select-box").css("height", "auto");
+            $(".ol_box_mask").click(function () {
+                box.close();
+            });
+
+            $(".box-header").unbind("mousemove");
+            $(".box-header").unbind("mousedown");
+
+            var divTop = document.getElementById("region-select-box").offsetTop;
+            $("#region-select-box").mousedown(function (e) {
+                var e = e || window.event;
+                var region = document.getElementById("region-select-box");
+
+                var leftX = e.clientX - region.offsetLeft;
+                var topY = e.clientY - region.offsetTop;
+                $("#region-select-box").mousemove(function (event) {
+                    var e = event || window.event;
+                    var left = e.clientX - leftX;
+                    var top = e.clientY - topY;
+
+                    if (e.clientX - leftX < 20 - region.offsetWidth) {
+                        left = 20 - region.offsetWidth;
+                    }
+                    if (e.clientY - topY < 20 - region.offsetHeight) {
+                        top = 20 - region.offsetHeight;
+                    }
+
+                    if (e.clientY - topY + 20 >= $(window).height()) {
+                        top = $(window).height() - 20;
+                    }
+                    if (e.clientX - leftX + 20 >= $(window).width()) {
+                        left = $(window).width() - 20;
+                    }
+                    $("#region-select-box").css({"left": left, "top": top});
+                    divTop = top;
+
+                });
+            });
+            $("#region-select-box").mouseup(function () {
+                $("#region-select-box").unbind("mousemove");
+            });
+            $(window).scroll(function () {
+                $("#region-select-box").offset({top: divTop});
+            });
+        }
+
+        ec.load("ec.slider", {
+            loadType: "lazy",
+            callback: function () {
+                $("#ec-erweima").slider({
+                    width: 91, //必须
+                    height: 96, //必须
+                    style: 1,                    //1显示分页，2只显示左右箭头,3两者都显示
+                    pause: 120000,           //间隔时间
+                    auto: true
+                });
+            }
+        });
+
+        ec.ready(function () {
+            try {
+                ec.minicart.readyContent();
+                ec.minicart.microCartTpl = new ec.template($('#micro-cart-tpl').val());
+                var $miniCart = $('#header-toolbar-minicart-content');
+                $('#header-toolbar-minicart').hover(function () {
+                    if (ec.checkBrowerIE()) {
+                        var act = (document.activeElement || {}).id;
+                        if (act == 'search-kw') {
+                            $("#search-kw").blur();
+                        }
+                    }
+
+                    $(this).unbind("mouseenter");
+                    ec.minicart.content();
+                }, function () {
+                    $(this).bind("mouseenter", function () {
+                        if (ec.checkBrowerIE()) {
+                            var act = (document.activeElement || {}).id;
+                            if (act == 'search-kw') {
+                                $("#search-kw").blur();
+                            }
+                        }
+
+                        $(this).unbind("mouseenter");
+                        ec.minicart.content();
+                    });
+                });
+
+                $('#up_loginName-hover').hover(function () {
+                    if (ec.checkBrowerIE()) {
+                        var act = (document.activeElement || {}).id;
+                        if (act == 'search-kw') {
+                            $("#search-kw").blur();
+                        }
+                    }
+
+                    $(this).unbind("mouseenter");
+                }, function () {
+                    $(this).bind("mouseenter", function () {
+                        if (ec.checkBrowerIE()) {
+                            var act = (document.activeElement || {}).id;
+                            if (act == 'search-kw') {
+                                $("#search-kw").blur();
+                            }
+                        }
+
+                        $(this).unbind("mouseenter");
+                    });
+                });
+
+            } catch (err) {
+                // console.log(err);
+            }
+
+        });
+        // 更新购物车数字
+        $(function () {
+            $('.j-hungBar .hungBar-cart').hover(function () {
+                ec.minicart.updateMiniCartNum();
+            });
+        });
+
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+
+        function pushMyOrderMsg() {
+            ec.account.afterLogin(function () {
+                ec.redirectTo("https://www.vmall.com/member/order?t=1568687878821timestamp");
+            });
+            ec.dapClick(300000301, {
+                "click": "1"
+            });
+        }
+
+        function pushMyCartMsg() {
+            ec.dapClick(300000401, {
+                "click": "1"
+            });
+        }
+
+
+        function pushCartProMsg(skuId, url, location) {
+            ec.dapClick(300000402, {
+                "SKUID": skuId,
+                "URL": url,
+                "location": location,
+                "click": "1"
+            });
+        }
+
+        function pushFootAdvertMsg(name, url) {
+            ec.dapClick(300000501, {
+                "name": name,
+                "URL": url,
+                "click": "1"
+            });
+        }
+
+        $(".fl").find("dd").find("a").bind("click", function () {
+            var HREF = "";
+            HREF = this.href;
+            var name = this.innerHTML;
+            if (HREF == null || HREF == "") {
+                return;
+            }
+            if (this.id == "tools-nav-service-robotim-button") {
+                name = "在线客服";
+            }
+            if (this.className == "service-btn btn-report") {
+                name = "不良信息举报";
+            }
+            pushFootAdvertMsg(name, HREF);
+        });
+
+
+        $('.footer-warrant-area.clearfix a').click(function () {
+            var dapData = {
+                "URL": $(this).attr("href"),
+                "click": "1"
+            };
+            if ($(this).find('img').length > 0) {
+                dapData.ADID = $(this).find("img").attr("src");
+            } else {
+                dapData.name = $(this).text();
+            }
+            ec.dapClick(300000502, dapData);
+        });
+
+        function pushRightHelpMsg(index) {
+            var buttonName = ['', '购物车', '在线客服', '意见反馈'][index];
+            ec.dapClick(300000601, {
+                "buttonName": buttonName,
+                "click": "1",
+                'index': index
+            });
+        }
+
+        jump = function (url, obj) {
+            if (typeof (obj.html()) != "undefined" && obj.html() != null && obj.html() != "") {
+                pushFootAdvertMsg($(this).html(), url);
+            }
+            var win = ec.openWindow(url);
+            win.opener = null;
+        }
+
+        function pushProRelationMsg(productId, column) {
+            ec.dapClick(300020601, {
+                "productId": productId,
+                "row": "1",
+                "column": column,
+                "click": "1"
+            });
+        }
+
+        function pushProHotMsg(skuCode) {
+            ec.dapClick(300020701, {
+                "SKUCode": skuCode,
+                "click": "1"
+            });
+        }
+
+        $('#serverlink a').each(function () {
+            var $a = $(this);
+            var url = $a.attr('onclick') || '';
+            url = url.toString();
+            var m = url.match(/jump_link\('([^']+)'\)/);
+            if (m && m[1]) {
+                url = m[1];
+                $a.attr('target', '_blank').attr('href', url);
+            }
+        });
+        jump_link = function (url) {
+            return;
+        }
+    </script>
+
+    <iframe style="display: none;" src="javascript:false"></iframe>
+    <script src="{% static 'js/dmpa-min.js' %}"
+            async="" id="dmpa"></script>
+    <script src="{% static 'js/vmallcsrf.js' %}"></script>
+
+{% endblock content %}

@@ -1,0 +1,1 @@
+(function(){ec.encodeInit=function(a){org.owasp.esapi.ESAPI.initialize()};ec.encodeForJS=function(a){if($ESAPI==null){org.owasp.esapi.ESAPI.initialize()}return $ESAPI.encoder().encodeForJavaScript(a)};ec.encodeForHTML=function(a){if($ESAPI==null){org.owasp.esapi.ESAPI.initialize()}return $ESAPI.encoder().encodeForHTML(a)}})();

@@ -1,0 +1,1456 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>华为帐号 - 登录</title>
+
+    <script type="text/javascript">var pageToken = "9522a0ba161dd427a807af40f969f07cd90658b021ac21ac288fe35a8e164ccc";
+    var isOpenCasPageStat = "true";</script>
+    <script type="text/javascript">
+
+    </script>
+
+
+    <link href="https://id1.cloud.huawei.com/CAS/up/idmw_rss_41/logos/icons/huawei.ico" type="image/x-icon"
+          rel="shortcut icon">
+
+    <link href="{% static 'css/ec.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/dialog.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/dialogEMUIV6.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/common_002.css' %}" rel="stylesheet" type="text/css">
+
+
+    <link href="{% static 'css/zh-cn.css' %}" rel="stylesheet" type="text/css">
+
+
+    <script type="text/javascript">var localHttps = "https://id1.cloud.huawei.com/CAS";
+    var currentSiteID = "1";
+    var webAppName = "CAS";
+    var localHttps_AMW = "https://id1.cloud.huawei.com/AMW";
+    var languageCode = "zh-cn";
+    var resourse_js_img_css_webUrl = "https://id1.cloud.huawei.com/CAS/up/idmw_rss_41";</script>
+
+
+    <script src="{% static 'js/zh-cn.js' %}"></script>
+
+
+    <script src="{% static 'js/_portal_includes_loginEMUI6Rss.js' %}" type="text/javascript"></script>
+
+
+</head>
+<body class="login themeName-red">
+<div id="cookies_privacy" class="center cookie hidden">
+    本站点使用cookies,继续浏览表示您同意我们使用cookies。
+    <a class="cookie-pro" href="#">Cookies和隐私政策&gt;</a>
+    <img src="{% static 'images/cookie-close.png' %}">
+</div>
+<div>
+    <!-- 头部  -->
+    <div class="customer-header">
+        <div class="head_center">
+            <div class="main-logo adHeadPicContainer"><img
+                    src="{% static 'images/HUAWEI.png' %}" class="adHeadPic">
+            </div>
+            <div class="website-name"><b style="font-size: 18px;margin-top: -5px;float: left;color:#cccccc;">|</b> <b
+                    class="adHeadTitle">华为商城</b></div>
+        </div>
+    </div>
+    <!-- 广告位 -->
+    <span><div
+            style="background: #FFFBE4;display: block;height: 40px;text-align: center;line-height: 40px;color: #989898;"><span
+            class="prompt_icon" id="ad1">依据《网络安全法》，为保障您的帐号安全与正常使用，请尽快绑定您的手机号，感谢您的理解及支持！</span></div></span>
+    <!--登录 -->
+    <div class="login_bg" id="loginform">
+        <div style="background-image: url('https://id1.cloud.huawei.com/CAS/up/idmw_rss_41/ads/login_default_bg.png');"
+             class="g login_adBg">
+            <div class="login-area login-right login-area-box">
+
+
+                <div class="userAccountLogin">
+
+                    <div class="h">
+                        <span class="loginTitle actived loginTitle-left" data-type="account">帐号登录</span>
+
+
+                    </div>
+
+                    <div class="b-account">
+                        <div class="login-form-marginTop">
+                            <div class="form-edit-area loginEventForm">
+                                <div class="userAccountLogin-errorTipsDiv" id="errorTip"></div>
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                         for="login_userName">
+                                            <div style="border: medium none; background: transparent none repeat scroll 0% 0%; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
+                                                 tabindex="-1" class="text vam">手机号/邮件地址/华为号
+                                            </div>
+                                        </label><input type="text" autocomplete="off" class="text vam"
+                                                       id="login_userName" name="userAccount" maxlength="50"
+                                                       tabindex="1" onfocus="this.removeAttribute('readonly');"
+                                                       validator="validator11568624301400" style="z-index: 1;"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                         for="login_password">
+                                            <div style="border: medium none; background: transparent none repeat scroll 0% 0%; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
+                                                 tabindex="-1" class="text vam">密码
+                                            </div>
+                                        </label><input oncut="return false;" oncopy="return false" id="login_password"
+                                                       type="password" autocomplete="off" class="text vam"
+                                                       name="password" maxlength="32" tabindex="2" readonly="readonly"
+                                                       onfocus="this.removeAttribute('readonly');"
+                                                       validator="validator21568624301400" style="z-index: 1;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="picAuthCode" class="verify-td referenceTarget">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-links lineHeightFix" id="operLinkTd">
+                                            <span id="smsLoginEntrance" class="changeLoginType l"
+                                                  data-type="userAccountLogin" title="短信验证码登录"
+                                                  style="visibility: visible;"><i class="phoneIcon marginR6"></i>短信验证码登录</span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-bottom:0px;"><span class="vam error" id="login_msg"
+                                                                                  style="display:block"></span></div>
+                                            <div class="button-login" id="btnLogin" data-type="accountLogin"
+                                                 tabindex="5">登录
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-checkbox">
+                                            <span id="rememberNameSpan">
+                                                 <input type="checkbox" class="checkbox vam" id="remember_name"
+                                                        name="remember_name" tabindex="4">
+                                                <label for="remember_name">
+                                                    <i id="remember_name_icon"
+                                                       class="checkBox-icon tick-off-icon marginR6"></i>
+{#                                                    记住华为帐号#}
+                                                </label>
+                                            </span>
+                                            <div class="hidden remeberTip"></div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-links p0">
+                                            <div class="mt-links-float vam clearWidth">
+
+
+                                                <span class="regist"><a id="registText" class="btn-primary clearWidth"
+                                                                        href="{% url 'app:register' %}"
+                                                                        title="注册帐号">注册帐号</a></span><span
+                                                    class="forgot"><a class="btn-primary clearWidth"
+                                                                      href="#" onclick="gotoresetpwd()"
+                                                                      title="忘记密码？">忘记密码？</a></span>
+
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smsValidateLogin hidden">
+                    <span class="changeLoginType callbackAcctLoginBtn" data-type="smsValidateLogin"
+                          style="visibility: visible;">&lt;&nbsp;返回</span>
+                    <div class="b-account">
+                        <div class="login-form-marginTop smsLogin-form">
+                            <div class="form-edit-area loginEventForm">
+                                <div class="smsValidateLogin-errorTipsDiv"></div>
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="user-input-tr chooseCountryTD">
+                                            <!-- 国家/地区-->
+                                            <div class="l" id="chooseCountry">
+                                                <div id="smsLoginCountryCodeDiv" class="ddrop-EMU5">
+                                                    <div class="dropMenu"><input type="hidden" class="selectVal"
+                                                                                 value="cn,+86,1"><span
+                                                            class="select-text " data-regions="cn"
+                                                            data-countrycode="+86" data-countrysite="1">+86  中国  </span>
+                                                        <div class="select-ico"></div>
+                                                    </div>
+                                                    <div class="droplist">
+                                                        <div class="orderContainer">
+                                                            <div class="input-div"><input type="text"
+                                                                                          class="searchValue"
+                                                                                          placeholder="搜索"
+                                                                                          value="cn,+86,1"></div>
+                                                        </div>
+                                                        <ul class="list-container">
+                                                            <div class="line-container" data-value="0">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="0"
+                                                                data-label="+355  阿尔巴尼亚  ">+355 阿尔巴尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="1">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="1"
+                                                                data-label="+213  阿尔及利亚  ">+213 阿尔及利亚
+                                                            </li>
+                                                            <div class="line-container" data-value="2">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="2"
+                                                                data-label="+93  阿富汗  ">+93 阿富汗
+                                                            </li>
+                                                            <div class="line-container" data-value="3">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="3"
+                                                                data-label="+54  阿根廷  ">+54 阿根廷
+                                                            </li>
+                                                            <div class="line-container" data-value="4">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="4"
+                                                                data-label="+353  爱尔兰  ">+353 爱尔兰
+                                                            </li>
+                                                            <div class="line-container" data-value="5">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="5"
+                                                                data-label="+20  埃及  ">+20 埃及
+                                                            </li>
+                                                            <div class="line-container" data-value="6">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="6"
+                                                                data-label="+251  埃塞俄比亚  ">+251 埃塞俄比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="7">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="7"
+                                                                data-label="+372  爱沙尼亚  ">+372 爱沙尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="8">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="8"
+                                                                data-label="+971  阿拉伯联合酋长国  ">+971 阿拉伯联合酋长国
+                                                            </li>
+                                                            <div class="line-container" data-value="9">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="9"
+                                                                data-label="+968  阿曼  ">+968 阿曼
+                                                            </li>
+                                                            <div class="line-container" data-value="10">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="10"
+                                                                data-label="+376  安道尔  ">+376 安道尔
+                                                            </li>
+                                                            <div class="line-container" data-value="11">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="11"
+                                                                data-label="+244  安哥拉  ">+244 安哥拉
+                                                            </li>
+                                                            <div class="line-container" data-value="12">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="12"
+                                                                data-label="+61  澳大利亚  ">+61 澳大利亚
+                                                            </li>
+                                                            <div class="line-container" data-value="13">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="13"
+                                                                data-label="+43  奥地利  ">+43 奥地利
+                                                            </li>
+                                                            <div class="line-container" data-value="14">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="14"
+                                                                data-label="+994  阿塞拜疆  ">+994 阿塞拜疆
+                                                            </li>
+                                                            <div class="line-container" data-value="15">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="15"
+                                                                data-label="+675  巴布亚新几内亚  ">+675 巴布亚新几内亚
+                                                            </li>
+                                                            <div class="line-container" data-value="16">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="16"
+                                                                data-label="+1242  巴哈马  ">+1242 巴哈马
+                                                            </li>
+                                                            <div class="line-container" data-value="17">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="17"
+                                                                data-label="+375  白俄罗斯  ">+375 白俄罗斯
+                                                            </li>
+                                                            <div class="line-container" data-value="18">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="18"
+                                                                data-label="+92  巴基斯坦  ">+92 巴基斯坦
+                                                            </li>
+                                                            <div class="line-container" data-value="19">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="19"
+                                                                data-label="+595  巴拉圭  ">+595 巴拉圭
+                                                            </li>
+                                                            <div class="line-container" data-value="20">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="20"
+                                                                data-label="+973  巴林  ">+973 巴林
+                                                            </li>
+                                                            <div class="line-container" data-value="21">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="21"
+                                                                data-label="+507  巴拿马  ">+507 巴拿马
+                                                            </li>
+                                                            <div class="line-container" data-value="22">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="22"
+                                                                data-label="+359  保加利亚  ">+359 保加利亚
+                                                            </li>
+                                                            <div class="line-container" data-value="23">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="23"
+                                                                data-label="+55  巴西  ">+55 巴西
+                                                            </li>
+                                                            <div class="line-container" data-value="24">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="24"
+                                                                data-label="+229  贝宁  ">+229 贝宁
+                                                            </li>
+                                                            <div class="line-container" data-value="25">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="25"
+                                                                data-label="+32  比利时  ">+32 比利时
+                                                            </li>
+                                                            <div class="line-container" data-value="26">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="26"
+                                                                data-label="+354  冰岛  ">+354 冰岛
+                                                            </li>
+                                                            <div class="line-container" data-value="27">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="27"
+                                                                data-label="+267  博茨瓦纳  ">+267 博茨瓦纳
+                                                            </li>
+                                                            <div class="line-container" data-value="28">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="28"
+                                                                data-label="+48  波兰  ">+48 波兰
+                                                            </li>
+                                                            <div class="line-container" data-value="29">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="29"
+                                                                data-label="+591  玻利维亚  ">+591 玻利维亚
+                                                            </li>
+                                                            <div class="line-container" data-value="30">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="30"
+                                                                data-label="+387  波斯尼亚和黑塞哥维那  ">+387 波斯尼亚和黑塞哥维那
+                                                            </li>
+                                                            <div class="line-container" data-value="31">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="31"
+                                                                data-label="+226  布基纳法索  ">+226 布基纳法索
+                                                            </li>
+                                                            <div class="line-container" data-value="32">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="32"
+                                                                data-label="+257  布隆迪  ">+257 布隆迪
+                                                            </li>
+                                                            <div class="line-container" data-value="33">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="33"
+                                                                data-label="+240  赤道几内亚  ">+240 赤道几内亚
+                                                            </li>
+                                                            <div class="line-container" data-value="34">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="34"
+                                                                data-label="+45  丹麦  ">+45 丹麦
+                                                            </li>
+                                                            <div class="line-container" data-value="35">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="35"
+                                                                data-label="+49  德国  ">+49 德国
+                                                            </li>
+                                                            <div class="line-container" data-value="36">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="36"
+                                                                data-label="+228  多哥  ">+228 多哥
+                                                            </li>
+                                                            <div class="line-container" data-value="37">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="37"
+                                                                data-label="+1849  多米尼加共和国  ">+1849 多米尼加共和国
+                                                            </li>
+                                                            <div class="line-container" data-value="38">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="38"
+                                                                data-label="+593  厄瓜多尔  ">+593 厄瓜多尔
+                                                            </li>
+                                                            <div class="line-container" data-value="39">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="39"
+                                                                data-label="+7  俄罗斯  ">+7 俄罗斯
+                                                            </li>
+                                                            <div class="line-container" data-value="40">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="40"
+                                                                data-label="+33  法国  ">+33 法国
+                                                            </li>
+                                                            <div class="line-container" data-value="41">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="41"
+                                                                data-label="+298  法罗群岛  ">+298 法罗群岛
+                                                            </li>
+                                                            <div class="line-container" data-value="42">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="42"
+                                                                data-label="+379  梵蒂冈  ">+379 梵蒂冈
+                                                            </li>
+                                                            <div class="line-container" data-value="43">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="43"
+                                                                data-label="+689  法属波利尼西亚  ">+689 法属波利尼西亚
+                                                            </li>
+                                                            <div class="line-container" data-value="44">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="44"
+                                                                data-label="+679  斐济  ">+679 斐济
+                                                            </li>
+                                                            <div class="line-container" data-value="45">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="45"
+                                                                data-label="+63  菲律宾  ">+63 菲律宾
+                                                            </li>
+                                                            <div class="line-container" data-value="46">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="46"
+                                                                data-label="+358  芬兰  ">+358 芬兰
+                                                            </li>
+                                                            <div class="line-container" data-value="47">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="47"
+                                                                data-label="+238  佛得角  ">+238 佛得角
+                                                            </li>
+                                                            <div class="line-container" data-value="48">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="48"
+                                                                data-label="+220  冈比亚  ">+220 冈比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="49">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="49"
+                                                                data-label="+242  刚果（布）  ">+242 刚果（布）
+                                                            </li>
+                                                            <div class="line-container" data-value="50">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="50"
+                                                                data-label="+243  刚果（金）  ">+243 刚果（金）
+                                                            </li>
+                                                            <div class="line-container" data-value="51">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="51"
+                                                                data-label="+299  格陵兰岛  ">+299 格陵兰岛
+                                                            </li>
+                                                            <div class="line-container" data-value="52">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="52"
+                                                                data-label="+995  格鲁吉亚  ">+995 格鲁吉亚
+                                                            </li>
+                                                            <div class="line-container" data-value="53">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="53"
+                                                                data-label="+57  哥伦比亚  ">+57 哥伦比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="54">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="54"
+                                                                data-label="+506  哥斯达黎加  ">+506 哥斯达黎加
+                                                            </li>
+                                                            <div class="line-container" data-value="55">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="55"
+                                                                data-label="+590  瓜德罗普  ">+590 瓜德罗普
+                                                            </li>
+                                                            <div class="line-container" data-value="56">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="56"
+                                                                data-label="+7  哈萨克斯坦  ">+7 哈萨克斯坦
+                                                            </li>
+                                                            <div class="line-container" data-value="57">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="57"
+                                                                data-label="+382  黑山  ">+382 黑山
+                                                            </li>
+                                                            <div class="line-container" data-value="58">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="58"
+                                                                data-label="+31  荷兰  ">+31 荷兰
+                                                            </li>
+                                                            <div class="line-container" data-value="59">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="59"
+                                                                data-label="+504  洪都拉斯  ">+504 洪都拉斯
+                                                            </li>
+                                                            <div class="line-container" data-value="60">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="60"
+                                                                data-label="+233  加纳  ">+233 加纳
+                                                            </li>
+                                                            <div class="line-container" data-value="61">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="61"
+                                                                data-label="+855  柬埔寨  ">+855 柬埔寨
+                                                            </li>
+                                                            <div class="line-container" data-value="62">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="62"
+                                                                data-label="+241  加蓬  ">+241 加蓬
+                                                            </li>
+                                                            <div class="line-container" data-value="63">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="63"
+                                                                data-label="+253  吉布提  ">+253 吉布提
+                                                            </li>
+                                                            <div class="line-container" data-value="64">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="64"
+                                                                data-label="+420  捷克共和国  ">+420 捷克共和国
+                                                            </li>
+                                                            <div class="line-container" data-value="65">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="65"
+                                                                data-label="+996  吉尔吉斯斯坦  ">+996 吉尔吉斯斯坦
+                                                            </li>
+                                                            <div class="line-container" data-value="66">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="66"
+                                                                data-label="+263  津巴布韦  ">+263 津巴布韦
+                                                            </li>
+                                                            <div class="line-container" data-value="67">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="67"
+                                                                data-label="+224  几内亚  ">+224 几内亚
+                                                            </li>
+                                                            <div class="line-container" data-value="68">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="68"
+                                                                data-label="+245  几内亚比绍  ">+245 几内亚比绍
+                                                            </li>
+                                                            <div class="line-container" data-value="69">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="69"
+                                                                data-label="+237  喀麦隆  ">+237 喀麦隆
+                                                            </li>
+                                                            <div class="line-container" data-value="70">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="70"
+                                                                data-label="+974  卡塔尔  ">+974 卡塔尔
+                                                            </li>
+                                                            <div class="line-container" data-value="71">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="71"
+                                                                data-label="+385  克罗地亚  ">+385 克罗地亚
+                                                            </li>
+                                                            <div class="line-container" data-value="72">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="72"
+                                                                data-label="+269  科摩罗  ">+269 科摩罗
+                                                            </li>
+                                                            <div class="line-container" data-value="73">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="73"
+                                                                data-label="+254  肯尼亚  ">+254 肯尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="74">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="74"
+                                                                data-label="+225  科特迪瓦  ">+225 科特迪瓦
+                                                            </li>
+                                                            <div class="line-container" data-value="75">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="75"
+                                                                data-label="+965  科威特  ">+965 科威特
+                                                            </li>
+                                                            <div class="line-container" data-value="76">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="76"
+                                                                data-label="+682  库克群岛  ">+682 库克群岛
+                                                            </li>
+                                                            <div class="line-container" data-value="77">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="77"
+                                                                data-label="+266  莱索托  ">+266 莱索托
+                                                            </li>
+                                                            <div class="line-container" data-value="78">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="78"
+                                                                data-label="+856  老挝  ">+856 老挝
+                                                            </li>
+                                                            <div class="line-container" data-value="79">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="79"
+                                                                data-label="+371  拉脱维亚  ">+371 拉脱维亚
+                                                            </li>
+                                                            <div class="line-container" data-value="80">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="80"
+                                                                data-label="+961  黎巴嫩  ">+961 黎巴嫩
+                                                            </li>
+                                                            <div class="line-container" data-value="81">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="81"
+                                                                data-label="+231  利比里亚  ">+231 利比里亚
+                                                            </li>
+                                                            <div class="line-container" data-value="82">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="82"
+                                                                data-label="+218  利比亚  ">+218 利比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="83">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="83"
+                                                                data-label="+423  列支敦士登  ">+423 列支敦士登
+                                                            </li>
+                                                            <div class="line-container" data-value="84">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="84"
+                                                                data-label="+370  立陶宛  ">+370 立陶宛
+                                                            </li>
+                                                            <div class="line-container" data-value="85">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="85"
+                                                                data-label="+40  罗马尼亚  ">+40 罗马尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="86">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="86"
+                                                                data-label="+352  卢森堡  ">+352 卢森堡
+                                                            </li>
+                                                            <div class="line-container" data-value="87">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="87"
+                                                                data-label="+250  卢旺达  ">+250 卢旺达
+                                                            </li>
+                                                            <div class="line-container" data-value="88">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="88"
+                                                                data-label="+261  马达加斯加  ">+261 马达加斯加
+                                                            </li>
+                                                            <div class="line-container" data-value="89">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="89"
+                                                                data-label="+960  马尔代夫  ">+960 马尔代夫
+                                                            </li>
+                                                            <div class="line-container" data-value="90">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="90"
+                                                                data-label="+356  马耳他  ">+356 马耳他
+                                                            </li>
+                                                            <div class="line-container" data-value="91">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="91"
+                                                                data-label="+60  马来西亚  ">+60 马来西亚
+                                                            </li>
+                                                            <div class="line-container" data-value="92">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="92"
+                                                                data-label="+265  马拉维  ">+265 马拉维
+                                                            </li>
+                                                            <div class="line-container" data-value="93">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="93"
+                                                                data-label="+223  马里  ">+223 马里
+                                                            </li>
+                                                            <div class="line-container" data-value="94">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="94"
+                                                                data-label="+230  毛里求斯  ">+230 毛里求斯
+                                                            </li>
+                                                            <div class="line-container" data-value="95">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="95"
+                                                                data-label="+222  毛里塔尼亚  ">+222 毛里塔尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="96">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="96"
+                                                                data-label="+389  马其顿  ">+389 马其顿
+                                                            </li>
+                                                            <div class="line-container" data-value="97">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="97"
+                                                                data-label="+1  美国  ">+1 美国
+                                                            </li>
+                                                            <div class="line-container" data-value="98">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="98"
+                                                                data-label="+976  蒙古  ">+976 蒙古
+                                                            </li>
+                                                            <div class="line-container" data-value="99">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="99"
+                                                                data-label="+880  孟加拉  ">+880 孟加拉
+                                                            </li>
+                                                            <div class="line-container" data-value="100">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="100"
+                                                                data-label="+95  缅甸  ">+95 缅甸
+                                                            </li>
+                                                            <div class="line-container" data-value="101">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="101"
+                                                                data-label="+51  秘鲁  ">+51 秘鲁
+                                                            </li>
+                                                            <div class="line-container" data-value="102">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="102"
+                                                                data-label="+373  摩尔多瓦  ">+373 摩尔多瓦
+                                                            </li>
+                                                            <div class="line-container" data-value="103">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="103"
+                                                                data-label="+377  摩纳哥  ">+377 摩纳哥
+                                                            </li>
+                                                            <div class="line-container" data-value="104">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="104"
+                                                                data-label="+258  莫桑比克  ">+258 莫桑比克
+                                                            </li>
+                                                            <div class="line-container" data-value="105">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="105"
+                                                                data-label="+52  墨西哥  ">+52 墨西哥
+                                                            </li>
+                                                            <div class="line-container" data-value="106">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="106"
+                                                                data-label="+264  纳米比亚  ">+264 纳米比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="107">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="107"
+                                                                data-label="+27  南非  ">+27 南非
+                                                            </li>
+                                                            <div class="line-container" data-value="108">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="108"
+                                                                data-label="+674  瑙鲁  ">+674 瑙鲁
+                                                            </li>
+                                                            <div class="line-container" data-value="109">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="109"
+                                                                data-label="+977  尼泊尔  ">+977 尼泊尔
+                                                            </li>
+                                                            <div class="line-container" data-value="110">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="110"
+                                                                data-label="+505  尼加拉瓜  ">+505 尼加拉瓜
+                                                            </li>
+                                                            <div class="line-container" data-value="111">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="111"
+                                                                data-label="+227  尼日尔  ">+227 尼日尔
+                                                            </li>
+                                                            <div class="line-container" data-value="112">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="112"
+                                                                data-label="+234  尼日利亚  ">+234 尼日利亚
+                                                            </li>
+                                                            <div class="line-container" data-value="113">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="113"
+                                                                data-label="+47  挪威  ">+47 挪威
+                                                            </li>
+                                                            <div class="line-container" data-value="114">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="114"
+                                                                data-label="+351  葡萄牙  ">+351 葡萄牙
+                                                            </li>
+                                                            <div class="line-container" data-value="115">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="115"
+                                                                data-label="+81  日本  ">+81 日本
+                                                            </li>
+                                                            <div class="line-container" data-value="116">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="116"
+                                                                data-label="+46  瑞典  ">+46 瑞典
+                                                            </li>
+                                                            <div class="line-container" data-value="117">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="117"
+                                                                data-label="+41  瑞士  ">+41 瑞士
+                                                            </li>
+                                                            <div class="line-container" data-value="118">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="118"
+                                                                data-label="+503  萨尔瓦多  ">+503 萨尔瓦多
+                                                            </li>
+                                                            <div class="line-container" data-value="119">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="119"
+                                                                data-label="+381  塞尔维亚  ">+381 塞尔维亚
+                                                            </li>
+                                                            <div class="line-container" data-value="120">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="120"
+                                                                data-label="+232  塞拉利昂  ">+232 塞拉利昂
+                                                            </li>
+                                                            <div class="line-container" data-value="121">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="121"
+                                                                data-label="+221  塞内加尔  ">+221 塞内加尔
+                                                            </li>
+                                                            <div class="line-container" data-value="122">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="122"
+                                                                data-label="+357  塞浦路斯  ">+357 塞浦路斯
+                                                            </li>
+                                                            <div class="line-container" data-value="123">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="123"
+                                                                data-label="+966  沙特阿拉伯  ">+966 沙特阿拉伯
+                                                            </li>
+                                                            <div class="line-container" data-value="124">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="124"
+                                                                data-label="+378  圣马力诺  ">+378 圣马力诺
+                                                            </li>
+                                                            <div class="line-container" data-value="125">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="125"
+                                                                data-label="+94  斯里兰卡  ">+94 斯里兰卡
+                                                            </li>
+                                                            <div class="line-container" data-value="126">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="126"
+                                                                data-label="+421  斯洛伐克  ">+421 斯洛伐克
+                                                            </li>
+                                                            <div class="line-container" data-value="127">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="127"
+                                                                data-label="+386  斯洛文尼亚  ">+386 斯洛文尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="128">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="128"
+                                                                data-label="+268  斯威士兰  ">+268 斯威士兰
+                                                            </li>
+                                                            <div class="line-container" data-value="129">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="129"
+                                                                data-label="+597  苏里南  ">+597 苏里南
+                                                            </li>
+                                                            <div class="line-container" data-value="130">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="130"
+                                                                data-label="+677  所罗门群岛  ">+677 所罗门群岛
+                                                            </li>
+                                                            <div class="line-container" data-value="131">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="131"
+                                                                data-label="+252  索马里  ">+252 索马里
+                                                            </li>
+                                                            <div class="line-container" data-value="132">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="132"
+                                                                data-label="+66  泰国  ">+66 泰国
+                                                            </li>
+                                                            <div class="line-container" data-value="133">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="133"
+                                                                data-label="+992  塔吉克斯坦  ">+992 塔吉克斯坦
+                                                            </li>
+                                                            <div class="line-container" data-value="134">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="134"
+                                                                data-label="+676  汤加  ">+676 汤加
+                                                            </li>
+                                                            <div class="line-container" data-value="135">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="135"
+                                                                data-label="+255  坦桑尼亚  ">+255 坦桑尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="136">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="136"
+                                                                data-label="+1868  特立尼达和多巴哥  ">+1868 特立尼达和多巴哥
+                                                            </li>
+                                                            <div class="line-container" data-value="137">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="137"
+                                                                data-label="+90  土耳其  ">+90 土耳其
+                                                            </li>
+                                                            <div class="line-container" data-value="138">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="138"
+                                                                data-label="+216  突尼斯  ">+216 突尼斯
+                                                            </li>
+                                                            <div class="line-container" data-value="139">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="139"
+                                                                data-label="+502  危地马拉  ">+502 危地马拉
+                                                            </li>
+                                                            <div class="line-container" data-value="140">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="140"
+                                                                data-label="+58  委内瑞拉  ">+58 委内瑞拉
+                                                            </li>
+                                                            <div class="line-container" data-value="141">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="141"
+                                                                data-label="+673  文莱  ">+673 文莱
+                                                            </li>
+                                                            <div class="line-container" data-value="142">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="142"
+                                                                data-label="+256  乌干达  ">+256 乌干达
+                                                            </li>
+                                                            <div class="line-container" data-value="143">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="143"
+                                                                data-label="+380  乌克兰  ">+380 乌克兰
+                                                            </li>
+                                                            <div class="line-container" data-value="144">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="144"
+                                                                data-label="+598  乌拉圭  ">+598 乌拉圭
+                                                            </li>
+                                                            <div class="line-container" data-value="145">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="145"
+                                                                data-label="+998  乌兹别克斯坦  ">+998 乌兹别克斯坦
+                                                            </li>
+                                                            <div class="line-container" data-value="146">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="146"
+                                                                data-label="+34  西班牙  ">+34 西班牙
+                                                            </li>
+                                                            <div class="line-container" data-value="147">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="147"
+                                                                data-label="+30  希腊  ">+30 希腊
+                                                            </li>
+                                                            <div class="line-container" data-value="148">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="148"
+                                                                data-label="+65  新加坡  ">+65 新加坡
+                                                            </li>
+                                                            <div class="line-container" data-value="149">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="149"
+                                                                data-label="+64  新西兰  ">+64 新西兰
+                                                            </li>
+                                                            <div class="line-container" data-value="150">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="150"
+                                                                data-label="+36  匈牙利  ">+36 匈牙利
+                                                            </li>
+                                                            <div class="line-container" data-value="151">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="151"
+                                                                data-label="+1876  牙买加  ">+1876 牙买加
+                                                            </li>
+                                                            <div class="line-container" data-value="152">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="152"
+                                                                data-label="+374  亚美尼亚  ">+374 亚美尼亚
+                                                            </li>
+                                                            <div class="line-container" data-value="153">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="153"
+                                                                data-label="+967  也门  ">+967 也门
+                                                            </li>
+                                                            <div class="line-container" data-value="154">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="154"
+                                                                data-label="+39  意大利  ">+39 意大利
+                                                            </li>
+                                                            <div class="line-container" data-value="155">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="155"
+                                                                data-label="+964  伊拉克  ">+964 伊拉克
+                                                            </li>
+                                                            <div class="line-container" data-value="156">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="156"
+                                                                data-label="+91  印度  ">+91 印度
+                                                            </li>
+                                                            <div class="line-container" data-value="157">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="157"
+                                                                data-label="+62  印度尼西亚  ">+62 印度尼西亚
+                                                            </li>
+                                                            <div class="line-container" data-value="158">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="158"
+                                                                data-label="+44  英国  ">+44 英国
+                                                            </li>
+                                                            <div class="line-container" data-value="159">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="159"
+                                                                data-label="+972  以色列  ">+972 以色列
+                                                            </li>
+                                                            <div class="line-container" data-value="160">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="160"
+                                                                data-label="+962  约旦  ">+962 约旦
+                                                            </li>
+                                                            <div class="line-container" data-value="161">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="161"
+                                                                data-label="+84  越南  ">+84 越南
+                                                            </li>
+                                                            <div class="line-container" data-value="162">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="162"
+                                                                data-label="+260  赞比亚  ">+260 赞比亚
+                                                            </li>
+                                                            <div class="line-container" data-value="163">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="163"
+                                                                data-label="+235  乍得  ">+235 乍得
+                                                            </li>
+                                                            <div class="line-container" data-value="164">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="164"
+                                                                data-label="+350  直布罗陀  ">+350 直布罗陀
+                                                            </li>
+                                                            <div class="line-container" data-value="165">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="165"
+                                                                data-label="+56  智利  ">+56 智利
+                                                            </li>
+                                                            <div class="line-container" data-value="166">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="166"
+                                                                data-label="+236  中非共和国  ">+236 中非共和国
+                                                            </li>
+                                                            <div class="line-container" data-value="167">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="167"
+                                                                data-label="+86  中国  ">+86 中国
+                                                            </li>
+                                                            <div class="line-container" data-value="168">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="168"
+                                                                data-label="+853  中国澳门特别行政区  ">+853 中国澳门特别行政区
+                                                            </li>
+                                                            <div class="line-container" data-value="169">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="169"
+                                                                data-label="+886  中国台湾  ">+886 中国台湾
+                                                            </li>
+                                                            <div class="line-container" data-value="170">
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <li class="dropListEMUI5_li " data-value="170"
+                                                                data-label="+852  中国香港特别行政区  ">+852 中国香港特别行政区
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="splitLine l">
+                                            </div>
+                                            <div class="overFlowHidden">
+                                                <input type="text" autocomplete="off" class="text vam"
+                                                       id="login_phoneNum" name="userAccount" maxlength="50"
+                                                       tabindex="1" readonly="readonly"
+                                                       onfocus="this.removeAttribute('readonly');"
+                                                       validator="validator31568624301401">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 图形验证码 -->
+
+
+                                    <tr>
+                                        <td class="referenceTarget user-input-tr"><label class="lb_opacity_Class"
+                                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                                         for="smsAuthCode">
+                                            <div style="border: medium none; background: transparent none repeat scroll 0% 0%; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
+                                                 tabindex="-1" class="text vam">短信验证码
+                                            </div>
+                                        </label><input type="text" autocomplete="off" class="text vam" id="smsAuthCode"
+                                                       name="smsAuthCode" maxlength="8" tabindex="3" readonly="readonly"
+                                                       onfocus="this.removeAttribute('readonly');"
+                                                       validator="validator41568624301401" style="z-index: 1;">
+                                            <div id="getSmsRandomCodeDiv">
+                                                <div id="getSmsRandomCode" intervaltime="60"
+                                                     class="smsAuthBth btnUnable"><span>获取验证码</span>
+                                                    <div id="smsAuthCodeTips"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="mt-checkbox">
+                                            <span id="sms-rememberNameSpan"><input type="checkbox" class="checkbox vam"
+                                                                                   id="remember_smsName"
+                                                                                   name="remember_smsName" tabindex="4"><label
+                                                    for="remember_smsName"><i id="remember_smsName_icon"
+                                                                              class="checkBox-icon tick-off-icon marginR6"></i>记住华为帐号</label></span>
+                                            <div class="hidden remeberTip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-bottom:0px;"><span class="vam error" id="login_msg"
+                                                                                  style="display:block"></span></div>
+                                            <div class="button-login" id="btnSMSLogin" data-type="smsLogin"
+                                                 tabindex="5">登录
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="hwmeta" id="hwmeta"
+               value="JxEAPAAmA/MAAAAAANefAAYBAAfN3dzb2sjNBgEAB83d3NvayQAGAQAHzd3c29rJbQYBAAfN3dzb2slNBgEAB83d3NvayawGAQAHzd3c29rWNwYBAAfN3dzb2tZqBgEAB83d3Nva1ksGAQAHzd3c29rWzBYBAATNzMvKBgEAB83d3Nva1y8WAQAEzczLyhYBAATNzMvKFgEABM3My8oFAQAVxMLFxWxramlobfPynfOV/ZL3meqEBAEACc3NHR2lpKOraAQBAAnNzquqpaSjod0WAQAEzczLygIBAFDNgsyk2bHct9f5zeLR8MeR+Zbxn+mbuveigbGAUWBkQxV9EicSKglwWWxQbxxtVmNbdENrSg5oBGgIKBUkEiEQPg09HF01RiB5F25Cd09gbxQBABjNzKrKqsawwbTUpsSx1JPTvMKF4Zb8mPIXAQAEzczKyQEBAAjNzMqkmtKEsAwBAFWZqpmskqKWpsb2wvjPrcr5wfPF8N3qjL+I44G30rfVsM2on/zD8cCMv4jh2OTWsdHnh7GE4YS7ib+J7Ym+j7jVsMr+xPCL7I3og+GE4dPlgbGDuoiyCwEBfM0fHrjfqt2s2O3D7YXg7sOhzKTWsZ71geGX85u00KDy3p7ciKjXucq93bCAE30bcxw1XC9DLhJnB2oAm/uO6IO/yrvPq4z/lvCC5K3NocX5iuyPqNS2x7DGpsCC6Zzvnu7I9cHzs5eklqfg+sv/zI37jfvUpcmpxK+AHHQeOAUxAkcnRSdJPVIlATIEMXYWdACT/ZvznL3QoPie87HYttu01rmFtoOygbCfrp26y6/fnfCG4LHEl++e+Mr7zO2AHnMVKVI5FXcYMVM9SSZRIlgUfB97RyVKIVQnViYfMR93EiAxUz5SJEdoD3sbbQlhTi5CLARAfi4CcR9sH38SPkg0Vid0FnIYZBdzANC92b/cotG42Lnd8pnshunXpcGyx6/NqZX8j/qJ+8CQoOiQ+NmuwN6x3PWX+ZW727nbtcGu2feV9YfqhuKI6c6hz6nBru6F5Yrng+7Q/cr5yPfG9cTllvCe3rHZvdKl8Jblgb2Ou5z3l/iQssuijOiJAwEAIM3My5RslGyTkpGX+fj39AQDAgaFhIOGvby7vTw7Oj0EBAEACc3Impjx8O/qMQQBABLExefkmJeWnc2g8Ijug+SM+ZUHAQAUw8LBwLUVeBhwBms1QTNXJG0NYQUGAQAHzd3c29rVMQYBAAfN3dzb2tcOBgEAB83d3Nva1u4GAQAHzd3c29rWjgYBAAfN3dzb2tapBgEAB83d3NvaycwGAQAHzd3c29rJ6wYBAAfN3dzb2smKBgEAB83d3NvaySAGAQAHzZ+fnp2NgA==">
+    </div>
+</div>
+<div>
+    <!-- 底部  -->
+
+
+    <div class="customer-footer">
+        <div class="ft">
+            <!--授权  -->
+            <div class="warrant-area">
+                <p style="text-align: center;line-height:20px;height:20px;">
+
+
+                    <a href="#"
+                       class="rule" target="">华为帐号与云空间用户协议</a>
+                    <em class="foot_em">|</em>
+                    <a href="#"
+                       class="rule" target="">关于华为帐号与云空间隐私的声明</a>
+                    <span class="foot_em"><em style="font-style: normal">|</em> <a style="padding:0 10px;" target=""
+                                                                                   href="#">常见问题</a></span>
+
+
+                    <em class="foot_em">|</em>
+                    <a href="#" class="rule"
+                       target="">Cookies</a>
+
+
+                </p>
+
+                <p style="text-align: center;line-height: 12px;height:12px;margin-top: 10px ">
+
+
+                    Copyright&nbsp;©&nbsp;2011-2019&nbsp;&nbsp;华为软件技术有限公司&nbsp;&nbsp;版权所
+                    有&nbsp;&nbsp;保留一切权利&nbsp;&nbsp;苏B2-20070200号&nbsp;|&nbsp;苏ICP备09062682号
+                    -9
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div id="layer">
+    <div class="mc"></div>
+</div>
+
+<div id="selectCountryCodeDiv"></div>
+<div class="loginmask" style="display: none;">
+    <div>
+        <span>登录中...</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var localInfo = {
+        thirdLoginUrlAddrass: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS"),
+        authCodeValidate: htmlDecodeJQ(""),
+        webssoLoginSessionCode: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;Captcha&#x2f;authCodeImage&#x3f;session_code_key&#x3d;login_session_ramdom_code_key"),
+        webssoSMSLoginSessionCode: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;Captcha&#x2f;authCodeImage&#x3f;session_code_key&#x3d;sms_login_session_ramdom_code_key"),
+        findPwd: htmlDecodeJQ("https://id1.cloud.huawei.com/AMW/portal/resetPwd/forgetbyid.html"),
+        urlCountryCode: htmlDecodeJQ("cn"),
+        submit: htmlDecodeJQ("true"),
+        loginUrl: htmlDecodeJQ("https://id1.cloud.huawei.com/CAS/portal/login.html"),
+        service: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;account&#x2f;caslogin"),
+        loginChannel: htmlDecodeJQ("26000000"),
+        reqClientType: htmlDecodeJQ("26"),
+        adUrl: htmlDecodeJQ(""),
+        lang: htmlDecodeJQ("zh-cn"),
+        inviterUserID: htmlDecodeJQ(""),
+        inviter: htmlDecodeJQ(""),
+        userID: htmlDecodeJQ(""),
+        emailPng: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;css&#x2f;portal&#x2f;register_rss&#x2f;red&#x2f;images&#x2f;email-imp.png&#x3f;cas20190804"),
+        cookiePrivacyPolicyUrl: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;portal&#x2f;agreements&#x2f;cookiePrivacyPolicy&#x2f;zh-cn_cookiePrivacyPolicy.html"),
+        bgImgUrl: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;ads&#x2f;login_default_bg.png"),
+        currentSiteID: htmlDecodeJQ("1"),
+        quickAuth: htmlDecodeJQ("false"),
+        newsign: htmlDecodeJQ(""),
+        cookiePrivateAgreement: htmlDecodeJQ("false"),
+        globalCrossPrivacyPolicy: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;agreements&#x2f;userPrivacyPolicy&#x2f;zh-cn_userPrivacyPolicy.html&#x3f;reqClientType&#x3d;26&amp;version&#x3d;europe"),
+        queryString: htmlDecodeJQ("&#x3f;reqClientType&#x3d;26&amp;loginChannel&#x3d;26000000&amp;countryCode&#x3d;cn&amp;loginUrl&#x3d;https&#x25;3A&#x25;2F&#x25;2Fid1.cloud.huawei.com&#x25;2FCAS&#x25;2Fportal&#x25;2Flogin.html&amp;service&#x3d;https&#x25;3A&#x25;2F&#x25;2Fwww.vmall.com&#x25;2Faccount&#x25;2Fcaslogin&amp;lang&#x3d;zh-cn&amp;themeName&#x3d;red"),
+        requestURIQuery: htmlDecodeJQ("&#x2f;CAS&#x2f;portal&#x2f;login.html&#x3f;reqClientType&#x3d;26&amp;loginChannel&#x3d;26000000&amp;countryCode&#x3d;cn&amp;loginUrl&#x3d;https&#x25;3A&#x25;2F&#x25;2Fid1.cloud.huawei.com&#x25;2FCAS&#x25;2Fportal&#x25;2Flogin.html&amp;service&#x3d;https&#x25;3A&#x25;2F&#x25;2Fwww.vmall.com&#x25;2Faccount&#x25;2Fcaslogin&amp;lang&#x3d;zh-cn&amp;themeName&#x3d;red"),
+        accountSiteID: htmlDecodeJQ("1"),
+        successImgPath: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;css&#x2f;portal&#x2f;common_rss&#x2f;images&#x2f;suc.png&#x3f;cas20190804"),
+        representationLink: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;appealSelf&#x2f;applyChangeAccount.html&#x3f;reqClientType&#x3d;26&amp;loginChannel&#x3d;26000000&amp;countryCode&#x3d;cn&amp;loginUrl&#x3d;https&#x25;3A&#x25;2F&#x25;2Fid1.cloud.huawei.com&#x25;2FCAS&#x25;2Fportal&#x25;2Flogin.html&amp;service&#x3d;https&#x25;3A&#x25;2F&#x25;2Fwww.vmall.com&#x25;2Faccount&#x25;2Fcaslogin&amp;lang&#x3d;zh-cn&amp;themeName&#x3d;red&amp;refererPage&#x3d;login"),
+        isOpenApealSelf: htmlDecodeJQ("true"),
+        hasExtInfo: htmlDecodeJQ(""),
+        extInfo: htmlDecodeJQ(""),
+        rememberAccount: htmlDecodeJQ(""),
+        loginSMSNum: htmlDecodeJQ(""),
+        eyeoff: htmlDecodeJQ("https://id1.cloud.huawei.com/CAS/up/idmw_rss_41/css/portal/vmall_rss/images/eyeoff.png?cas20190804"),
+        eyeon: htmlDecodeJQ("https://id1.cloud.huawei.com/CAS/up/idmw_rss_41/css/portal/vmall_rss/images/eyeon.png?cas20190804"),
+        formatNo: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;css&#x2f;portal&#x2f;vmall_rss&#x2f;images&#x2f;format_no.png&#x3f;cas20190804"),
+        isOpenLocalCacheRisk: htmlDecodeJQ("false"),
+        displayCaptchaType: htmlDecodeJQ("1"),
+        formatOk: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;css&#x2f;portal&#x2f;vmall_rss&#x2f;images&#x2f;format_ok.png&#x3f;cas20190804"),
+        maxTimeDev: htmlDecodeJQ("1"),
+        maxCountDev: htmlDecodeJQ("4"),
+        recoverTimeDev: htmlDecodeJQ("30"),
+        maxTimePhone: htmlDecodeJQ("1"),
+        maxCountPhone: htmlDecodeJQ("4"),
+        recoverTimePhone: htmlDecodeJQ("30"),
+        maxTimeEmail: htmlDecodeJQ("1"),
+        maxCountEmail: htmlDecodeJQ("4"),
+        normalLoginTooManyTimes: htmlDecodeJQ(false),
+        lastInputAccount: htmlDecodeJQ(""),
+        isCurSiteOpenDeviceFinger: htmlDecodeJQ("true"),
+        curInputAccount: htmlDecodeJQ(""),
+        curAccountSiteID: htmlDecodeJQ(""),
+        recoverTimeEmail: htmlDecodeJQ("30"),
+        isOpenDimensionalCode: htmlDecodeJQ("true"),
+        onlyDimensionalCode: htmlDecodeJQ("false"),
+        getqrURL: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;DimensionalCode&#x2f;getqrWeb&#x3f;appID&#x3d;com.huawei.hwidweb&amp;loginChannel&#x3d;7000700&amp;reqClientType&#x3d;700&amp;confirmFlag&#x3d;1&amp;version&#x3d;30000"),
+        asyncURL: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;DimensionalCode&#x2f;async&#x3f;version&#x3d;30000"),
+        agree_DFVersion_cliagree: htmlDecodeJQ("&#x70b9;&#x51fb;&#x540c;&#x610f;&#xff0c;&#x5373;&#x8868;&#x793a;&#x60a8;&#x540c;&#x610f;&#x4e0a;&#x8ff0;&#x5185;&#x5bb9;&#x53ca;&lt;a&#x20;href&#x3d;&quot;https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;agreements&#x2f;userAgreement&#x2f;zh-cn_userAgreement.html&#x3f;version&#x3d;china&amp;reqClientType&#x3d;26&quot;&#x20;target&#x3d;&quot;_blank&quot;&#x20;class&#x3d;&quot;loginAndRegLink&quot;&gt;&#x534e;&#x4e3a;&#x5e10;&#x53f7;&#x7528;&#x6237;&#x534f;&#x8bae;&lt;&#x2f;a&gt;&#x5e76;&#x786e;&#x8ba4;&#x60a8;&#x5df2;&#x9605;&#x8bfb;&lt;a&#x20;href&#x3d;&quot;https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;agreements&#x2f;userPrivacyPolicy&#x2f;zh-cn_userPrivacyPolicy.html&quot;&#x20;target&#x3d;&quot;_blank&quot;&#x20;class&#x3d;&quot;loginAndRegLink&quot;&gt;&#x534e;&#x4e3a;&#x9690;&#x79c1;&#x653f;&#x7b56;&lt;&#x2f;a&gt;&#x3002;"),
+        getqrContent: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;DimensionalCode&#x2f;getqrInfo&#x3f;appID&#x3d;com.huawei.hwidweb&amp;loginChannel&#x3d;7000700&amp;reqClientType&#x3d;700&amp;confirmFlag&#x3d;1&amp;version&#x3d;30000"),
+        createQrCodeType: htmlDecodeJQ("0"),
+        postRemoteLogin: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;stRemoteLogin"),
+        isIfmLogin: htmlDecodeJQ(false),
+        resetPwdLink: htmlDecodeJQ("?reqClientType=26&loginChannel=26000000&countryCode=cn&loginUrl=https%3A%2F%2Fid1.cloud.huawei.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin&lang=zh-cn&themeName=red"),
+        isOpenSMSLogin: htmlDecodeJQ("true"),
+        randomCodeImgLoading: htmlDecodeJQ("https://id1.cloud.huawei.com/CAS/up/idmw_rss_41/css/mobile/images/loading.gif?cas20190804"),
+        isOpenImgCode: htmlDecodeJQ("false"),
+        agree_DFVersion_Content1_info1: htmlDecodeJQ("&#x4e3a;&#x9632;&#x6b62;&#x6b3a;&#x8bc8;&#x884c;&#x4e3a;&#xff0c;&#x534e;&#x4e3a;&#x9700;&#x91c7;&#x96c6;&#x6d4f;&#x89c8;&#x5668;&#x4fe1;&#x606f;&#x20;&#x28;&#x7c7b;&#x578b;&#x3001;&#x65f6;&#x533a;&#x3001;&#x63d2;&#x4ef6;&#x3001;&#x8bed;&#x8a00;&#x3001;&#x5b57;&#x4f53;&#x3001;canvas&#x56fe;&#x7247;&#x6e32;&#x67d3;&#x54c8;&#x5e0c;&#x503c;&#x3001;webgl&#x56fe;&#x7247;&#x6e32;&#x67d3;&#x54c8;&#x5e0c;&#x503c;&#x29;&#xff1b;&#x767b;&#x5f55;&#x5f02;&#x5e38;&#x65f6;&#xff0c;&#x534e;&#x4e3a;&#x9700;&#x91c7;&#x96c6;&#x56fe;&#x7247;&#x9a8c;&#x8bc1;&#x7801;&#x9875;&#x9762;&#x7684;&#x9f20;&#x6807;&#x6216;&#x5c4f;&#x5e55;&#x6ed1;&#x52a8;&#x4fe1;&#x606f;&#xff0c;&#x4ee5;&#x9a8c;&#x8bc1;&#x8eab;&#x4efd;&#x3002;&lt;div&#x20;class&#x3d;&quot;DFVersion-EMUI6&quot;&gt;&#x534e;&#x4e3a;&#x6536;&#x96c6;&#x3001;&#x4f7f;&#x7528;&#x4fe1;&#x606f;&#x7684;&#x8be6;&#x60c5;&#x8bf7;&#x89c1;&lt;a&#x20;href&#x3d;&quot;https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;agreements&#x2f;accPrivacyStatement&#x2f;zh-cn_accPrivacyStatement.html&#x3f;version&#x3d;china&amp;reqClientType&#x3d;26&quot;&#x20;target&#x3d;&quot;_blank&quot;&#x20;class&#x3d;&quot;DFVersion-link-EMUI6&quot;&gt;&#x5173;&#x4e8e;&#x534e;&#x4e3a;&#x5e10;&#x53f7;&#x4e0e;&#x9690;&#x79c1;&#x7684;&#x58f0;&#x660e;&lt;&#x2f;a&gt;&#x3002;&lt;&#x2f;div&gt;"),
+        agree_DFVersion_Content4: htmlDecodeJQ("&#x70b9;&#x51fb;&ldquo;&#x540c;&#x610f;&rdquo;&#xff0c;&#x5373;&#x8868;&#x793a;&#x60a8;&#x540c;&#x610f;&#x4e0a;&#x8ff0;&#x5185;&#x5bb9;&#x53ca;&lt;a&#x20;href&#x3d;&quot;https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;agreements&#x2f;userAgreement&#x2f;zh-cn_userAgreement.html&#x3f;version&#x3d;china&amp;reqClientType&#x3d;26&quot;&#x20;target&#x3d;&quot;_blank&quot;&#x20;class&#x3d;&quot;DFVersion-link-EMUI6&quot;&gt;&#x534e;&#x4e3a;&#x5e10;&#x53f7;&#x7528;&#x6237;&#x534f;&#x8bae;&lt;&#x2f;a&gt;&#x3002;"),
+        curSiteSupportSMSLoginSites: htmlDecodeJQ("1,7,8,5"),
+        faqLink: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;faq&#x2f;zh-cn_faq.html&#x3f;version&#x3d;china&amp;countryCode&#x3d;cn&amp;lang&#x3d;zh-cn&amp;reqClientType&#x3d;26"),
+        accountChangeLink: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;appealSelf&#x2f;applyChangeAccount.html&#x3f;reqClientType&#x3d;26&amp;loginChannel&#x3d;26000000&amp;countryCode&#x3d;cn&amp;loginUrl&#x3d;https&#x25;3A&#x25;2F&#x25;2Fid1.cloud.huawei.com&#x25;2FCAS&#x25;2Fportal&#x25;2Flogin.html&amp;service&#x3d;https&#x25;3A&#x25;2F&#x25;2Fwww.vmall.com&#x25;2Faccount&#x25;2Fcaslogin&amp;lang&#x3d;zh-cn&amp;themeName&#x3d;red&amp;refererPage&#x3d;login"),
+        illnessOptype: 1,
+        loginID: htmlDecodeJQ(""),
+        isReReg: htmlDecodeJQ(""),
+        defaultAvatar: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;idmw_rss_41&#x2f;css&#x2f;mobile&#x2f;images&#x2f;ic_list_account_48-48.png&#x3f;cas20190804"),
+        rCY: htmlDecodeJQ(""),
+        secCodeAndSecondLoginFaqUrl: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;faq&#x2f;zh-cn_secCodeAndSecondLoginFaq.html&#x3f;countryCode&#x3d;cn&amp;lang&#x3d;zh-cn&amp;reqClientType&#x3d;26"),
+        reRegLoginSessionCode: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;Captcha&#x2f;authCodeImage&#x3f;session_code_key&#x3d;login_session_ramdom_code_key"),
+        clientID: htmlDecodeJQ(""),
+        ageLimit: htmlDecodeJQ("") * 1,
+        webUrl: htmlDecodeJQ("https://id1.cloud.huawei.com/CAS/up/idmw_rss_41")
+    };
+
+
+</script>
+
+
+<script src="{% static 'js/swfobject.js' %}"
+        type="text/javascript"></script>
+
+<script src="{% static 'js/acctguard-secure.js' %}"
+        type="text/javascript"></script>
+
+
+<script src="{% static 'js/_portal_login_cloudIframeLoginV3.js' %}"
+        type="text/javascript"></script>
+
+</body>
+</html>

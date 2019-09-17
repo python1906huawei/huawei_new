@@ -1,0 +1,38 @@
+.mod-ad-collapse {
+    position: relative;
+    display: block;
+}
+.mod-ad-collapse .btns{
+   position: absolute;
+   width: 1200px;
+   top:0;
+   left: 50%;
+   margin-left: -600px;
+}
+.mod-ad-collapse .btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    text-indent: 999px;
+    background-color: #666;
+    border-radius: 50%;
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
+    display: none;
+    background: url(../images/icon1.png) no-repeat;
+}
+
+.mod-ad-collapse .btn-close{
+    background-position: 0 -385px;
+}
+.mod-ad-collapse .btn-up{
+   background-position: 0 -409px;
+}
+.mod-ad-collapse .img img{
+   max-width:100%
+}

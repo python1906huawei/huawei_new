@@ -1,0 +1,127 @@
+.mod-sign-pc{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.mod-sign-pc .sign-wrapper{
+    position: relative;
+    min-height: 310px;
+    margin: 0 auto;
+}
+.mod-sign-pc .sign-title{
+    height: 60px;
+}
+.mod-sign-pc .sign-content{
+    position: relative;
+    margin: 0 auto;
+    height: 310px;
+}
+.mod-sign-pc .sign-content-text{
+    position: absolute;
+    top: 183px;
+    left: 85px;
+    width: 500px;
+    color:#D8A72E;
+    font-size: 18px;
+    text-align: center;
+}
+.mod-sign-pc .sign-btn-wrapper{
+    position: absolute;
+    top:43px;
+    left: 281px;
+}
+.mod-sign-pc .sign-btn{
+    position: relative;
+    display: block;
+    width: 112px;
+    height: 112px;
+    line-height: 112px;
+    background: url(../images/btn-signing-112.png) no-repeat center center;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+.mod-sign-pc .sign-btn.sign-success{
+    cursor: not-allowed;
+    background: url(../images/btn-signed-112.png) no-repeat center center;
+}
+.mod-sign-pc .sign-schedule{
+    position: absolute;
+    top: 66px;
+    right: 160px;
+    width: 500px;
+    height: 176px;
+    background: #fff;
+}
+.mod-sign-pc .sign-wall{
+    height: 47px;
+    line-height: 47px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+.mod-sign-pc .sign-schedule ul{
+    margin-top: 27px;
+    display: table;
+    width: 100%;
+}
+.mod-sign-pc .sign-schedule li{
+    position: relative;
+    display: table-cell;
+    height: 102px;
+}
+.mod-sign-pc .sign-schedule li .dic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url(../images/icon_02.png) no-repeat center center;
+    margin-right: 0;
+}
+
+.mod-sign-pc .sign-schedule li.selected .dic{
+    background: url(../images/icon_01.png) no-repeat center center;
+}
+.mod-sign-pc .sign-schedule li span{
+    display: block;
+    width: 100%;
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    background: #D8A82E;
+    transform: translateY(-27px);
+    color: #fff;
+}
+/*多国样式兼容*/
+.mod-sign-de .mod-sign-pc .sign-content-text{
+    font-size: 14px;
+}
+.mod-sign-es .mod-sign-pc .sign-btn{
+    font-size: 18px;
+}
+.mod-sign-fr .mod-sign-pc .sign-btn{
+    font-size: 18px;
+}
+.mod-sign-de .mod-sign-pc .sign-btn{
+    font-size: 18px;
+}
+.mod-sign-pl .mod-sign-pc .sign-btn,
+.mod-sign-ru .mod-sign-pc .sign-btn{
+    font-size: 16px;
+}
+.mod-sign-cz .mod-sign-pc .sign-btn{
+    font-size: 18px;
+}
+.mod-sign-it .mod-sign-pc .sign-btn.sign-success{
+    font-size: 18px;
+}
+.mod-sign-es .mod-sign-pc .sign-btn.sign-success{
+    font-size: 15px;
+}
+.mod-sign-en .mod-sign-pc .sign-btn.sign-success{
+    font-size: 18px;
+}
+.mod-sign-pl .mod-sign-pc .sign-btn.sign-success{
+    font-size: 12px;
+}

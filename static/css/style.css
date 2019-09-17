@@ -1,0 +1,120 @@
+/*模板共用*/
+.mod-product-single-huawei{float:left;}
+.mod-product-single-huawei a.item{text-decoration:none;position:relative;}
+.mod-product-single-huawei a.item .p-text{position:absolute;text-align:left;}
+.mod-product-single-huawei a.item .p-text .title{max-width:230px;word-wrap:break-word;overflow:hidden;display:-webkit-box;text-overflow:ellipsis;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.mod-product-single-huawei a.item .p-text .desc {text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.mod-product-single-huawei a.item .p-text .price .get-coupon{display: inline-block;color:#900;margin-left:5px;border:1px solid #900;padding:4px 6px;font-size:14px;line-height:1em;cursor:pointer;}
+.mod-product-single-huawei a.item .p-tips{position:absolute;max-width:48px;max-height:48px;}
+
+/*tpl-1*/
+.mod-product-single-huawei.tpl-1{width:300px;position:relative;}
+.mod-product-single-huawei.tpl-1:before{content:"";width:0;height:4px;display:block;background:#900;position:absolute;top:0;right:auto;bottom:auto;left:0;z-index:10;transition:width .2s ease-out 0s}
+.mod-product-single-huawei.tpl-1.current:before{width:100%;}
+.mod-product-single-huawei.tpl-1 a.item{position:relative;height:278px;display:block;text-align:center;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;border-bottom:1px solid #eaeaea;}
+.mod-product-single-huawei.tpl-1:first-child a.item{border-left:1px solid #eaeaea;}
+.mod-product-single-huawei.tpl-1 a.item .p-text{max-width:240px;left:30px;top:18px;}
+.mod-product-single-huawei.tpl-1 a.item .p-text .title{font-size:18px;line-height:22px;max-height:44px;color:#3a3a3a;}
+.mod-product-single-huawei.tpl-1 a.item .p-text .desc {font-size:14px;line-height:17px;color:#a4a4a4;margin-top:4px;}
+.mod-product-single-huawei.tpl-1 a.item .p-text .price .get-coupon{margin-top:12px;margin-left:0;}
+.mod-product-single-huawei.tpl-1 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-1 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-1 a.item .p-text .price.price-color{color: #fff}
+
+/*tpl-2*/
+.mod-product-single-huawei.tpl-2{width:386px;margin-left:21px;position:relative;}
+.mod-product-single-huawei.tpl-2:first-child{margin-left:0;}
+.mod-product-single-huawei.tpl-2 a.item{position:relative;height:190px;display:block;text-align:center;}
+.mod-product-single-huawei.tpl-2 a.item .p-text{left:auto;top:0px;right:0;width:164px;height:160px;padding:30px 10px 0 16px;background:rgba(0,0,0,0.4);}
+.mod-product-single-huawei.tpl-2 a.item:hover .p-text {background:rgba(153,0,0,0.8);}
+.mod-product-single-huawei.tpl-2 a.item .p-text .title{font-size:18px;line-height:20px;max-height:40px;color:#fff;}
+.mod-product-single-huawei.tpl-2 a.item .p-text .desc {font-size:12px;line-height:28px;color:#fff;margin-bottom:16px;}
+.mod-product-single-huawei.tpl-2 a.item .p-text .price{font-size:14px;line-height:32px;color:#fff;}
+.mod-product-single-huawei.tpl-2 a.item .p-text .price:before{content:"";width:24px;height:2px;display:block;background:#fff;}
+.mod-product-single-huawei.tpl-2 a.item .p-text .price .get-coupon{margin-left:0;border:1px solid #fff;color:#fff;}
+.mod-product-single-huawei.tpl-2 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-2 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-2 a.item .p-text .price.price-color{color: #fff}
+
+/*tpl-3*/
+.mod-product-single-huawei.tpl-3{width:291px;}
+.mod-product-single-huawei.tpl-3 a.item{position:relative;height:592px;display:block;text-align:center;}
+.mod-product-single-huawei.tpl-3 a.item .p-text{left:28px;top:18px;}
+.mod-product-single-huawei.tpl-3 a.item .p-text:before{content:"";width:24px;height:2px;display:block;background:#900;margin-bottom:14px;}
+.mod-product-single-huawei.tpl-3 a.item .p-text .title{font-size:18px;line-height:22px;max-height:44px;color:#fff;}
+.mod-product-single-huawei.tpl-3 a.item .p-text .desc {font-size:14px;line-height:17px;color:#fff;margin-top:8px;}
+.mod-product-single-huawei.tpl-3 a.item .p-text .price{font-size:18px;color:#fff;margin-top:13px;}
+.mod-product-single-huawei.tpl-3 a.item .p-text .price .get-coupon{color:#fff;border-color:#fff;}
+.mod-product-single-huawei.tpl-3 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-3 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-3 a.item .p-text .price.price-color{color: #fff}
+
+/*tpl-4*/
+.mod-product-single-huawei.tpl-4{width:594px;margin-left:12px;margin-bottom:12px;background-color:#999;}
+.mod-product-single-huawei.tpl-4 a.item{position:relative;height:290px;display:block;text-align:center;}
+.mod-product-single-huawei.tpl-4 a.item .p-text{left:28px;top:18px;}
+.mod-product-single-huawei.tpl-4 a.item .p-text:before{content:"";width:24px;height:2px;display:block;background:#900;margin-bottom:14px;}
+.mod-product-single-huawei.tpl-4 a.item .p-text .title{font-size:18px;line-height:22px;max-height:44px;color:#000;}
+.mod-product-single-huawei.tpl-4 a.item .p-text .desc {font-size:14px;line-height:17px;color:#333;margin-top:8px;}
+.mod-product-single-huawei.tpl-4 a.item .p-text .price{font-size:18px;line-height:34px;color:#900;margin-top:10px;}
+.mod-product-single-huawei.tpl-4 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-4 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-4 a.item .p-text .price.price-color{color: #A4A4A4}
+
+/*tpl-5*/
+.mod-product-single-huawei.tpl-5{width:291px;margin-left:12px;margin-bottom:12px;background-color:#666;}
+.mod-product-single-huawei.tpl-5:nth-last-child(1){margin-bottom:none;}
+.mod-product-single-huawei.tpl-5:nth-last-child(2){margin-bottom:none;}
+.mod-product-single-huawei.tpl-5:nth-last-child(3){margin-bottom:none;}
+.mod-product-single-huawei.tpl-5 a.item{position:relative;height:290px;display:block;text-align:center;}
+.mod-product-single-huawei.tpl-5 a.item .p-text{left:28px;top:18px;}
+.mod-product-single-huawei.tpl-5 a.item .p-text:before{content:"";width:24px;height:2px;display:block;background:#900;margin-bottom:16px;}
+.mod-product-single-huawei.tpl-5 a.item .p-text .title{font-size:18px;line-height:20px;max-height:40px;color:#000;}
+.mod-product-single-huawei.tpl-5 a.item .p-text .desc {font-size:14px;line-height:17px;color:#333;margin-top:8px;}
+.mod-product-single-huawei.tpl-5 a.item .p-text .price{font-size:18px;line-height:34px;color:#900;margin-top:10px;}
+.mod-product-single-huawei.tpl-5 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-5 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-5 a.item .p-text .price.price-color{color: #A4A4A4}
+
+/*tpl-6*/
+.mod-product-single-huawei.tpl-6{width:400px;position:relative;}
+.mod-product-single-huawei.tpl-6:before{content:"";width:0;height:4px;display:block;background:#900;position:absolute;top:0;right:auto;bottom:auto;left:0;z-index:10;transition:width .2s ease-out 0s}
+.mod-product-single-huawei.tpl-6.current:before{width:100%;padding-left:2px;}
+.mod-product-single-huawei.tpl-6 a.item{position:relative;height:746px;display:block;text-align:center;}
+.mod-product-single-huawei.tpl-6 a.item .p-text{max-width:344px;left:28px;top:28px;}
+.mod-product-single-huawei.tpl-6 a.item .p-text:before{content:"";width:24px;height:2px;display:block;background:#900;margin-bottom:14px;}
+.mod-product-single-huawei.tpl-6 a.item .p-text .title{font-size:18px;line-height:22px;max-height:44px;color:#fff;}
+.mod-product-single-huawei.tpl-6 a.item .p-text .desc {font-size:14px;line-height:17px;color:#fff;margin-top:8px;}
+.mod-product-single-huawei.tpl-6 a.item .p-text .price{font-size:18px;color:#fff;margin-top:13px;}
+.mod-product-single-huawei.tpl-6 a.item .p-text .price .get-coupon{color:#fff;border-color:#fff;}.mod-product-single-huawei.tpl-6 a.item .p-img{max-width:200px;margin:196px 20px 20px;}
+.mod-product-single-huawei.tpl-6 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-6 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-6 a.item .p-text .price.price-color{color: #fff}
+
+/*tpl-7*/
+.mod-product-single-huawei.tpl-7{width:400px;position:relative;}
+.mod-product-single-huawei.tpl-7:before{content:"";width:0;height:4px;display:block;background:#900;position:absolute;top:0;right:auto;bottom:auto;left:0;z-index:10;transition:width .2s ease-out 0s}
+.mod-product-single-huawei.tpl-7.current:before{width:100%;padding-left:2px;}
+.mod-product-single-huawei.tpl-7 a.item{position:relative;height:372px;display:block;text-align:center;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;border-bottom:1px solid #eaeaea;}
+.mod-product-single-huawei.tpl-7 a.item .p-text{position:absolute;max-width:360px;padding:0 20px;text-align:center;top:auto;right:auto;left:auto;bottom:17px;}
+.mod-product-single-huawei.tpl-7 a.item .p-text .title{font-size:18px;line-height:22px;max-height:22px;-webkit-line-clamp:1;color:#3a3a3a;text-align:center;max-width:100%;}
+.mod-product-single-huawei.tpl-7 a.item .p-text .desc {font-size:14px;line-height:22px;color:#a4a4a4;min-height:22px;}
+.mod-product-single-huawei.tpl-7 a.item .p-text .price{font-size:14px;line-height:28px;color:#900;margin-top:8px;}
+.mod-product-single-huawei.tpl-7 a.item .p-img{max-width:200px;margin-top:39px;}
+.mod-product-single-huawei.tpl-7 a.item .p-tips{bottom:127px;right:92px;}
+.mod-product-single-huawei.tpl-7 a.item .p-text .price.price-color{color: #A4A4A4}
+
+/*tpl-8*/
+.mod-product-single-huawei.tpl-8{width:800px;position:relative;}
+.mod-product-single-huawei.tpl-8:first-child{margin-left:0;}
+.mod-product-single-huawei.tpl-8 a.item{position:relative;height:371px;display:block;text-align:center;border-right:1px solid #eaeaea;border-bottom:1px solid #eaeaea;}
+.mod-product-single-huawei.tpl-8 a.item .p-text{left:auto;top:0px;right:0;width:368px;height:298px;padding:74px 10px 0 22px;background:rgba(0,0,0,0.4);}
+.mod-product-single-huawei.tpl-8 a.item:hover .p-text {background:rgba(153,0,0,0.8);}
+.mod-product-single-huawei.tpl-8 a.item .p-text .title{font-size:24px;line-height:36px;max-height:72px;color:#fff;max-width:320px;}
+.mod-product-single-huawei.tpl-8 a.item .p-text .desc{font-size:14px;line-height:32px;color:#fff;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.mod-product-single-huawei.tpl-8 a.item .p-text .price{font-size:18px;margin-top:18px;color:#fff;}
+.mod-product-single-huawei.tpl-8 a.item .p-text .price:before{content:"";width:24px;height:2px;display:block;background:#fff;margin-bottom:18px;}
+.mod-product-single-huawei.tpl-8 a.item .p-text .price .get-coupon{color:#fff;border-color:#fff;}
+.mod-product-single-huawei.tpl-8 a.item .p-img{display:none;}
+.mod-product-single-huawei.tpl-8 a.item .p-tips{bottom:20px;right:20px;}
+.mod-product-single-huawei.tpl-8 a.item .p-text .price.price-color{color: #fff}
