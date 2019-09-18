@@ -1,23 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-{% block top %}
 
+
+{% block head %}
     <head>
-        <style class="vjs-styles-defaults">
-            .video-js {
-                width: 300px;
-                height: 150px;
-            }
-
-            .vjs-fluid {
-                padding-top: 56.25%
-            }
-        </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Content-Language" content="zh-cn">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-        <script src="{% static 'js/push.js' %}"></script>
+        <script src="{% static 'base_new/js/push.js' %}"></script>
         <script>
             var domainYY = 'https://yy.vmall.com';
             var domainRush = 'https://buy.vmall.com';
@@ -46,21 +37,31 @@
             var dapDomain = 'https://dap.vmall.com';
         </script>
         {% block title %}
-        <title>华为商城</title>
+            <title>华为商城</title>
         {% endblock title %}
-        <meta name="keywords" content="【100元订金】荣耀Play3,【100元订金】荣耀Play3价格,【100元订金】荣耀Play3怎么样,华为商城">
-        <meta name="description" content="【100元订金】荣耀Play3官方渠道售卖！华为商城提供最新款的【100元订金】荣耀Play3的价格、参数、图片等信息。官方品质保证，欢迎选购！">
+        <meta name="keywords" content="华为手机大全,华为智能手机,华为商城">
+        <meta name="description" content="华为商城是华为旗下面向全国服务的电子商务官网,我们提供最新款的华为智能手机的价格、参数、图片等信息。VMALL.COM 正品保障!">
+
         <link rel="shortcut icon" href="https://www.vmall.com/favicon.ico">
-        <link href="{% static 'css/ec.css' %}" rel="stylesheet" type="text/css">
-
-        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
-
-        <link href="{% static 'css/main_002.css' %}" rel="stylesheet" type="text/css">
-        <script src="{% static 'detail01_a/a_002' %}" namespace="ec"></script>
+        <link href="{% static 'base_new/css/ec.css' %}"
+              rel="stylesheet" type="text/css">
+        <link href="{% static 'base_new/css/index.css' %}"
+              rel="stylesheet" type="text/css">
+        <link href="{% static 'base_new/css/main.css' %}"
+              rel="stylesheet" type="text/css">
+        <script src="{% static 'base_new/js/jsapi.js' %}"
+                namespace="ec"></script>
         <!--[if lte IE 6]><script>ol.isIE6=true;</script><![endif]--><!--[if IE 7]><script>ol.isIE7=true;</script>
     <![endif]--><!--[if IE 8]><script>ol.isIE8=true;</script><![endif]-->
+        <script src="{% static 'base_new/js/jquery-3.js' %}"></script>
+        <script src="{% static 'base_new/js/jquery-migrate-1.js' %}"></script>
+        <script src="{% static 'base_new/js/jquery-migrate-3.js' %}"></script>
+        <script src="{% static 'base_new/js/helper_002.js' %}"></script>
+        <script src="{% static 'base_new/js/ec_002.js' %}"></script>
+        <script src="{% static 'base_new/js/ec.js' %}"></script>
+        <script src="{% static 'base_new/js/base.js' %}"></script>
         <script id="jsapi_loader0" loadtype="insert" type="text/javascript"
-                src="{% static 'js/jquery-migrate-1.js' %}"></script>
+                src="{% static 'base_new/js/jquery-migrate-1.js' %}"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader0');
             if (!el || (el.readyState && 'complete' != el.readyState)) {
@@ -75,7 +76,7 @@
             ol._setLoadStatus("base/jquery-migrate-1.4.1.min.js", "complete");
         })();</script>
         <script id="jsapi_loader1" loadtype="insert" type="text/javascript"
-                src="{% static 'js/jquery-migrate-3.js' %}"></script>
+                src="{% static 'base_new/js/jquery-migrate-3.js' %}"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader1');
             if (!el || (el.readyState && 'complete' != el.readyState)) {
@@ -90,7 +91,7 @@
             ol._setLoadStatus("base/jquery-migrate-3.0.1.min.js", "complete");
         })();</script>
         <script id="jsapi_loader2" loadtype="insert" type="text/javascript"
-                src="{% static 'js/helper.js' %}"></script>
+                src="{% static 'base_new/js/helper.js' %}"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader2');
             if (!el || (el.readyState && 'complete' != el.readyState)) {
@@ -105,7 +106,7 @@
             ol._setLoadStatus("base/helper.min.js", "complete");
         })();</script>
         <script id="jsapi_loader3" loadtype="insert" type="text/javascript"
-                src="{% static 'js/box-min.js' %}"></script>
+                src="{% static 'base_new/js/box-min.js' %}"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader3');
             if (!el || (el.readyState && 'complete' != el.readyState)) {
@@ -120,7 +121,7 @@
             ol._setLoadStatus("ec.box/box-min.js", "complete");
         })();</script>
         <script id="jsapi_loader4" loadtype="insert" type="text/javascript"
-                src="{% static 'js/XSSUtils.js' %}"
+                src="{% static 'base_new/js/XSSUtils.js' %}"
                 charset="utf-8"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader4');
@@ -136,7 +137,7 @@
             ol._setLoadStatus("/aes/XSSUtils.min.js", "complete");
         })();</script>
         <script id="jsapi_loader5" loadtype="insert" type="text/javascript"
-                src="{% static 'js/esapi.js' %}"
+                src="{% static 'base_new/js/esapi.js' %}"
                 charset="utf-8"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader5');
@@ -152,7 +153,7 @@
             ol._setLoadStatus("/aes/esapi.js", "complete");
         })();</script>
         <script id="jsapi_loader6" loadtype="insert" type="text/javascript"
-                src="{% static 'images/Base.js' %}"
+                src="{% static 'base_new/js/Base.js' %}"
                 charset="utf-8"></script>
         <script>(function () {
             var time = 0, el = document.getElementById('jsapi_loader6');
@@ -167,115 +168,21 @@
             }
             ol._setLoadStatus("/aes/resources/Base.esapi.properties.min.js", "complete");
         })();</script>
-        <script src="{% static 'detail01_a/a' %}" namespace="ec"></script>
-        <script id="jsapi_loader7" loadtype="insert" type="text/javascript" src="{% static 'js/jquery.js' %}"
-                charset="utf-8"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader7');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader7 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("jquery.form", "complete");
-        })();</script>
-        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
-                src="{% static 'js/ajax.js' %}"
-                charset="utf-8"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader8');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader8 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("ajax", "complete");
-        })();</script>
-        <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
-                src="{% static 'js/cloud-zoom.js' %}"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader9');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader9 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("cloud-zoom.1.0.2/cloud-zoom.1.0.2-hack-min.js", "complete");
-            (function () {
-                setTimeout(function () {
-                    $("#product-img").CloudZoom()
-                }, 200)
-            })();
-        })();</script>
-        <script id="jsapi_loader10" loadtype="insert" type="text/javascript"
-                src="{% static 'js/fixed.js' %}"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader10');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader10 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("jquery.fixed/fixed.js", "complete");
-            (function () {
-                $(function () {
-                    $("#pro-tab-all").fixed()
-                })
-            })();
-        })();</script>
-        <script id="jsapi_loader11" loadtype="insert" type="text/javascript"
-                src="{% static 'js/lodash.js' %}"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader11');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader11 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("https://res9.vmallres.com/20190808/js/common/base/lodash.min.js", "complete");
-        })();</script>
-        <script id="jsapi_loader12" loadtype="insert" type="text/javascript"
-                src="{% static 'js/bigInt.js' %}"></script>
-        <script>(function () {
-            var time = 0, el = document.getElementById('jsapi_loader12');
-            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                if (time < 10) {
-                    setTimeout(arguments.callee, 30);
-                    time++;
-                } else {
-                    logger.error('load the script of id jsapi_loader12 fail!');
-                }
-                return;
-            }
-            ol._setLoadStatus("dh/bigInt.min.js", "complete");
-        })();</script>
+        <script src="{% static 'base_new/js/slider.js' %}"></script>
+        <script src="{% static 'base_new/js/swiper.js' %}"></script>
         <!--[if lt IE 9]><script src="https://res9.vmallres.com/20190808/js/common/html5shiv.js"></script> <![endif]-->
     </head>
+{% endblock head %}
 
-    <body class="wide detail">
-    <img src="{% static 'images/icon-common.svg' %}" class="hide">
-    <img src="{% static 'images/icon01.svg' %}" class="hide">
-    <img src="{% static 'images/bg-slide.png' %}" class="hide">
+
+<body class="wide">
+{% block top %}
+    <img src="{% static 'images/icon-common.svg' %}"
+         class="hide">
+    <img src="{% static 'images/icon01.svg' %}"
+         class="hide">
+    <img src="{% static 'images/bg-slide.png' %}"
+         class="hide">
     <style>
         .minicart-pro-item .pro-other .p-title span.p-mini-tag-suit {
             display: block;
@@ -310,12 +217,14 @@
         <div class="layout">
             <div class="s-sub">
                 <ul>
-                    <li><a href="{% url 'app:index' %}">首页</a></li>
+                    <li><a href="https://www.vmall.com/" onclick="pushHeaderMsg('首页','https://www.vmall.com')">首页</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="s-main ">
-                <img src="{% static 'images/bg71.png' %}" class="hide">
+                <img src="{% static 'images/bg71.png' %}"
+                     class="hide">
                 <ul>
                     <li id="unlogin_status">
                         <div id="top_unlogin" class="header-toolbar">
@@ -339,7 +248,7 @@
                         <div id="top_login" class="header-toolbar hide">
                             <div class="s-dropdown">
                                 <div class="h h-wide" id="up_loginName-hover">
-                                    <a class="icon-dropdown" href="https://www.vmall.com/member?t=1568269281282"
+                                    <a class="icon-dropdown" href="https://www.vmall.com/member?t=1568791745509"
                                        rel="nofollow" target="_blank" onclick="pushLoginMsg('已登录','用户名')"><span
                                             id="up_loginName"></span></a>&nbsp;
                                 </div>
@@ -349,7 +258,7 @@
                                         <div class="i-mall-prompt clearfix">
                                             <div class="user-head fl">
                                                 <p class="user-img">
-                                                    <a href="https://www.vmall.com/member?t=15682692812821568269456869"
+                                                    <a href="https://www.vmall.com/member?t=15687917455091568791898557"
                                                        rel="nofollow" timetype="timestamp" target="_blank"
                                                        onclick="pushLoginMsg('已登录','头像')">
                                                         <img id="customerPic"
@@ -372,7 +281,7 @@
                                                        class="icon-realname disabled hide"
                                                        onclick="pushLoginMsg('已登录','未实名')">未实名</a>
                                                     <a class="icon-mail"
-                                                       href="https://www.vmall.com/member/msg?t=15682692812821568269456869"
+                                                       href="https://www.vmall.com/member/msg?t=15687917455091568791898557"
                                                        rel="nofollow" timetype="timestamp"
                                                        onclick="pushLoginMsg('已登录','消息中心')">消息(<span
                                                             id="top-newMsgCount">0</span>)</a>
@@ -383,7 +292,7 @@
                                         <div class="i-mall-uc">
                                             <dl class="clearfix">
                                                 <dt><span class="fl">我的订单</span><a class="fr"
-                                                                                   href="https://www.vmall.com/member/order?t=15682692812821568269456869"
+                                                                                   href="https://www.vmall.com/member/order?t=15687917455091568791898557"
                                                                                    timetype="timestamp"
                                                                                    onclick="pushLoginMsg('已登录','更多')">更多</a>
                                                 </dt>
@@ -391,27 +300,27 @@
                                             <div class="i-mall-uc-con">
                                                 <dl class="clearfix">
                                                     <dd>
-                                                        <a href="https://www.vmall.com/member/order?t=15682692812821568269456869&amp;tab=unpaid"
+                                                        <a href="https://www.vmall.com/member/order?t=15687917455091568791898557&amp;tab=unpaid"
                                                            timetype="timestamp"
                                                            onclick="pushLoginMsg('已登录','待支付')">待支付</a>
                                                     </dd>
                                                     <dd>
-                                                        <a href="https://www.vmall.com/member/order?t=15682692812821568269456869&amp;tab=send"
+                                                        <a href="https://www.vmall.com/member/order?t=15687917455091568791898557&amp;tab=send"
                                                            timetype="timestamp"
                                                            onclick="pushLoginMsg('已登录','待收货')">待收货</a>
                                                     </dd>
                                                     <dd>
-                                                        <a href="https://www.vmall.com/member/order?t=15682692812821568269456869&amp;tab=nocomment"
+                                                        <a href="https://www.vmall.com/member/order?t=15687917455091568791898557&amp;tab=nocomment"
                                                            timetype="timestamp"
                                                            onclick="pushLoginMsg('已登录','待评价')">待评价</a>
                                                     </dd>
                                                     <dd>
-                                                        <a href="https://www.vmall.com/member/exchange?t=15682692812821568269456869"
+                                                        <a href="https://www.vmall.com/member/exchange?t=15687917455091568791898557"
                                                            timetype="timestamp"
                                                            onclick="pushLoginMsg('已登录','退换货')">退换货</a>
                                                     </dd>
                                                     <dd>
-                                                        <a href="https://www.vmall.com/member/recycle/index/aihuishou?t=15682692812821568269456869"
+                                                        <a href="https://www.vmall.com/member/recycle/index/aihuishou?t=15687917455091568791898557"
                                                            timetype="timestamp"
                                                            onclick="pushLoginMsg('已登录','旧机回收')">旧机回收</a></dd>
                                                 </dl>
@@ -421,14 +330,14 @@
                                         <div class="i-mall-huaban">
                                             <ul class="clearfix">
                                                 <li>
-                                                    <a href="https://www.vmall.com/member/newpoint?t=1568269281282"
+                                                    <a href="https://www.vmall.com/member/newpoint?t=1568791745509"
                                                        target="_blank" id="point" onclick="pushLoginMsg('已登录','积分')">
                                                         <p class="p-price"><span id="userPointBalance">--</span></p>
                                                         <p class="p-dec">积分</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.vmall.com/member/coupon?t=1568269281282"
+                                                    <a href="https://www.vmall.com/member/coupon?t=1568791745509"
                                                        rel="nofollow" target="_blank"
                                                        onclick="pushLoginMsg('已登录','优惠券')">
                                                         <p class="p-price"><span id="top-couponCount">--</span></p>
@@ -436,7 +345,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.vmall.com/member/balance?t=1568269281282"
+                                                    <a href="https://www.vmall.com/member/balance?t=1568791745509"
                                                        rel="nofollow" target="_blank"
                                                        onclick="pushLoginMsg('已登录','代金券')">
                                                         <p class="p-price"><span id="balanceAmount">--</span></p>
@@ -456,23 +365,15 @@
                         </div>
                     </li>
 
-                    <!-- <li><a href="https://www.vmall.com/member/order?t=1568269281282timestamp" timeType="timestamp" onclick = "pushMyOrderMsg()">我的订单</a></li>-->
+                    <!-- <li><a href="https://www.vmall.com/member/order?t=1568791745509timestamp" timeType="timestamp" onclick = "pushMyOrderMsg()">我的订单</a></li>-->
                     <li><a href="javascript:;" timetype="timestamp" onclick="pushMyOrderMsg()">我的订单</a></li>
 
-                    <li>
 
-                    </li>
-                    <li>
-
-                    </li>
-                    <li class="downloadApp">
-
-                    </li>
 
                     <li>
                         <div class="s-dropdown s-dropdown-minicart">
                             <div class="h h-wide" id="header-toolbar-minicart">
-                                <a href="https://www.vmall.com/cart2?t=15682692812821568269456869" class="icon-minicart"
+                                <a href="https://www.vmall.com/cart2?t=15687917455091568791898557" class="icon-minicart"
                                    rel="nofollow" timetype="timestamp" target="blank" onclick="pushMyCartMsg()">
                                     <span>购物车(<span id="header-cart-total">0</span>)</span>
                                 </a>
@@ -486,10 +387,9 @@
                                         <a href="https://www.vmall.com/">去逛逛吧</a>
                                     </div>
                                     <div class="minicart-pro-list minicart-pro-list-scroll hide"
-                                         id="minicart-pro-list-block" style="display: none;">
+                                         id="minicart-pro-list-block">
                                         <ul id="minicart-goods-list"></ul>
-                                        <div class="minicart-pro-settleup" id="minicart-pro-settleup"
-                                             style="display: none;">
+                                        <div class="minicart-pro-settleup" id="minicart-pro-settleup">
                                             <p>
                                                 <span>总计：</span>
                                                 <span><b id="micro-cart-totalPrice">¥&nbsp;0</b><s
@@ -497,9 +397,9 @@
                                             </p>
                                             <a class="button-minicart" id="button-minicart-go2confirm"
                                                href="javascript:;"
-                                               onclick="ec.minicart.confirm()" style="display: none;">结算</a>
+                                               onclick="ec.minicart.confirm()">结算</a>
                                             <a class="button-minicart disabled" id="disbutton-minicart-go2confirm"
-                                               style="">结算</a>
+                                               style="display:none;">结算</a>
                                         </div>
                                     </div>
                                 </div>
@@ -520,19 +420,19 @@
 						&lt;dl&gt;
 				&lt;dt&gt;HUAWEI&lt;/dt&gt;
 				&lt;dd class="box-button"&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://consumer.huawei.com/cz/?utm_source=vmall&amp;utm_medium=header"&gt;Czech&lt;/a&gt;
 
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://consumer.huawei.com/my/?utm_source=vmall&amp;utm_medium=header"&gt;Malaysia&lt;/a&gt;
 
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://shop.huawei.ru/?utm_source=vmall&amp;utm_medium=header"&gt;Россия&lt;/a&gt;
 
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://consumer.huawei.com/sa/?utm_source=vmall&amp;utm_medium=header"&gt;Saudi
  Arabia&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://consumer.huawei.com/ae/?utm_source=vmall&amp;utm_medium=header"&gt;United
  Arab Emirates&lt;/a&gt;
 				&lt;/dd&gt;
@@ -540,25 +440,25 @@ href="https://consumer.huawei.com/ae/?utm_source=vmall&amp;utm_medium=header"&gt
 				&lt;dl class="box-lan-choose-area"&gt;
 				&lt;dt&gt;HONOR&lt;/dt&gt;
 				&lt;dd class="box-button"&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/de/"&gt;Deutschland&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/es/"&gt;España&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/fr/"&gt;France&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/in/"&gt;India&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/it/"&gt;Italia&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/my/"&gt;Malaysia&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://shop.huawei.ru/"&gt;Россия&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/sa/"&gt;Saudi Arabia&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/ae/"&gt;United Arab Emirates&lt;/a&gt;
-						&lt;a class="box-choose" 
+						&lt;a class="box-choose"
 href="https://www.hihonor.com/uk/"&gt;United Kingdom&lt;/a&gt;
 				&lt;/dd&gt;
 			&lt;/dl&gt;
@@ -640,23 +540,23 @@ href="https://www.hihonor.com/uk/"&gt;United Kingdom&lt;/a&gt;
 data--&gt;
 &lt;!--#list data.itemInfos as item--&gt;
 		&lt;!--#var classChoose='';--&gt;
-		
-      
-        
-			
-			
+
+
+
+
+
             &lt;!--#var skuId='#'+item.skuId;--&gt;
-            
-           
-            
-             &lt;!--#if (item.subItems &amp;&amp; item.subItems.length 
+
+
+
+             &lt;!--#if (item.subItems &amp;&amp; item.subItems.length
 &gt; 0)--&gt;
             &lt;!--#list item.subItems as sub--&gt;
- 				&lt;!--#if ((classChoose) &amp;&amp; (classChoose != "true")  
-)--&gt;           
+ 				&lt;!--#if ((classChoose) &amp;&amp; (classChoose != "true")
+)--&gt;
    					&lt;!--#var  classChoose='false';--&gt;
-   					
-   				&lt;!--/#if--&gt;         
+
+   				&lt;!--/#if--&gt;
            		&lt;!--#if (sub.itemType == 'S1' || sub.itemType == 'S6' ||
  sub.itemType == 'S15')--&gt;
         				&lt;!--#var  classChoose='true';--&gt;
@@ -670,293 +570,293 @@ data--&gt;
             	&lt;!--/#if--&gt;
 	        &lt;!--/#list--&gt;
 	       &lt;!--/#if--&gt;
-	       
+
 	        &lt;!--#if (classChoose == 'true' )--&gt;
-        	    &lt;li class="minicart-pro-item minicart-pro-item-suit 
+        	    &lt;li class="minicart-pro-item minicart-pro-item-suit
 &lt;!--#if ( (item.show))--&gt;disabled&lt;!--/#if--&gt;"&gt;
             &lt;!--#else--&gt;
-                &lt;li class="minicart-pro-item &lt;!--#if ( 
-(item.show)) --&gt;disabled&lt;!--/#if--&gt;"&gt;	
+                &lt;li class="minicart-pro-item &lt;!--#if (
+(item.show)) --&gt;disabled&lt;!--/#if--&gt;"&gt;
             &lt;!--/#if--&gt;
-            
+
             &lt;div class="pro-info clearfix"&gt;
-           	&lt;!--#if (item.itemType=='B')--&gt;	
-           			
-                    
+           	&lt;!--#if (item.itemType=='B')--&gt;
+
+
                      &lt;!--#if (item.invalidCauseReason == 0) --&gt;
-                        &lt;div class="p-choose"&gt;&lt;i 
-class="&lt;!--#if 
+                        &lt;div class="p-choose"&gt;&lt;i
+class="&lt;!--#if
 (item.selected)--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
- id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.itemCode}" type="{#item.itemType}" 
+ id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.itemCode}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;&lt;/div&gt;
-                        &lt;input class="hide" 
-id="checkbox-{#item.itemkd}" name="bundleIds" value="{#item.itemCode}" 
-data-itemId="{#item.itemId}" type="checkbox" &lt;!--#if 
+                        &lt;input class="hide"
+id="checkbox-{#item.itemkd}" name="bundleIds" value="{#item.itemCode}"
+data-itemId="{#item.itemId}" type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
-                        &lt;input class="hide" 
-id="quantity-{#item.itemCode}" value="{#item.qty}" 
-data-type="{#item.itemType}" type="text" &lt;!--#if 
+                        &lt;input class="hide"
+id="quantity-{#item.itemCode}" value="{#item.qty}"
+data-type="{#item.itemType}" type="text" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
-                    &lt;!--#elseif ((item.invalidCauseReason == 
+                    &lt;!--#elseif ((item.invalidCauseReason ==
 7)&amp;&amp;( !item.numblimit   )&amp;&amp;(!item.show) )--&gt;
-                         &lt;div class="p-choose"&gt;&lt;i 
-class="&lt;!--#if 
+                         &lt;div class="p-choose"&gt;&lt;i
+class="&lt;!--#if
 (item.selected)--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
- id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.itemCode}" type="{#item.itemType}" 
+ id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.itemCode}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;&lt;/div&gt;
-                        &lt;input class="hide" 
-id="checkbox-{#item.itemkd}" name="bundleIds" value="{#item.itemCode}" 
-data-itemId="{#item.itemId}" type="checkbox" &lt;!--#if 
+                        &lt;input class="hide"
+id="checkbox-{#item.itemkd}" name="bundleIds" value="{#item.itemCode}"
+data-itemId="{#item.itemId}" type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
-                        &lt;input class="hide" 
-id="quantity-{#item.itemCode}" value="{#item.qty}" 
-data-type="{#item.itemType}" type="text" &lt;!--#if 
+                        &lt;input class="hide"
+id="quantity-{#item.itemCode}" value="{#item.qty}"
+data-type="{#item.itemType}" type="text" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
                     &lt;!--#else--&gt;
-                        &lt;div class="p-choose"&gt;&lt;i 
-class="icon-choose-normal" 
+                        &lt;div class="p-choose"&gt;&lt;i
+class="icon-choose-normal"
 id="icon-choose-{#item.itemCode}"&gt;&lt;/i&gt;&lt;/div&gt;
-                        &lt;input class="hide" 
+                        &lt;input class="hide"
 id="checkbox-{#item.itemCode}" name="bundleIds" value="{#item.itemCode}"
  type="checkbox" /&gt;
-                        &lt;input class="hide" 
-id="quantity-{#item.itemCode}" value="{#item.qty}" 
+                        &lt;input class="hide"
+id="quantity-{#item.itemCode}" value="{#item.qty}"
 data-type="{#item.itemType}" type="text" /&gt;
                     &lt;!--/#if--&gt;
-                    
+
                     &lt;div class="p-img"&gt;
-                        &lt;a 
-href="/product/{#item.photoId}.html{#skuId}" title="" target="_blank" 
-onclick = 
+                        &lt;a
+href="/product/{#item.photoId}.html{#skuId}" title="" target="_blank"
+onclick =
 "pushCartProMsg('{#skuId}','/product/{#item.photoId}.html{#skuId}','{#item_index+1}')"&gt;
 
-                            &lt;img 
+                            &lt;img
 src="https://res.vmallres.com/pimages/{#item.photoPath}78_78_{#item.photoName}"
  alt="{#item.itemName}" /&gt;
                         &lt;/a&gt;
                     &lt;/div&gt;
-                    
+
                     &lt;div class="p-name"&gt;
-                        &lt;a 
-href="/product/{#item.photoId}.html{#skuId}" title="{#item.itemName}" 
-target="_blank" onclick = 
+                        &lt;a
+href="/product/{#item.photoId}.html{#skuId}" title="{#item.itemName}"
+target="_blank" onclick =
 "pushCartProMsg('{#skuId}','/product/{#item.photoId}.html{#skuId}','{#item_index+1}')"&gt;{#item.itemName}&lt;/a&gt;
 
                     &lt;/div&gt;
-           	
-           				
-            &lt;!--#else--&gt;	
-                    &lt;!--#if ((item.invalidCauseReason == 0) 
+
+
+            &lt;!--#else--&gt;
+                    &lt;!--#if ((item.invalidCauseReason == 0)
 &amp;&amp;(!item.bnumblimit) &amp;&amp;(!item.numblimit)) --&gt;
-                    	
+
                         &lt;div class="p-choose"&gt;
                         &lt;!--#if (item.itemType == "P") --&gt;
-                        &lt;i class="&lt;!--#if (item.selected) 
---&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;" 
-id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.skuId}" type="{#item.itemType}" 
+                        &lt;i class="&lt;!--#if (item.selected)
+--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
+id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.skuId}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;
-                         &lt;input class="hide" name="skuIds" 
-id="checkbox-{#item.itemkd}" value="{#item.skuId}" 
-data-scode="{#item.itemCode}" data-itemId="{#item.itemId}" 
-type="checkbox" &lt;!--#if 
+                         &lt;input class="hide" name="skuIds"
+id="checkbox-{#item.itemkd}" value="{#item.skuId}"
+data-scode="{#item.itemCode}" data-itemId="{#item.itemId}"
+type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt;&gt;
             		  &lt;!--#else--&gt;
-                        &lt;i class="&lt;!--#if (item.selected) 
---&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;" 
-id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.skuId}" type="{#item.itemType}" 
+                        &lt;i class="&lt;!--#if (item.selected)
+--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
+id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.skuId}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;
-                        &lt;input class="hide" name="skuIds" 
-id="checkbox-{#item.itemkd}" value="{#item.skuId}" 
-data-scode="{#item.itemCode}" data-itemId="{#item.itemId}" 
-type="checkbox" &lt;!--#if 
+                        &lt;input class="hide" name="skuIds"
+id="checkbox-{#item.itemkd}" value="{#item.skuId}"
+data-scode="{#item.itemCode}" data-itemId="{#item.itemId}"
+type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt;&gt;
                         &lt;!--/#if--&gt;
                         &lt;/div&gt;
-                        
-                        &lt;input class="hide" 
-id="quantity-{#item.skuId}" value="{#item.qty}" 
-data-type="{#item.itemType}" type="text" &lt;!--#if 
+
+                        &lt;input class="hide"
+id="quantity-{#item.skuId}" value="{#item.qty}"
+data-type="{#item.itemType}" type="text" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
-                     
-                     &lt;!--#elseif ((item.invalidCauseReason == 
+
+                     &lt;!--#elseif ((item.invalidCauseReason ==
 7)&amp;&amp;( !item.numblimit  )&amp;&amp;(!item.show) )--&gt;
-                     
+
                                   &lt;div class="p-choose"&gt;
                         &lt;!--#if (item.itemType == "P") --&gt;
-                        &lt;i class="&lt;!--#if (item.selected) 
---&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;" 
-id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.skuId}" type="{#item.itemType}" 
+                        &lt;i class="&lt;!--#if (item.selected)
+--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
+id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.skuId}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;
-                         &lt;input class="hide" name="skuIds" 
-id="checkbox-{#item.itemkd}" value="{#item.skuId}" 
-data-scode="{#item.itemCode}" data-itemId="{#item.itemId}" 
-type="checkbox" &lt;!--#if 
+                         &lt;input class="hide" name="skuIds"
+id="checkbox-{#item.itemkd}" value="{#item.skuId}"
+data-scode="{#item.itemCode}" data-itemId="{#item.itemId}"
+type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt;&gt;
             		  &lt;!--#else--&gt;
-                        &lt;i class="&lt;!--#if (item.selected) 
---&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;" 
-id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)" 
-value="{#item.skuId}" type="{#item.itemType}" 
+                        &lt;i class="&lt;!--#if (item.selected)
+--&gt;icon-choose&lt;!--#else--&gt;icon-choose-normal&lt;!--/#if--&gt;"
+id="icon-choose-{#item.itemkd}" onclick="ec.minicart.click(this)"
+value="{#item.skuId}" type="{#item.itemType}"
 data-itemId="{#item.itemId}"&gt;&lt;/i&gt;
-                        &lt;input class="hide" name="skuIds" 
-id="checkbox-{#item.itemkd}" value="{#item.skuId}" 
-data-scode="{#item.itemCode}" data-itemId="{#item.itemId}" 
-type="checkbox" &lt;!--#if 
+                        &lt;input class="hide" name="skuIds"
+id="checkbox-{#item.itemkd}" value="{#item.skuId}"
+data-scode="{#item.itemCode}" data-itemId="{#item.itemId}"
+type="checkbox" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt;&gt;
                         &lt;!--/#if--&gt;
                         &lt;/div&gt;
-                        
-                        &lt;input class="hide" 
-id="quantity-{#item.skuId}" value="{#item.qty}" 
-data-type="{#item.itemType}" type="text" &lt;!--#if 
+
+                        &lt;input class="hide"
+id="quantity-{#item.skuId}" value="{#item.qty}"
+data-type="{#item.itemType}" type="text" &lt;!--#if
 (item.selected)--&gt;checked="checked"&lt;!--/#if--&gt; /&gt;
 
                     &lt;!--#else--&gt;
-                        &lt;div class="p-choose"&gt;&lt;i 
-class="icon-choose-normal" 
+                        &lt;div class="p-choose"&gt;&lt;i
+class="icon-choose-normal"
 id="icon-choose-{#item.skuId}"&gt;&lt;/i&gt;&lt;/div&gt;
-                        &lt;input class="hide" name="skuIds" 
+                        &lt;input class="hide" name="skuIds"
 id="checkbox-{#item.skuId}" value="{#item.skuId}" type="checkbox" /&gt;
-                        &lt;input class="hide" 
-id="quantity-{#item.skuId}" value="{#item.qty}" 
+                        &lt;input class="hide"
+id="quantity-{#item.skuId}" value="{#item.qty}"
 data-type="{#item.itemType}" type="text" /&gt;
                     &lt;!--/#if--&gt;
 
-        			&lt;!--#if 
+        			&lt;!--#if
 ((item.attrsMap)&amp;&amp;(item.attrsMap.package_code)) --&gt;
-        			 &lt;input class="hide" name="newBundle" 
-id="bundle-{#item.itemkd}" value="{#item.attrsMap.package_code}" 
-data-scode="&lt;!--#list item.subItems as sku--&gt;&lt;!--#if 
+        			 &lt;input class="hide" name="newBundle"
+id="bundle-{#item.itemkd}" value="{#item.attrsMap.package_code}"
+data-scode="&lt;!--#list item.subItems as sku--&gt;&lt;!--#if
 ((sku.itemType=='B')||(sku.itemType=='P'))--&gt;{#sku.itemCode},&lt;!--/#if--&gt;&lt;!--/#list--&gt;"
  type="checkbox" /&gt;
         			&lt;!--/#if--&gt;
 
-                    &lt;!--#if 
+                    &lt;!--#if
 ((item.attrsMap)&amp;&amp;(item.attrsMap.dp_package_code)) --&gt;
-                    &lt;input class="hide" name="dpPackage" 
-id="dpPackage-{#item.itemkd}" 
-data-dpcode="{#item.attrsMap.dp_package_code}" value="&lt;!--#list 
-item.subItems as sku--&gt;&lt;!--#if 
+                    &lt;input class="hide" name="dpPackage"
+id="dpPackage-{#item.itemkd}"
+data-dpcode="{#item.attrsMap.dp_package_code}" value="&lt;!--#list
+item.subItems as sku--&gt;&lt;!--#if
 (sku.itemType=='DP')--&gt;{#sku.itemCode},{#sku.attrsMap.dp_group}|&lt;!--/#if--&gt;&lt;!--/#list--&gt;"
  type="hidden"/&gt;
                     &lt;!--/#if--&gt;
 
                  	 &lt;div class="p-img"&gt;
-                        &lt;a 
-href="/product/{#item.productId}.html{#skuId}" title="" target="_blank" 
-onclick = 
+                        &lt;a
+href="/product/{#item.productId}.html{#skuId}" title="" target="_blank"
+onclick =
 "pushCartProMsg('{#skuId}','/product/{#item.productId}.html{#skuId}','{#item_index+1}')"&gt;
 
-                            &lt;img 
+                            &lt;img
 src="https://res.vmallres.com/pimages/{#item.photoPath}78_78_{#item.photoName}"
  alt="{#item.itemName}" /&gt;
                         &lt;/a&gt;
                     &lt;/div&gt;
-                    
+
                     &lt;div class="p-name"&gt;
-                        &lt;a 
-href="/product/{#item.productId}.html{#skuId}" title="{#item.itemName}" 
-target="_blank" onclick = 
+                        &lt;a
+href="/product/{#item.productId}.html{#skuId}" title="{#item.itemName}"
+target="_blank" onclick =
 "pushCartProMsg('{#skuId}','/product/{#item.productId}.html{#skuId}','{#item_index+1}')"&gt;{#item.itemName}&lt;/a&gt;
 
                     &lt;/div&gt;
-                 &lt;!--/#if--&gt;   
+                 &lt;!--/#if--&gt;
                     &lt;div class="p-dec"&gt;
                         &lt;span class="p-slogan"&gt;
-                           
+
                         &lt;/span&gt;
                     &lt;/div&gt;
                     &lt;div class="p-status"&gt;
-                        
+
                         &lt;!--#if (gGift == "true") --&gt;
                         &lt;!--#list item.subItems as gif--&gt;
                          &lt;!--#if (gif.itemType=="G")--&gt;
-                        &lt;input type="checkbox" name="giftId" 
+                        &lt;input type="checkbox" name="giftId"
 class="hide" value="{#gif.itemCode}" /&gt;
                         &lt;!--/#if--&gt;
                         &lt;!--/#list--&gt;
                         &lt;!--/#if--&gt;
-                        
-                      	&lt;!--#if (   (item.showP)&amp;&amp;( 
-(item.invalidCauseReason==0) ||  ( (item.invalidCauseReason==7)  
+
+                      	&lt;!--#if (   (item.showP)&amp;&amp;(
+(item.invalidCauseReason==0) ||  ( (item.invalidCauseReason==7)
 &amp;&amp; (  !item.numblimit  )  )  )    ) --&gt;
- 						&lt;div class="p-tags"&gt;此商品已失效&lt;/div&gt;              
+ 						&lt;div class="p-tags"&gt;此商品已失效&lt;/div&gt;
                         &lt;!--#else--&gt;
                         &lt;!--#if (item.invalidCauseReason == 1) --&gt;
                         &lt;div class="p-tags"&gt;此商品已失效&lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 2) 
+                        &lt;!--#elseif (item.invalidCauseReason == 2)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品已失效 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 3) 
+                        &lt;!--#elseif (item.invalidCauseReason == 3)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品已失效 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 4) 
+                        &lt;!--#elseif (item.invalidCauseReason == 4)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品已失效 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 5) 
+                        &lt;!--#elseif (item.invalidCauseReason == 5)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品暂不可购买 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 6) 
+                        &lt;!--#elseif (item.invalidCauseReason == 6)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品暂时缺货 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 7) 
+                        &lt;!--#elseif (item.invalidCauseReason == 7)
 --&gt;
-                        &lt;div 
+                        &lt;div
 class="p-tags"&gt;此商品限购{#item.invalidCauseLeftValue}件&lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 8) 
+                        &lt;!--#elseif (item.invalidCauseReason == 8)
 --&gt;
                         &lt;div class="p-tags"&gt;超过内购限额 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 9) 
+                        &lt;!--#elseif (item.invalidCauseReason == 9)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品不在本渠道销售&lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 10) 
+                        &lt;!--#elseif (item.invalidCauseReason == 10)
 --&gt;
                         &lt;div class="p-tags"&gt;此商品已失效 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 101) 
+                        &lt;!--#elseif (item.invalidCauseReason == 101)
 --&gt;
                         &lt;div class="p-tags"&gt;此套餐已失效 &lt;/div&gt;
-                        &lt;!--#elseif (item.invalidCauseReason == 106) 
+                        &lt;!--#elseif (item.invalidCauseReason == 106)
 --&gt;
                         &lt;div class="p-tags"&gt;此套餐暂时缺货 &lt;/div&gt;
                         &lt;!--/#if--&gt;
                         &lt;!--/#if--&gt;
-                        
+
                         &lt;div class="p-price"&gt;
-                            &lt;!--#if (item.salePrice != 
-item.originalPrice) 
+                            &lt;!--#if (item.salePrice !=
+item.originalPrice)
 --&gt;&lt;s&gt;¥&nbsp;{#item.originalPrice.toFixed(2)}&lt;/s&gt;&nbsp;&nbsp;&lt;!--/#if--&gt;
 
-                            
+
 &lt;b&gt;¥&nbsp;{#item.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#item.qty}&lt;/span&gt;&lt;/strong&gt;
 
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-            
-					&lt;!--#if ((item.itemType=='B')||(item.itemType=='P'))--&gt;	
-					&lt;div class="p-pack &lt;!--#if (item.show) 
+
+					&lt;!--#if ((item.itemType=='B')||(item.itemType=='P'))--&gt;
+					&lt;div class="p-pack &lt;!--#if (item.show)
 --&gt;disabled&lt;!--/#if--&gt;"&gt;
                     &lt;span class="p-mini-tag-suit"&gt;套餐&lt;/span&gt;
-                    &lt;a href="javascript:;" title="&lt;!--#list 
-item.subItems as sku--&gt;&lt;!--#if 
+                    &lt;a href="javascript:;" title="&lt;!--#list
+item.subItems as sku--&gt;&lt;!--#if
 ((sku.itemType=='B')||(sku.itemType=='P'))--&gt;{#sku.itemName}x{#sku.qty}&lt;!--/#if--&gt;&lt;!--/#list--&gt;"&gt;
 
                         &lt;!--#list item.subItems as sku--&gt;
-                        &lt;!--#if 
+                        &lt;!--#if
 ((sku.itemType=='B')||(sku.itemType=='P'))--&gt;
                         &lt;span&gt;
                         {#sku.itemName}&lt;em&gt;x{#sku.qty}&lt;/em&gt;
 						&lt;/span&gt;
-						&lt;!--/#if--&gt;	
+						&lt;!--/#if--&gt;
                         &lt;!--/#list--&gt;
                     	&lt;/a&gt;
                 	&lt;/div&gt;
-					&lt;!--/#if--&gt;	
+					&lt;!--/#if--&gt;
 
 				&lt;!--#if (classChoose=='true')--&gt;
                 &lt;div class="pro-other clearfix" id={#classChoose}&gt;
@@ -966,13 +866,13 @@ item.subItems as sku--&gt;&lt;!--#if
                         &lt;li class="&lt;!--#if (sub.invalidCauseReason
  != 0) --&gt;disabled&lt;!--/#if--&gt;"&gt;
                             &lt;div class="p-title"&gt;
-                                &lt;span 
+                                &lt;span
 class="p-mini-tag-extend"&gt;无忧服务&lt;/span&gt;{#sub.itemName}
                             &lt;/div&gt;
-                            &lt;input class="hide" name="ucareIds" 
-value="{#sub.skuId}" data-scode="{#sub.itemCode}" 
+                            &lt;input class="hide" name="ucareIds"
+value="{#sub.skuId}" data-scode="{#sub.itemCode}"
 data-id="{#sub.itemId}" type="checkbox" /&gt;
-                            &lt;div 
+                            &lt;div
 class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#item.qty}&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;
 
                         &lt;/li&gt;
@@ -984,13 +884,13 @@ class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;str
                         &lt;li class="&lt;!--#if (sub.invalidCauseReason
  != 0) --&gt;disabled&lt;!--/#if--&gt;"&gt;
                             &lt;div class="p-title"&gt;
-                                &lt;span 
+                                &lt;span
 class="p-mini-tag-extend"&gt;碎屏保&lt;/span&gt;{#sub.itemName}
                             &lt;/div&gt;
-                            &lt;input class="hide" name="accidentIds" 
-value="{#sub.skuId}" data-scode="{#sub.itemCode}" 
+                            &lt;input class="hide" name="accidentIds"
+value="{#sub.skuId}" data-scode="{#sub.itemCode}"
 data-id="{#sub.itemId}" type="checkbox" /&gt;
-                            &lt;div 
+                            &lt;div
 class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#item.qty}&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;
 
                         &lt;/li&gt;
@@ -1002,13 +902,13 @@ class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;str
                         &lt;li class="&lt;!--#if (sub.invalidCauseReason
  != 0) --&gt;disabled&lt;!--/#if--&gt;"&gt;
                             &lt;div class="p-title"&gt;
-                                &lt;span 
+                                &lt;span
 class="p-mini-tag-long"&gt;延保&lt;/span&gt;{#sub.itemName}
                             &lt;/div&gt;
-                            &lt;input class="hide" name="extendIds" 
-value="{#sub.skuId}" data-scode="{#sub.itemCode}" type="checkbox" 
+                            &lt;input class="hide" name="extendIds"
+value="{#sub.skuId}" data-scode="{#sub.itemCode}" type="checkbox"
 data-id="{#sub.itemId}" /&gt;
-                            &lt;div 
+                            &lt;div
 class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#item.qty}&lt;/span&gt;&lt;/strong&gt;&lt;/div&gt;
 
                         &lt;/li&gt;
@@ -1017,27 +917,27 @@ class="p-price"&gt;&lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;str
       				&lt;/ol&gt;
       			&lt;/div&gt;
 				&lt;!--/#if--&gt;
-				
+
 				&lt;!--#if (gGift=="true")--&gt;
-                &lt;input type="hidden" 
-id="gift_sbomCodes_{#item.skuId}" value="&lt;!--#list item.subItems as 
-gift--&gt;&lt;!--#if (gift.itemType == "G") 
+                &lt;input type="hidden"
+id="gift_sbomCodes_{#item.skuId}" value="&lt;!--#list item.subItems as
+gift--&gt;&lt;!--#if (gift.itemType == "G")
 --&gt;{#gift.skuId},&lt;!--/#if--&gt;&lt;!--/#list--&gt;" /&gt;
                 &lt;div class="p-pack"&gt;
                     &lt;span class="p-mini-tag-suit"&gt;配&lt;/span&gt;
-                    &lt;a href="javascript:;" style="cursor: default;" 
+                    &lt;a href="javascript:;" style="cursor: default;"
 title="&lt;!--#list item.subItems as gift--&gt;&lt;!--#if (gift.itemType
- == "G") 
+ == "G")
 --&gt;{#gift.itemName}x{#gift.qty*item.qty},&lt;!--/#if--&gt;&lt;!--/#list--&gt;"&gt;
 
-                        &lt;!--#list item.subItems as 
+                        &lt;!--#list item.subItems as
 gift--&gt;&lt;!--#if (gift.itemType == "G") --&gt;
-                        &lt;span class="&lt;!--#if 
+                        &lt;span class="&lt;!--#if
 (gift.invalidCauseReason != 0) --&gt;disabled&lt;!--/#if--&gt;"&gt;
-                        
+
 {#gift.itemName}&lt;em&gt;x{#gift.qty*item.qty}&lt;/em&gt;
-                        &lt;/span&gt; 
-						&lt;!--/#if--&gt;					
+                        &lt;/span&gt;
+						&lt;!--/#if--&gt;
                         &lt;!--/#list--&gt;
                     &lt;/a&gt;
                 &lt;/div&gt;
@@ -1048,19 +948,19 @@ gift--&gt;&lt;!--#if (gift.itemType == "G") --&gt;
                     &lt;ol&gt;
                         &lt;!--#list item.subItems as sub--&gt;
                         &lt;!--#if (sub.itemType == "DP") --&gt;
-                        &lt;li class="&lt;!--#if 
-((sub.Jlost)||(sub.invalidCauseReason!=0)) 
+                        &lt;li class="&lt;!--#if
+((sub.Jlost)||(sub.invalidCauseReason!=0))
 --&gt;disabled&lt;!--/#if--&gt;"&gt;
                             &lt;div class="p-title p-add"&gt;
-                                &lt;span 
+                                &lt;span
 class="p-mini-tag-suit"&gt;搭配&lt;/span&gt;{#sub.itemName}
                             &lt;/div&gt;
                             &lt;div class="p-price"&gt;
-                                &lt;!--#if (sub.salePrice != 
-sub.originalPrice) 
+                                &lt;!--#if (sub.salePrice !=
+sub.originalPrice)
 --&gt;&lt;s&gt;¥&nbsp;{#sub.originalPrice.toFixed(2)}&lt;/s&gt;&nbsp;&nbsp;&lt;!--/#if--&gt;
 
-                                
+
 &lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#sub.qty}&lt;/span&gt;&lt;/strong&gt;
 
                             &lt;/div&gt;
@@ -1075,34 +975,34 @@ sub.originalPrice)
                 &lt;div class="pro-other clearfix"&gt;
                     &lt;ol&gt;
                         &lt;!--#if (jBuy=="true")--&gt;
-                        &lt;input type="hidden" 
-id="preferIds_{#item.skuId}" 
-                        value="&lt;!--#list item.subItems as 
-ea--&gt;&lt;!--#if (ea.itemType == "J") 
---&gt;{#ea.itemCode},&lt;!--/#if--&gt;&lt;!--/#list--&gt;" 
-                        skuids="&lt;!--#list item.subItems as 
-ea--&gt;&lt;!--#if (ea.itemType == "J") 
---&gt;{#ea.skuId},&lt;!--/#if--&gt;&lt;!--/#list--&gt;" 
-                        newId="&lt;!--#list item.subItems as 
-ea--&gt;&lt;!--#if (ea.itemType == "J") 
+                        &lt;input type="hidden"
+id="preferIds_{#item.skuId}"
+                        value="&lt;!--#list item.subItems as
+ea--&gt;&lt;!--#if (ea.itemType == "J")
+--&gt;{#ea.itemCode},&lt;!--/#if--&gt;&lt;!--/#list--&gt;"
+                        skuids="&lt;!--#list item.subItems as
+ea--&gt;&lt;!--#if (ea.itemType == "J")
+--&gt;{#ea.skuId},&lt;!--/#if--&gt;&lt;!--/#list--&gt;"
+                        newId="&lt;!--#list item.subItems as
+ea--&gt;&lt;!--#if (ea.itemType == "J")
 --&gt;{#ea.itemId},&lt;!--/#if--&gt;&lt;!--/#list--&gt;" /&gt;
                         &lt;!--/#if--&gt;
 
                         &lt;!--#list item.subItems as sub--&gt;
                         &lt;!--#if (sub.itemType == "J") --&gt;
-                        &lt;li class="&lt;!--#if 
-((sub.Jlost)||(sub.invalidCauseReason!=0)) 
+                        &lt;li class="&lt;!--#if
+((sub.Jlost)||(sub.invalidCauseReason!=0))
 --&gt;disabled&lt;!--/#if--&gt;"&gt;
                             &lt;div class="p-title p-add"&gt;
-                                &lt;span 
+                                &lt;span
 class="p-mini-tag-extend"&gt;加价购&lt;/span&gt;{#sub.itemName}
                             &lt;/div&gt;
                             &lt;div class="p-price"&gt;
-                                &lt;!--#if (sub.salePrice != 
-sub.originalPrice) 
+                                &lt;!--#if (sub.salePrice !=
+sub.originalPrice)
 --&gt;&lt;s&gt;¥&nbsp;{#sub.originalPrice.toFixed(2)}&lt;/s&gt;&nbsp;&nbsp;&lt;!--/#if--&gt;
 
-                                
+
 &lt;b&gt;¥&nbsp;{#sub.salePrice.toFixed(2)}&lt;/b&gt;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;span&gt;{#sub.qty}&lt;/span&gt;&lt;/strong&gt;
 
                             &lt;/div&gt;
@@ -1128,19 +1028,19 @@ id="ec-binding-phone-1" class="ec-binding-phone-box hide"&gt;
             &lt;/div&gt;
             &lt;div class="b"&gt;
                 &lt;p class="title"&gt;绑定手机号码&lt;/p&gt;
-                
+
 &lt;p&gt;为了给您提供更好的服务，建议您将登录的邮箱帐号进行手机号码绑定，绑定后邮箱帐号和绑定的手机号码都可以作为登录帐号，&lt;em
  class="red"&gt;不绑定将不能提交订单。&lt;/em&gt;&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="box-button"&gt;
-            &lt;a class="box-ok" href="javascript:;" 
+            &lt;a class="box-ok" href="javascript:;"
 id="ec-binding-phone-url-1"&gt;&lt;span&gt;立即绑定&lt;/span&gt;&lt;/a&gt;&
 lt;/a&gt;
         &lt;/div&gt;
         &lt;!-- 20141011-绑定安全手机号提示-end --&gt;
     &lt;/div&gt;
-    &lt;div id="ec-binding-phone-2" class="ec-binding-phone-box 
+    &lt;div id="ec-binding-phone-2" class="ec-binding-phone-box
 hide"&gt;
         &lt;!-- 20141424-绑定安全手机号提示-start --&gt;
         &lt;div class="box-phone01"&gt;
@@ -1149,20 +1049,20 @@ hide"&gt;
             &lt;/div&gt;
             &lt;div class="b"&gt;
                 &lt;p class="title"&gt;绑定手机号码&lt;/p&gt;
-                
+
 &lt;p&gt;请您在新打开的页面中完成绑定安全手机号操作，完成绑定后请根据您的情况点击下面的按钮。&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="box-button"&gt;
-            &lt;a class="box-cancel" href="javascript:;" 
+            &lt;a class="box-cancel" href="javascript:;"
 id="ec-binding-phone-url-2"&gt;&lt;span&gt;重新绑定&lt;/span&gt;&lt;/a&gt;
-            &lt;a class="box-ok" href="javascript:;" 
+            &lt;a class="box-ok" href="javascript:;"
 onclick="ec.binding.resetShow()"&gt;&lt;span&gt;绑定成功&lt;/span&gt;&lt;/a&
 gt;
         &lt;/div&gt;
         &lt;!-- 20141424-绑定安全手机号提示-end --&gt;
     &lt;/div&gt;
-    &lt;div id="ec-binding-phone-3" class="ec-binding-phone-box 
+    &lt;div id="ec-binding-phone-3" class="ec-binding-phone-box
 hide"&gt;
         &lt;!-- 20141424-安全手机号绑定提示失败-start --&gt;
         &lt;div class="box-phone01"&gt;
@@ -1171,18 +1071,18 @@ hide"&gt;
             &lt;/div&gt;
             &lt;div class="b"&gt;
                 &lt;p class="title"&gt;对不起，您未成功绑定手机号&lt;/p&gt;
-                
+
 &lt;p&gt;为了您在商城正常购物、保护您的权益，请您绑定一个手机号码以享受华为商城的所有服务。&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="box-button"&gt;
-            &lt;a href="javascript:;" class="box-ok" 
-onclick="ec.binding.showOk()" id="ec-binding-phone-url-3" 
+            &lt;a href="javascript:;" class="box-ok"
+onclick="ec.binding.showOk()" id="ec-binding-phone-url-3"
 &gt;&lt;span&gt;立即绑定&lt;/span&gt;&lt;/a&gt;
         &lt;/div&gt;
         &lt;!-- 20141424-安全手机号绑定提示失败-end --&gt;
     &lt;/div&gt;
-    &lt;div id="ec-binding-phone-4" class="ec-binding-phone-box 
+    &lt;div id="ec-binding-phone-4" class="ec-binding-phone-box
 hide"&gt;
         &lt;!-- 20150824-手机号绑定未绑定-start --&gt;
         &lt;div class="box-phone01"&gt;
@@ -1191,23 +1091,23 @@ hide"&gt;
             &lt;/div&gt;
             &lt;div class="b"&gt;
                 &lt;p class="title"&gt;绑定手机号码&lt;/p&gt;
-                
+
 &lt;p&gt;为了给您提供更好的服务，建议您将登录的邮箱帐号进行手机号码绑定，绑定后邮箱帐号和绑定的手机号码都可以作为登录帐号；&lt;em
- class="red"&gt;自&lt;/em&gt;&lt;em id="bindEndDate4State4" 
-class="red"&gt;&lt;/em&gt;&lt;em 
+ class="red"&gt;自&lt;/em&gt;&lt;em id="bindEndDate4State4"
+class="red"&gt;&lt;/em&gt;&lt;em
 class="red"&gt;号起，若不绑定将不能提交订单。&lt;/em&gt;&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="box-button"&gt;
-            &lt;a class="box-cancel" href="javascript:;" 
+            &lt;a class="box-cancel" href="javascript:;"
 onclick="ec.binding.closeState4();"&gt;&lt;span&gt;下次再说&lt;/span&gt;&lt;
 /a&gt;
-            &lt;a class="box-ok" href="javascript:;" 
+            &lt;a class="box-ok" href="javascript:;"
 id="ec-binding-phone-url-4"&gt;&lt;span&gt;立即绑定&lt;/span&gt;&lt;/a&gt;
         &lt;/div&gt;
         &lt;!-- 20150824-安全手机号绑定提示失败-end --&gt;
     &lt;/div&gt;
-    &lt;div id="ec-binding-phone-5" class="ec-binding-phone-box 
+    &lt;div id="ec-binding-phone-5" class="ec-binding-phone-box
 hide"&gt;
         &lt;!-- 20141424-安全手机号绑定提示失败-start --&gt;
         &lt;div class="box-phone01"&gt;
@@ -1220,11 +1120,11 @@ hide"&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="box-button"&gt;
-            &lt;a class="box-cancel" 
-href="https://www.vmall.com/account/login" 
+            &lt;a class="box-cancel"
+href="https://www.vmall.com/account/login"
 id="ec-binding-phone-reLogin-5"&gt;&lt;span&gt;重新登录&lt;/span&gt;&lt;/a&
 gt;')
-            &lt;a class="box-ok" href="javascript:;" 
+            &lt;a class="box-ok" href="javascript:;"
 id="ec-binding-phone-url-5"&gt;&lt;span&gt;重新绑定&lt;/span&gt;&lt;/a&gt;
         &lt;/div&gt;
         &lt;!-- 20141424-安全手机号绑定提示失败-end --&gt;
@@ -1232,24 +1132,24 @@ id="ec-binding-phone-url-5"&gt;&lt;span&gt;重新绑定&lt;/span&gt;&lt;/a&gt;
 </textarea>
 
     <textarea class="hide" id="jTplDownloadApp">&lt;div class="b"&gt;&lt;div
- class="dropdown-code"&gt;&lt;div class="clearfix 
-dropdown-code-detail"&gt;&lt;img class="code-img" 
+ class="dropdown-code"&gt;&lt;div class="clearfix
+dropdown-code-detail"&gt;&lt;img class="code-img"
 src="https://res.vmallres.com/pimages//pages/cdnImages/ZXsAojWBKFhbhWZKudsv.png"
- title="安卓下载二维码.png" /&gt;&lt;div 
-class="code-info"&gt;&lt;h2&gt;华为商城APP&lt;/h2&gt;&lt;p 
-class="red"&gt;新人专享好礼&lt;br /&gt;最高5000积分&lt;/p&gt;&lt;span 
+ title="安卓下载二维码.png" /&gt;&lt;div
+class="code-info"&gt;&lt;h2&gt;华为商城APP&lt;/h2&gt;&lt;p
+class="red"&gt;新人专享好礼&lt;br /&gt;最高5000积分&lt;/p&gt;&lt;span
 class="icon-andrid fl mgr-5"&gt;&lt;/span&gt;&lt;span class="icon-wechat
- fl"&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="clearfix 
-dropdown-code-detail"&gt;&lt;a&gt;&lt;img class="code-img" 
+ fl"&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="clearfix
+dropdown-code-detail"&gt;&lt;a&gt;&lt;img class="code-img"
 src="https://res.vmallres.com/pimages/sale/2018-11/20181116180507506.jpg"
- /&gt;&lt;/a&gt;      &lt;div class="code-info"&gt;        
-&lt;h2&gt;华为商城公众号&lt;/h2&gt;&lt;p&gt;微信扫一扫&lt;/p&gt;&lt;span 
-class="icon-wechat"&gt;&lt;/span&gt;      &lt;/div&gt;    &lt;/div&gt;  
-  &lt;div class="clearfix dropdown-code-detail"&gt;      
-&lt;a&gt;&lt;img class="code-img" 
+ /&gt;&lt;/a&gt;      &lt;div class="code-info"&gt;
+&lt;h2&gt;华为商城公众号&lt;/h2&gt;&lt;p&gt;微信扫一扫&lt;/p&gt;&lt;span
+class="icon-wechat"&gt;&lt;/span&gt;      &lt;/div&gt;    &lt;/div&gt;
+  &lt;div class="clearfix dropdown-code-detail"&gt;
+&lt;a&gt;&lt;img class="code-img"
 src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
- /&gt;&lt;/a&gt;      &lt;div class="code-info"&gt;        
-&lt;h2&gt;微信小程序&lt;/h2&gt;&lt;span class="icon-wechat"&gt;&lt;/span&gt; 
+ /&gt;&lt;/a&gt;      &lt;div class="code-info"&gt;
+&lt;h2&gt;微信小程序&lt;/h2&gt;&lt;span class="icon-wechat"&gt;&lt;/span&gt;
      &lt;/div&gt;    &lt;/div&gt;  &lt;/div&gt;&lt;/div&gt;
 </textarea>
 
@@ -1258,7 +1158,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <div class="layout">
             <div class="left">
                 <!-- 2017-02-15-logo-start -->
-                <div class="logo"><a href="{% url 'app:index' %}" title="Vmall.com - 华为商城"
+                <div class="logo"><a href="https://www.vmall.com/index.html" title="Vmall.com - 华为商城"
                                      onclick="pushLogoClickMsg('https://res.vmallres.com/pimages//sale/2018-11/x9a6U8WW0bhrA7u0FIlY.png','https\x3A\x2F\x2Fwww.vmall.com\x2Findex.html')"><img
                         src="{% static 'images/x9a6U8WW0bhrA7u0FIlY.png' %}"
                         alt="Vmall.com - 华为商城"></a></div>
@@ -1268,12 +1168,12 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                 <div class="naver">
                     <ul id="naver" class="clearfix">
                         <li id="zxnav_0" data-id="0">
-                            <a href="{% url 'app:phonelist' %}" target="_blank"><span>手机</span></a>
+                            <a href="https://www.vmall.com/list-36" target="_blank"><span>手机</span></a>
                             <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
                         </li>
                         <li id="zxnav_1" data-id="1">
-                            <a href="{% url 'app:pclist' %}" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                            <a href="https://www.vmall.com/list-40" target="_blank"><span>笔记本 &amp; 平板</span></a>
                             <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
                         </li>
@@ -1328,12 +1228,12 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                 <p class="grid-price">¥4988</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086244199203.html">
+                                    href="https://www.vmall.com/product/10086693893548.html">
                                 <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1558245073712mp.png' %}">
+                                                         src="{% static 'images/142_142_FFF52FC8300511223A30ED8401D76D30BCBDBC5A3F75596Amp.png' %}">
                                 </p>
-                                <div class="grid-title">荣耀20</div>
-                                <p class="grid-price">¥2499</p></a></li>
+                                <div class="grid-title">荣耀Play3</div>
+                                <p class="grid-price">¥999</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086225607276.html">
@@ -1344,17 +1244,19 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                 <p class="grid-price">¥3688</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086905978384.html">
+                                    href="https://www.vmall.com/product/10086244199203.html">
                                 <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1560477702935mp.png' %}">
+                                                         src="{% static 'images/142_142_1558245073712mp.png' %}">
                                 </p>
-                                <div class="grid-title">荣耀20i</div>
-                                <p class="grid-price">¥1299</p></a></li>
+                                <div class="grid-title">荣耀20</div>
+                                <p class="grid-price">¥2499</p></a></li>
                         </ul>
                         <input id="zxnav_0_skuIds" type="hidden"
-                               value="10086299173518,10086087893146,10086407020352,10086785092314,10086534716564,10086494944305,">
+                               value="10086299173518,10086087893146,10086407020352,10086274621371,10086534716564,10086785092314,">
                     </div>
                     <div id="naverSub01" class="naver-sub-wrap hide" style="display: none;">
+
+
                         <ul id="zxnav_1_prolist" class="grid-list clearfix">
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
@@ -1395,7 +1297,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                                          src="{% static 'images/142_142_1539243364035mp.png' %}">
                                 </p>
                                 <div class="grid-title">荣耀平板5 10.1英寸</div>
-                                <p class="grid-price">¥1199</p></a></li>
+                                <p class="grid-price">¥1149</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086048814932.html">
@@ -1507,7 +1409,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                                          src="{% static 'images/142_142_1542765330080mp.png' %}">
                                 </p>
                                 <div class="grid-title">荣耀路由2S</div>
-                                <p class="grid-price">¥179</p></a></li>
+                                <p class="grid-price">¥169</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086862057573.html">
@@ -1515,7 +1417,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                                          src="{% static 'images/142_142_1546411816762mp.png' %}">
                                 </p>
                                 <div class="grid-title">荣耀YOYO智能音箱</div>
-                                <p class="grid-price">¥189</p></a></li>
+                                <p class="grid-price">¥179</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank" href="https://www.vmall.com/product/310439420.html"><p
                                     class="grid-img"><img alt=""
@@ -1534,17 +1436,19 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086780319057.html">
-                                <p class="grid-img"><img alt="" src="{% static 'images/142_142_1553601252627mp.png' %}">
+                                <p class="grid-img"><img alt=""
+                                                         src="{% static 'images/142_142_1553601252627mp.png' %}">
                                 </p>
                                 <div class="grid-title">华为40W超级快充移动电源</div>
                                 <p class="grid-price">¥369</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086335437779.html">
-                                <p class="grid-img"><img alt="" src="{% static 'images/142_142_1540862995742mp.png' %}">
+                                <p class="grid-img"><img alt=""
+                                                         src="{% static 'images/142_142_1540862995742mp.png' %}">
                                 </p>
                                 <div class="grid-title">荣耀FlyPods无线耳机</div>
-                                <p class="grid-price">¥799</p></a></li>
+                                <p class="grid-price">¥699</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank" href="https://www.vmall.com/product/936223974.html"><p
                                     class="grid-img"><img alt=""
@@ -1558,7 +1462,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                                           src="{% static 'images/142_142_1542854411097mp.png' %}">
                             </p>
                                 <div class="grid-title">荣耀xSport运动蓝牙耳机</div>
-                                <p class="grid-price">¥229</p></a></li>
+                                <p class="grid-price">¥179</p></a></li>
                             <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
                                     class="thumb" target="_blank"
                                     href="https://www.vmall.com/product/10086808172342.html">
@@ -1671,16 +1575,17 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                             <input type="hidden" id="channelType" name="channelType" value="0">
                             <input type="hidden" id="default-search" value="nova 3i|荣耀 Note10">
                             <input name="CsrfToken" type="hidden"
-                                   value="FD8BD100AD9FCE5A8267CC1E8E68A5D9D695118DE669ACFB">
+                                   value="1DF3465F9B21C384F104D934623AABB429B4BFCA20CB254C">
                         </form>
                     </div>
                     <div class="search-bar-key" id="search-bar-key">
                         <div class="searchBar-key">
-                            <a href="javascript:void(0);" onclick="searchFunc('\u8363\u8000Play3'); return false;"
-                               style="color:#CF0A2C" rel="nofollow">荣耀Play3</a>
                             <a href="https://sale.vmall.com/hwmate.html" onclick="pushHotSearchMsg('5G');"
                                style="color:"
                                target="_blank" rel="nofollow">5G</a>
+                            <a href="https://www.vmall.com/product/10086452612142.html"
+                               onclick="pushHotSearchMsg('\u8363\u800020S');" style="color:#CF0A2C" target="_blank"
+                               rel="nofollow">荣耀20S</a>
                         </div>
                     </div>
                     <div class="search-bar-history">
@@ -1697,10 +1602,10 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                             <ul id="search-key-list"></ul>
                         </div>
                     </div>
-                    <div id="AutocompleteContainter_e79a7"
-                    "="" style="top: 90px; left: 959px;">
+                    <div id="AutocompleteContainter_3719"
+                    "="" style="top: 90px; left: 1232.5px;">
                     <div class="autocomplete-w1">
-                        <div class="autocomplete" id="Autocomplete_e79a7"
+                        <div class="autocomplete" id="Autocomplete_3719"
                              style="display: none; width: 285px; max-height: 400px;"></div>
                     </div>
                 </div>
@@ -1709,6 +1614,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         </div>
     </div>
     </div><!-- 2017-02-15-头部-end -->
+
     <script type="text/javascript">
         ec.load("ec.slider", {
             loadType: "lazy",
@@ -1733,7 +1639,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         }
 
         ec.ready(function () {
-            ec.search.searchArr = JSON.parse('[{"activityUrl":"","fontColor":"#CF0A2C","id":546,"inSearchBox":1,"isActivityWords":0,"priority":27,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;Play3"},{"activityUrl":"","fontColor":"","id":528,"inSearchBox":0,"isActivityWords":0,"priority":26,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7545;&#x4eab;10&#x20;P"},{"activityUrl":"","fontColor":"","id":404,"inSearchBox":0,"isActivityWords":0,"priority":24,"saleChannel":1,"tagType":0,"type":1,"word":"HUAWEI&#x20;Mate&#x20;20&#x20;Pro"},{"activityUrl":"","fontColor":"","id":408,"inSearchBox":0,"isActivityWords":0,"priority":22,"saleChannel":1,"tagType":0,"type":1,"word":"&#x9ea6;&#x8292;8"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":514,"inSearchBox":0,"isActivityWords":1,"priority":20,"saleChannel":1,"tagType":0,"type":1,"word":"20s"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":512,"inSearchBox":0,"isActivityWords":1,"priority":19,"saleChannel":1,"tagType":0,"type":1,"word":"20S"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":506,"inSearchBox":0,"isActivityWords":1,"priority":17,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20s"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":462,"inSearchBox":0,"isActivityWords":1,"priority":14,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x7535;&#x89c6;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":460,"inSearchBox":0,"isActivityWords":1,"priority":13,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x667a;&#x6167;&#x5c4f;&#x7535;&#x89c6;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":458,"inSearchBox":0,"isActivityWords":1,"priority":12,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086097747140.html","fontColor":"","id":456,"inSearchBox":0,"isActivityWords":1,"priority":11,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x7535;&#x89c6;"},{"activityUrl":"","fontColor":"","id":454,"inSearchBox":0,"isActivityWords":0,"priority":10,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x5927;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":452,"inSearchBox":0,"isActivityWords":0,"priority":9,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":450,"inSearchBox":0,"isActivityWords":0,"priority":8,"saleChannel":1,"tagType":0,"type":1,"word":"&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086912255346.html","fontColor":"","id":444,"inSearchBox":0,"isActivityWords":1,"priority":7,"saleChannel":1,"tagType":0,"type":1,"word":"9X"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;product&#x2f;10086136565358.html","fontColor":"","id":422,"inSearchBox":0,"isActivityWords":1,"priority":5,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7535;&#x78c1;&#x7089;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;openTest","fontColor":"","id":418,"inSearchBox":0,"isActivityWords":1,"priority":3,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x4f17;&#x6d4b;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;openTest","fontColor":"","id":416,"inSearchBox":0,"isActivityWords":1,"priority":2,"saleChannel":1,"tagType":0,"type":1,"word":"&#x4f17;&#x6d4b;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":366,"inSearchBox":0,"isActivityWords":1,"priority":0,"saleChannel":1,"tagType":0,"type":1,"word":"&#x5ef6;&#x957f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"","fontColor":"","id":530,"inSearchBox":1,"isActivityWords":0,"priority":-1,"saleChannel":1,"tagType":0,"type":2,"word":"&#x7545;&#x4eab;10&#x20;Plus"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":364,"inSearchBox":0,"isActivityWords":1,"priority":-1,"saleChannel":1,"tagType":0,"type":1,"word":"&#x5ef6;&#x4fdd;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;pseries.html","fontColor":"#CF0A2C","id":288,"inSearchBox":1,"isActivityWords":1,"priority":-2,"saleChannel":1,"tagType":0,"type":2,"word":"HUAWEI&#x20;P30"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":362,"inSearchBox":0,"isActivityWords":1,"priority":-2,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x5ef6;&#x957f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":360,"inSearchBox":0,"isActivityWords":1,"priority":-3,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x5ef6;&#x957f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":358,"inSearchBox":0,"isActivityWords":1,"priority":-4,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x670d;&#x52a1;"},{"id":226,"inSearchBox":1,"isActivityWords":0,"priority":-4,"saleChannel":1,"tagType":0,"type":2,"word":"HUAWEI&#x20;Mate&#x20;20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":356,"inSearchBox":0,"isActivityWords":1,"priority":-5,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":354,"inSearchBox":0,"isActivityWords":1,"priority":-6,"saleChannel":1,"tagType":0,"type":1,"word":"&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":352,"inSearchBox":0,"isActivityWords":1,"priority":-7,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x788e;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":350,"inSearchBox":0,"isActivityWords":1,"priority":-8,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":348,"inSearchBox":0,"isActivityWords":1,"priority":-9,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":346,"inSearchBox":0,"isActivityWords":1,"priority":-10,"saleChannel":1,"tagType":0,"type":1,"word":"&#x6362;&#x7535;&#x6c60;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":342,"inSearchBox":0,"isActivityWords":1,"priority":-11,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":250,"inSearchBox":1,"isActivityWords":0,"priority":-11,"saleChannel":1,"tagType":0,"type":3,"word":"&#x8363;&#x8000;V20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086226569988.html","fontColor":"#CF0A2C","id":47,"inSearchBox":1,"isActivityWords":1,"priority":-12,"saleChannel":1,"tagType":0,"type":3,"word":"&#x8363;&#x8000;20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":308,"inSearchBox":0,"isActivityWords":1,"priority":-12,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":336,"inSearchBox":0,"isActivityWords":1,"priority":-13,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":306,"inSearchBox":0,"isActivityWords":1,"priority":-14,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":338,"inSearchBox":0,"isActivityWords":1,"priority":-15,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":304,"inSearchBox":0,"isActivityWords":1,"priority":-16,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":340,"inSearchBox":0,"isActivityWords":1,"priority":-17,"saleChannel":1,"tagType":0,"type":1,"word":"&#x65e0;&#x5fe7;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":322,"inSearchBox":0,"isActivityWords":1,"priority":-18,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x65e0;&#x5fe7;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":318,"inSearchBox":0,"isActivityWords":1,"priority":-19,"saleChannel":1,"tagType":0,"type":1,"word":"&#x65e0;&#x5fe7;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":302,"inSearchBox":0,"isActivityWords":1,"priority":-20,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x65e0;&#x5fe7;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":344,"inSearchBox":0,"isActivityWords":1,"priority":-21,"saleChannel":1,"tagType":0,"type":1,"word":"&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":298,"inSearchBox":0,"isActivityWords":1,"priority":-22,"saleChannel":1,"tagType":0,"type":1,"word":"&#x4e00;&#x53e3;&#x4ef7;&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":296,"inSearchBox":0,"isActivityWords":1,"priority":-23,"saleChannel":1,"tagType":0,"type":1,"word":"99&#x5143;&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwmate.html","fontColor":"","id":488,"inSearchBox":1,"isActivityWords":1,"priority":-32,"saleChannel":1,"tagType":0,"type":1,"word":"5G"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"#CF0A2C","id":510,"inSearchBox":1,"isActivityWords":1,"priority":-41,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20S"},{"activityUrl":"","fontColor":"#CF0A2C","id":494,"inSearchBox":1,"isActivityWords":0,"priority":-42,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5i&#x20;Pro"},{"activityUrl":"","fontColor":"#CF0A2C","id":496,"inSearchBox":1,"isActivityWords":0,"priority":-43,"saleChannel":1,"tagType":0,"type":1,"word":"Mate&#x20;20&#x20;X&#x20;&#x28;5G&#x29;"},{"activityUrl":"","fontColor":"#CF0A2C","id":254,"inSearchBox":1,"isActivityWords":0,"priority":-44,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20i"},{"activityUrl":"","fontColor":"#CF0A2C","id":286,"inSearchBox":1,"isActivityWords":0,"priority":-46,"saleChannel":1,"tagType":0,"type":1,"word":"HUAWEI&#x20;P30"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086912255346.html","fontColor":"#CF0A2C","id":486,"inSearchBox":1,"isActivityWords":1,"priority":-47,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;9X"},{"activityUrl":"","fontColor":"","id":434,"inSearchBox":1,"isActivityWords":0,"priority":-48,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5&#x20;Pro"},{"activityUrl":"","fontColor":"#CF0A2C","id":386,"inSearchBox":1,"isActivityWords":0,"priority":-53,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20"},{"activityUrl":"","fontColor":"","id":432,"inSearchBox":1,"isActivityWords":0,"priority":-56,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":502,"inSearchBox":1,"isActivityWords":1,"priority":-57,"saleChannel":1,"tagType":0,"type":1,"word":"&#x674e;&#x73b0;&#x7684;&#x793c;&#x7269;"},{"activityUrl":"","fontColor":"","id":430,"inSearchBox":0,"isActivityWords":0,"priority":-58,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5i"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086291072503.html","fontColor":"#CF0A2C","id":522,"inSearchBox":1,"isActivityWords":1,"priority":-59,"saleChannel":1,"tagType":1,"type":1,"word":"&#x7545;&#x4eab;10&#x20;Plus"}]' || null) || [];
+            ec.search.searchArr = JSON.parse('[{"activityUrl":"","fontColor":"","id":528,"inSearchBox":0,"isActivityWords":0,"priority":26,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7545;&#x4eab;10&#x20;P"},{"activityUrl":"","fontColor":"","id":404,"inSearchBox":0,"isActivityWords":0,"priority":24,"saleChannel":1,"tagType":0,"type":1,"word":"HUAWEI&#x20;Mate&#x20;20&#x20;Pro"},{"activityUrl":"","fontColor":"","id":408,"inSearchBox":0,"isActivityWords":0,"priority":22,"saleChannel":1,"tagType":0,"type":1,"word":"&#x9ea6;&#x8292;8"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":514,"inSearchBox":0,"isActivityWords":1,"priority":20,"saleChannel":1,"tagType":0,"type":1,"word":"20s"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":512,"inSearchBox":0,"isActivityWords":1,"priority":19,"saleChannel":1,"tagType":0,"type":1,"word":"20S"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":506,"inSearchBox":0,"isActivityWords":1,"priority":17,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20s"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":462,"inSearchBox":0,"isActivityWords":1,"priority":14,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x7535;&#x89c6;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":460,"inSearchBox":0,"isActivityWords":1,"priority":13,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x667a;&#x6167;&#x5c4f;&#x7535;&#x89c6;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwdp.html","fontColor":"","id":458,"inSearchBox":0,"isActivityWords":1,"priority":12,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086097747140.html","fontColor":"","id":456,"inSearchBox":0,"isActivityWords":1,"priority":11,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x7535;&#x89c6;"},{"activityUrl":"","fontColor":"","id":454,"inSearchBox":0,"isActivityWords":0,"priority":10,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x5927;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":452,"inSearchBox":0,"isActivityWords":0,"priority":9,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":450,"inSearchBox":0,"isActivityWords":0,"priority":8,"saleChannel":1,"tagType":0,"type":1,"word":"&#x667a;&#x6167;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086912255346.html","fontColor":"","id":444,"inSearchBox":0,"isActivityWords":1,"priority":7,"saleChannel":1,"tagType":0,"type":1,"word":"9X"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;product&#x2f;10086136565358.html","fontColor":"","id":422,"inSearchBox":0,"isActivityWords":1,"priority":5,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7535;&#x78c1;&#x7089;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;openTest","fontColor":"","id":418,"inSearchBox":0,"isActivityWords":1,"priority":3,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x4f17;&#x6d4b;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;m.vmall.com&#x2f;openTest","fontColor":"","id":416,"inSearchBox":0,"isActivityWords":1,"priority":2,"saleChannel":1,"tagType":0,"type":1,"word":"&#x4f17;&#x6d4b;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":366,"inSearchBox":0,"isActivityWords":1,"priority":0,"saleChannel":1,"tagType":0,"type":1,"word":"&#x5ef6;&#x957f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"","fontColor":"","id":530,"inSearchBox":1,"isActivityWords":0,"priority":-1,"saleChannel":1,"tagType":0,"type":2,"word":"&#x7545;&#x4eab;10&#x20;Plus"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":364,"inSearchBox":0,"isActivityWords":1,"priority":-1,"saleChannel":1,"tagType":0,"type":1,"word":"&#x5ef6;&#x4fdd;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;pseries.html","fontColor":"#CF0A2C","id":288,"inSearchBox":1,"isActivityWords":1,"priority":-2,"saleChannel":1,"tagType":0,"type":2,"word":"HUAWEI&#x20;P30"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":362,"inSearchBox":0,"isActivityWords":1,"priority":-2,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x5ef6;&#x957f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;tcsProductIndex","fontColor":"","id":360,"inSearchBox":0,"isActivityWords":1,"priority":-3,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x5ef6;&#x957f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":358,"inSearchBox":0,"isActivityWords":1,"priority":-4,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x670d;&#x52a1;"},{"id":226,"inSearchBox":1,"isActivityWords":0,"priority":-4,"saleChannel":1,"tagType":0,"type":2,"word":"HUAWEI&#x20;Mate&#x20;20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":356,"inSearchBox":0,"isActivityWords":1,"priority":-5,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;","fontColor":"","id":354,"inSearchBox":0,"isActivityWords":1,"priority":-6,"saleChannel":1,"tagType":0,"type":1,"word":"&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":352,"inSearchBox":0,"isActivityWords":1,"priority":-7,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x788e;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":350,"inSearchBox":0,"isActivityWords":1,"priority":-8,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":348,"inSearchBox":0,"isActivityWords":1,"priority":-9,"saleChannel":1,"tagType":0,"type":1,"word":"&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":346,"inSearchBox":0,"isActivityWords":1,"priority":-10,"saleChannel":1,"tagType":0,"type":1,"word":"&#x6362;&#x7535;&#x6c60;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":342,"inSearchBox":0,"isActivityWords":1,"priority":-11,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;"},{"activityUrl":"","fontColor":"","id":250,"inSearchBox":1,"isActivityWords":0,"priority":-11,"saleChannel":1,"tagType":0,"type":3,"word":"&#x8363;&#x8000;V20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086226569988.html","fontColor":"#CF0A2C","id":47,"inSearchBox":1,"isActivityWords":1,"priority":-12,"saleChannel":1,"tagType":0,"type":3,"word":"&#x8363;&#x8000;20"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":308,"inSearchBox":0,"isActivityWords":1,"priority":-12,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":336,"inSearchBox":0,"isActivityWords":1,"priority":-13,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":306,"inSearchBox":0,"isActivityWords":1,"priority":-14,"saleChannel":1,"tagType":0,"type":1,"word":"&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":338,"inSearchBox":0,"isActivityWords":1,"priority":-15,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;accidental-screen-damage-cover&#x2f;","fontColor":"","id":304,"inSearchBox":0,"isActivityWords":1,"priority":-16,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x788e;&#x5c4f;&#x670d;&#x52a1;&#x5b9d;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":340,"inSearchBox":0,"isActivityWords":1,"priority":-17,"saleChannel":1,"tagType":0,"type":1,"word":"&#x65e0;&#x5fe7;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":322,"inSearchBox":0,"isActivityWords":1,"priority":-18,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x65e0;&#x5fe7;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":318,"inSearchBox":0,"isActivityWords":1,"priority":-19,"saleChannel":1,"tagType":0,"type":1,"word":"&#x65e0;&#x5fe7;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;consumer.huawei.com&#x2f;cn&#x2f;support&#x2f;service-plus&#x2f;","fontColor":"","id":302,"inSearchBox":0,"isActivityWords":1,"priority":-20,"saleChannel":1,"tagType":0,"type":1,"word":"&#x534e;&#x4e3a;&#x65e0;&#x5fe7;&#x670d;&#x52a1;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":344,"inSearchBox":0,"isActivityWords":1,"priority":-21,"saleChannel":1,"tagType":0,"type":1,"word":"&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":298,"inSearchBox":0,"isActivityWords":1,"priority":-22,"saleChannel":1,"tagType":0,"type":1,"word":"&#x4e00;&#x53e3;&#x4ef7;&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;order&#x2f;batteryRenew","fontColor":"","id":296,"inSearchBox":0,"isActivityWords":1,"priority":-23,"saleChannel":1,"tagType":0,"type":1,"word":"99&#x5143;&#x6362;&#x7535;&#x6c60;"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;sale.vmall.com&#x2f;hwmate.html","fontColor":"","id":488,"inSearchBox":1,"isActivityWords":1,"priority":-32,"saleChannel":1,"tagType":0,"type":1,"word":"5G"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"#CF0A2C","id":510,"inSearchBox":1,"isActivityWords":1,"priority":-41,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20S"},{"activityUrl":"","fontColor":"#CF0A2C","id":494,"inSearchBox":1,"isActivityWords":0,"priority":-42,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5i&#x20;Pro"},{"activityUrl":"","fontColor":"#CF0A2C","id":496,"inSearchBox":1,"isActivityWords":0,"priority":-43,"saleChannel":1,"tagType":0,"type":1,"word":"Mate&#x20;20&#x20;X&#x20;&#x28;5G&#x29;"},{"activityUrl":"","fontColor":"#CF0A2C","id":254,"inSearchBox":1,"isActivityWords":0,"priority":-44,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20i"},{"activityUrl":"","fontColor":"#CF0A2C","id":286,"inSearchBox":1,"isActivityWords":0,"priority":-46,"saleChannel":1,"tagType":0,"type":1,"word":"HUAWEI&#x20;P30"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086912255346.html","fontColor":"#CF0A2C","id":486,"inSearchBox":1,"isActivityWords":1,"priority":-47,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;9X"},{"activityUrl":"","fontColor":"","id":434,"inSearchBox":1,"isActivityWords":0,"priority":-48,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5&#x20;Pro"},{"activityUrl":"","fontColor":"#CF0A2C","id":386,"inSearchBox":1,"isActivityWords":0,"priority":-53,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;20"},{"activityUrl":"","fontColor":"","id":432,"inSearchBox":1,"isActivityWords":0,"priority":-56,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086452612142.html","fontColor":"","id":502,"inSearchBox":1,"isActivityWords":1,"priority":-57,"saleChannel":1,"tagType":0,"type":1,"word":"&#x674e;&#x73b0;&#x7684;&#x793c;&#x7269;"},{"activityUrl":"","fontColor":"","id":430,"inSearchBox":0,"isActivityWords":0,"priority":-58,"saleChannel":1,"tagType":0,"type":1,"word":"nova&#x20;5i"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086693893548.html","fontColor":"#CF0A2C","id":546,"inSearchBox":1,"isActivityWords":1,"priority":-59,"saleChannel":1,"tagType":0,"type":1,"word":"&#x8363;&#x8000;Play3"},{"activityUrl":"https&#x3a;&#x2f;&#x2f;www.vmall.com&#x2f;product&#x2f;10086291072503.html","fontColor":"#CF0A2C","id":522,"inSearchBox":1,"isActivityWords":1,"priority":-60,"saleChannel":1,"tagType":1,"type":1,"word":"&#x7545;&#x4eab;10&#x20;Plus"}]' || null) || [];
             $("#search-kw").val('');
             if (typeof (topSearchKeyword) != "undefined") {
                 var keyword = topSearchKeyword;
@@ -1969,11 +1875,11 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
 
         (function () {
             /*
-                    *   专区导航下拉列表
-                    *   @version 1.2.0
-                    *   @update 2017-05-08
-                    *
-                    * */
+             *   专区导航下拉列表
+             *   @version 1.2.0
+             *   @update 2017-05-08
+             *
+             * */
             var $nav = $('.naver li'),
                 $naverSub = $('.naver-sub'),
                 navLen = $nav.length,
@@ -2096,71 +2002,12 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
             }
         })();
     </script>
-    <script>
-        $("body").addClass("wide detail");
-        ec.agreement = ec.agreement || {};
-        ec.agreement.prdshow = Number('1');
-    </script>
-    <style>
-        #product-recommend-all2 .product-recommend-thumbs a p {
-            text-align: center;
-        }
-
-        #product-recommend-all2 .product-recommend-thumbs .price {
-            text-align: center;
-            text-indent: 0;
-        }
-    </style>
-
-    <input type="hidden" id="pro-global-parameter" data-skulist-rushbuy=""
-           data-skulist="10086833888855,10086878807295,10086901714224,10086880383878,10086915161432,10086556686259"
-           data-skucodelist="2601010132401,2601010132403,2601010132404,2601010132406,2601010132407,2601010132409">
-
-
-    <input type="hidden"
-           value="https://hwid1.vmall.com/oauth2/userCenter/hwAccount?reqClientType=26&amp;loginChannel=26000000&amp;themeName=cloudTheme&amp;lang=zh-cn"
-           id="notFinishAllUPDataURL">
-    <input type="hidden" value="/authmember/accesstoken" id="authUrl">
-    <input type="hidden"
-           value="https://hwid1.vmall.com/oauth2/userCenter/hwAccount?reqClientType=26&amp;loginChannel=26000000&amp;themeName=cloudTheme&amp;lang=zh-cn"
-           id="accountCenterUrl">
-    <input type="hidden" value="" id="packageCode">
-    <input type="hidden" value="" id="packageListCode">
-
-{#    <div class="hr-10"></div>#}
-
-
-{#    <div class="g">详细导航,暂停#}
-            <!--面包屑 -->
-{#            <div class="breadcrumb-area fcn"><a href="https://www.vmall.com/index.html" title="首页">首页</a>&nbsp;&gt;&nbsp;<a#}
-{#                    href="https://www.vmall.com/list-36" title="手机">手机</a>&nbsp;&gt;&nbsp;<a#}
-{#                    href="https://www.vmall.com/list-75" title="荣耀">荣耀</a>&nbsp;&gt;&nbsp;#}
-{#                <span id="bread-pro-name">【100元订金】荣耀Play3 6.39英寸魅眼全视屏 4000mAh大电池 真4800万AI三摄 麒麟710F自研芯片 全网通4GB+64GB （幻夜黑）</span>#}
-{#            </div>#}
-{#    </div>#}
-{#    <div class="hr-10"></div>#}
-
-
-    <!-- 20170519-弹出层-优惠卷-start -->
-    {#<textarea class="hide" id="pro-roll-textarea">	&lt;div class="product-roll hide" id="pro-roll-page" &gt;#}
-    {#	    &lt;div id="pro-roll-list" class="product-roll-list"&gt;#}
-    {#	        &lt;ul class="clearfix"&gt;#}
-    {#	            &lt;li class="product-roll-detail"&gt;#}
-    {#	            &lt;/li&gt;#}
-    {#	        &lt;/ul&gt;       #}
-    {#	    &lt;/div&gt;#}
-    {#	&lt;/div&gt;#}
-    {#	&lt;p id="pro-roll-message" class="product-layer-tips" style="min-height:18px; padding:10px 20px;"&gt;&lt;/p&gt;#}
-    {#</textarea>#}
-
-    <!-- 20170519-弹出层-优惠卷-end -->
 {% endblock top %}
-
 
 {% block content %}
 
-
 {% endblock content %}
+
 
 {% block foot %}
     <!--口号-20121025 -->
@@ -2423,7 +2270,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                     </dd>
                     <dd>
                         <a id="tools-nav-service-robotim-button" rel="nofollow" class="service-btn btn-line-primary"
-                           href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Fproduct%2F10086608835751.html&amp;k=1&amp;from=06&amp;remark=10086608835751"
+                           href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Flist-36&amp;k=1&amp;from=06&amp;remark="
                            target="_blank" style="display: block;"><i class=""></i> 在线客服</a>
                     </dd>
                 </dl>
@@ -2490,20 +2337,6 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <div class="f"><s class="icon-arrow-down"></s></div>
     </div>
 
-    {#<!-- 2018-10-26-悬浮工具栏-start -->#}
-    {#<div class="hungBar j-hungBar">#}
-    {#    <div class="hungBar-content">#}
-    {#        <a target="_blank" onclick="pushRightHelpMsg(1)" href="https://www.vmall.com/cart2" timetype="timestamp"#}
-    {#           class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>#}
-    {#        <a target="_blank" id="tools-nav-service-robotim" onclick="pushRightHelpMsg(2)"#}
-    {#           href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Fproduct%2F10086608835751.html&amp;k=1&amp;from=06&amp;remark=10086608835751"#}
-    {#           class="hungBar-service" title="在线客服" style="display: block;"><i>在线客服</i></a>#}
-    {#        <a id="tools-nav-survery" onclick="ec.survery.open();pushRightHelpMsg(3)" href="javascript:;"#}
-    {#           class="hungBar-feedback" title="意见反馈" style="display: block;"><i>意见反馈</i></a>#}
-    {#        <a href="javascript:;" class="hungBar-top" title="返回顶部" id="hungBar-top" style="display: none;"><i>返回顶部</i></a>#}
-    {#    </div>#}
-    {#</div>#}
-    {#<!-- 2018-10-26-悬浮工具栏-end -->#}
 
 
     <!--意见反馈box-->
@@ -2582,7 +2415,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                                 </table>
                                             </div>
                                             <input name="CsrfToken" type="hidden"
-                                                   value="FD8BD100AD9FCE5A8267CC1E8E68A5D9D695118DE669ACFB"></form>
+                                                   value="1DF3465F9B21C384F104D934623AABB429B4BFCA20CB254C"></form>
                                     </div>
                                 </div>
                             </div>
@@ -2606,7 +2439,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
          mediapath="https://res.vmallres.com/pimages/"></div>
 
     <form action="/order/confirmcart" id="miniCartForm" method="post"><input name="CsrfToken" type="hidden"
-                                                                             value="FD8BD100AD9FCE5A8267CC1E8E68A5D9D695118DE669ACFB">
+                                                                             value="1DF3465F9B21C384F104D934623AABB429B4BFCA20CB254C">
     </form>
     <!-- 2017-02-15-底部-start -->
     <div class="footer-container">
@@ -2847,7 +2680,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
 
         function pushMyOrderMsg() {
             ec.account.afterLogin(function () {
-                ec.redirectTo("https://www.vmall.com/member/order?t=1568269281306timestamp");
+                ec.redirectTo("https://www.vmall.com/member/order?t=1568791745531timestamp");
             });
             ec.dapClick(300000301, {
                 "click": "1"
@@ -2957,13 +2790,11 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
     </script>
 
     <iframe style="display: none;" src="javascript:false"></iframe>
-    <script src="{% static 'js/dmpa-min.js' %}" async="" id="dmpa"></script>
-    <script src="{% static 'js/vmallcsrf.js' %}"></script>
-    <div id="ec_mask" class="ec_mask"
-         style="opacity: 0.2; background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 0px; height: 0px; visibility: hidden;"></div>
-    <div id="ec_ui_loading" class="ec_ui_loading" style="display: none;"></div>
-
-
+    <script src="{% static 'base_new/js/dmpa-min.js' %}"
+            async="" id="dmpa"></script>
+    <script src="{% static 'base_new/js/vmallcsrf.js' %}"></script>
 {% endblock foot %}
-
 </body>
+
+
+</html>

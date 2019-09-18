@@ -1,18 +1,14 @@
 from random import randint
-
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
 from django.views.generic import ListView
-
-# Create your views here.
-
-# 首页
-from App.forms import RegisterForm
+from App.forms import RegisterForm, FindpasswordForm
 from tools.sms import send_sms
 from App.models import User, Userinfo
+from django.contrib import auth
 
-
+# 首页
 class IndexView(ListView):
     template_name = 'index_new.html'
 
@@ -23,19 +19,10 @@ class IndexView(ListView):
         return render(request, 'index_new.html')
 
 
-# 注册
-# class RegisterView(ListView):
-#     template_name = 'register.html'
-#
-#     def get(self, request, *args, **kwargs):
-#         return render(request, 'register.html')
-#
-#     def post(self, request, *args, **kwargs):
-#         return render(request, 'register.html')
-
+# 验证码
 def yzm(request):
     # 将验证码保存到session
-    a=str(randint(1009, 9999))
+    a = str(randint(1009, 9999))
     res = send_sms(request.POST.get('mobile'), {'number': a})
     print(res)
     request.session['code'] = a
@@ -43,6 +30,7 @@ def yzm(request):
     return HttpResponse(request)
 
 
+# 注册
 class RegisterView(ListView):
     template_name = 'register.html'
 
@@ -64,11 +52,10 @@ class RegisterView(ListView):
         # 如果验证码不匹配
         if not res:
             form.errors['yzm'] = "验证码不匹配,请重新验证"
-        print(form,form.is_valid())
+        print(form, form.is_valid())
         if res and form.is_valid():
-            print('==========')# 验证通过
+            print('==========')  # 验证通过
             request.session.clear()
-
 
             username = form.cleaned_data.get('mobile')
 
@@ -76,16 +63,62 @@ class RegisterView(ListView):
 
             birthday = form.cleaned_data.get('birthday')
             print(000000000000000000000000)
-            User.objects.create_user(username=username,email=None,password=password)
-            user=User.objects.get(username=username)
-            user.birthday=birthday
+            User.objects.create_user(username=username, email=None, password=password)
+            user = User.objects.get(username=username)
+            user.birthday = birthday
             user.save()
             login(request, user)
             return redirect(reverse('app:index'))
 
-        return render(request,'register.html')
+        return render(request, 'register.html')
+
+
+# 找回密码
+class FindpasswordView(ListView):
+    template_name = 'findpassword1.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'findpassword1.html')
+
+    def post(self, request, *args, **kwargs):
+        form = FindpasswordForm(request.POST)
+
+        # 验证码验证
+
+        yzm1 = request.POST.get('message')
+        yzm2 = request.session.get('code')
+        # 判定验证码是否匹配
+        print(yzm1, yzm2)
+        res = (yzm1 == yzm2)
+        # 如果验证码不匹配
+        if not res:
+            form.errors['yzm'] = "验证码不匹配,请重新验证"
+        print(form, form.is_valid())
+        if res and form.is_valid():
+            print('==========')  # 验证通过
+            request.session.clear()
+
+            username = form.cleaned_data.get('mobile')
+
+            new_password = form.cleaned_data.get('password')
+            user = User.objects.get(username=username)
+
+            print(username)
+
+
+            user.set_password(new_password)
+            user.save()
+
+            login(request, user)
+            return redirect(reverse('app:index'))
+
+        return render(request, 'findpassword1.html')
+
 
 # 登录华为
+dict = {}
+
+
 class LoginHuaweiView(ListView):
     template_name = 'login.html'
 
@@ -93,7 +126,71 @@ class LoginHuaweiView(ListView):
         return render(request, 'login.html')
 
     def post(self, request, *args, **kwargs):
-        return render(request, 'login.html')
+
+        while True:
+            global dict
+
+            if request.POST.get('denglu1'):
+                print(dict, type(dict))
+                username = request.POST.get('userAccount')
+                password = request.POST.get('password')
+
+                user = authenticate(request, username=username, password=password)
+
+                if user and User.objects.get(username=request.POST.get('userAccount')).is_active == 1:
+                    # 登录，写入session，并把user写入request
+
+                    # 自动登录处理
+
+                    login(request, user)
+                    dict.clear()
+
+                    return redirect(reverse('app:index'))
+                else:
+
+                    if dict.get(username) and dict.get(username) > 1:
+                        dict.clear()
+                        user = User.objects.get(username=request.POST.get('userAccount'))
+                        user.is_active = 0
+                        user.save()
+
+                    else:
+                        if dict.get(username):
+                            dict[username] += 1
+                        else:
+                            dict[username] = 1
+
+
+            elif request.POST.get('denglu2'):
+                yzm1 = request.POST.get('message')
+                yzm2 = request.session.get('code')
+                print(yzm1, yzm2)
+                print(request.POST.get('mobile'))
+                if yzm1 == yzm2 and User.objects.filter(
+                        username=request.POST.get('mobile')).exists() and User.objects.get(
+                    username=request.POST.get('mobile')).is_active == 1:
+                    user = User.objects.get(username=request.POST.get('mobile'))
+
+                    # 登录，写入session，并把user写入request
+                    # 自动登录处理
+
+                    login(request, user)
+                    dict.clear()
+
+                    return redirect(reverse('app:index'))
+                else:
+                    if dict.get(request.POST.get('mobile')) and dict.get(request.POST.get('mobile')) > 1:
+                        dict.clear()
+                        user = User.objects.get(username=request.POST.get('mobile'))
+                        user.is_active = 0
+                        user.save()
+                    else:
+
+                        if dict.get(request.POST.get('mobile')):
+                            dict[request.POST.get('mobile')] += 1
+                        else:
+                            dict[request.POST.get('mobile')] = 1
+            return render(request, 'login.html')
 
 
 # 顶部+底部 的继承
@@ -105,6 +202,28 @@ class TopView(ListView):
 
     def post(self, request, *args, **kwargs):
         return render(request, 'base.html')
+
+
+# 顶部+底部 的继承  测试1
+class Top1View(ListView):
+    template_name = 'base1.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'base1.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'base1.html')
+
+
+# 顶部+底部 的继承  测试2
+class Top2View(ListView):
+    template_name = 'base_new1.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'base_new1.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'base_new1.html')
 
 
 # 商品详情
@@ -140,6 +259,34 @@ class PcListView(ListView):
         return render(request, 'pclist.html')
 
 
-#
+# 智能穿戴
 class WatchView(ListView):
     template_name = 'watchlist.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'watchlist.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'watchlist.html')
+
+
+# 个人中心
+class MyCenterView(ListView):
+    template_name = 'mycenter.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'mycenter.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'mycenter.html')
+
+
+# 个人中心-测试
+class MyCenter1View(ListView):
+    template_name = 'mycenter1.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'mycenter1.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'mycenter1.html')
