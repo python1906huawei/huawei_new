@@ -10,6 +10,7 @@ from tools.sms import send_sms
 from App.models import User, Userinfo, Product
 from django.contrib import auth
 
+
 # 首页
 class IndexView(ListView):
     template_name = 'index_new.html'
@@ -118,7 +119,6 @@ class FindpasswordView(ListView):
 
             print(username)
 
-
             user.set_password(new_password)
             user.save()
 
@@ -209,6 +209,7 @@ class LoginHuaweiView(ListView):
 # 退出登录
 class LogOutView(ListView):
     template_name = 'index_new.html'
+
     def get(self, request, *args, **kwargs):
         logout(request)
         return render(request, 'index_new.html')
@@ -216,7 +217,6 @@ class LogOutView(ListView):
     def post(self, request, *args, **kwargs):
         logout(request)
         return render(request, 'index_new.html')
-
 
 
 # 顶部+底部 的继承
@@ -241,12 +241,12 @@ class LogOutView(ListView):
 #         }
 #         return context
 def topview(request):
-
     # products=[Product.objects.filter(type=0),Product.objects.filter(type=1),Product.objects.filter(type=2)]
-    products=Product.objects.filter(type=0).all()
+    products = Product.objects.filter(type=0).all()
     print(products)
 
-    return render(request,'base.html',locals())
+    return render(request, 'base.html', locals())
+
 
 # class TopView2(ListView):
 #     template_name = 'base.html'
@@ -294,22 +294,30 @@ class DetailView(ListView):
 
 # 手机列表
 class PhoneListView(ListView):
-
     template_name = 'phone_list.html'
 
-
     def get_queryset(self):
-        print(self.request.GET.get('type'),'=============')
-        if self.request.GET.get('type')=='0':
-            queryset=Product.objects.filter(status=1,is_delete=0,type=0,inventory__gt=0)
-            print('111111111111111111111111111',Product.objects.filter(status=1,is_delete=0,type=0,inventory__gt=0))
+        print(self.request.GET.get('type'), '=============')
+        if self.request.GET.get('type') == '0':
+            queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0)]
+            print('111111111111111111111111111', Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0))
             return queryset
-        elif self.request.GET.get('type')=='1':
+        elif self.request.GET.get('type') == '1':
 
-            queryset=Product.objects.filter(status=1,is_delete=0,type=1,inventory__gt=0)
+            queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0)]
             return queryset
         elif self.request.GET.get('type') == '2':
-            queryset=Product.objects.filter(status=1,is_delete=0,type=2,inventory__gt=0)
+            queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                        Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0)]
+
             return queryset
 
 

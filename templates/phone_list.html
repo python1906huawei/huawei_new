@@ -102,18 +102,18 @@
             <!-- 20140727-商品列表-start -->
             <div class="pro-list clearfix">
                 <ul>
-                    {% for product in object_list %}
+                    {% for product in object_list.3 %}
 
                         <li data-pid="10086387384591" data-scode="2601010133204" data-sname="{{ product.name }}">
                             <div class="pro-panels">
                                 <p class="p-img"><a target="_blank"
-                                                    href="https://www.vmall.com/product/10086387384591.html"
+                                                    href="{% url 'app:detail' %}?pid={{ product.pid }}"
                                                     title="{{product.name}}"><img
                                         src="/static/images/{{ product.image }}"></a>
                                 </p>
                                 <p class="p-name">
-                                    <a target="_blank" href="https://www.vmall.com/product/10086387384591.html"
-                                       title="荣耀Play3e">
+                                    <a href="{% url 'app:detail' %}?pid={{ product.pid }}"
+                                       title="{{ product.name }}">
                                         <span>{{ product.name }}</span>
 
                                     </a>

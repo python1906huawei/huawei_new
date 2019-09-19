@@ -1256,8 +1256,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <div class="layout">
             <div class="left">
                 <!-- 2017-02-15-logo-start -->
-                <div class="logo"><a href="{% url 'app:index' %}" title="Vmall.com - 华为商城"
-                                     onclick="pushLogoClickMsg('https://res.vmallres.com/pimages//sale/2018-11/x9a6U8WW0bhrA7u0FIlY.png','https\x3A\x2F\x2Fwww.vmall.com\x2Findex.html')"><img
+                <div class="logo"><a href="{% url 'app:index' %}" title="Vmall.com - 华为商城"><img
                         src="{% static 'images/x9a6U8WW0bhrA7u0FIlY.png' %}"
                         alt="Vmall.com - 华为商城"></a></div>
                 <!-- 2017-02-15-logo-end -->
@@ -1285,13 +1284,9 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                 </div>
 
                 <div class="naver-sub hide" id="naver-sub-category" style="display: none;">
-
                     <div id="naverSub00" class="naver-sub-wrap hide" style="display: none;">
-
-
                         <ul id="zxnav_0_prolist" class="grid-list clearfix">
-                            {{ products }}
-                            {% for product in object_list %}
+                            {% for product in object_list.0 %}
                                 <li class="grid-items" onmouseenter="fixCurrent(this)"
                                     onmouseleave="leaveCurrent(this)"><a
                                         class="thumb" target="_blank"
@@ -1299,121 +1294,45 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                     <p class="grid-img"><img alt=""
                                                              src="/static/images/{{ product.image }}">
                                     </p>
-                                    <div class="grid-title">{{ product.name }}777</div>
-                                    <p class="grid-price">¥{{ product.price }}100</p></a></li>
+                                    <div class="grid-title">{{ product.name }}</div>
+                                    <p class="grid-price">¥{{ product.price }}</p></a>
+                                </li>
                             {% endfor %}
-
-
                         </ul>
-
-
                         <input id="zxnav_0_skuIds" type="hidden"
                                value="10086299173518,10086087893146,10086407020352,10086785092314,10086534716564,10086494944305,">
                     </div>
                     <div id="naverSub01" class="naver-sub-wrap hide" style="display: none;">
                         <ul id="zxnav_1_prolist" class="grid-list clearfix">
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086961613928.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1563869539329mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀 MagicBook Pro</div>
-                                <p class="grid-price">¥5499</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086441039650.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1560758954741mp.png' %}">
-                                </p>
-                                <div class="grid-title">华为平板 M6 10英寸</div>
-                                <p class="grid-price">¥2299</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086786653860.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1554717442802mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀MagicBook</div>
-                                <p class="grid-price">¥4299</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086894427418.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1555752034219mp.png' %}">
-                                </p>
-                                <div class="grid-title">HUAWEI MateBook X Pro（2019）</div>
-                                <p class="grid-price">¥8999</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086527872485.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1539243364035mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀平板5 10.1英寸</div>
-                                <p class="grid-price">¥1199</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086048814932.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1555751874478mp.png' %}">
-                                </p>
-                                <div class="grid-title">HUAWEI MateBook 14</div>
-                                <p class="grid-price">¥5999</p></a></li>
+                            {% for product in object_list.1 %}
+                                <li class="grid-items" onmouseenter="fixCurrent(this)"
+                                    onmouseleave="leaveCurrent(this)"><a
+                                        class="thumb" target="_blank"
+                                        href="https://www.vmall.com/product/10086961613928.html">
+                                    <p class="grid-img"><img alt=""
+                                                             src="/static/images/{{ product.image }}">
+                                    </p>
+                                    <div class="grid-title">{{ product.name }}</div>
+                                    <p class="grid-price">¥{{ product.price }}</p></a></li>
+                            {% endfor %}
+
                         </ul>
                         <input id="zxnav_1_skuIds" type="hidden"
                                value="10086051430538,10086777453690,10086442274711,10086433295367,10086466203116,10086302369679,">
                     </div>
                     <div id="naverSub02" class="naver-sub-wrap hide" style="display: none;">
                         <ul id="zxnav_2_prolist" class="grid-list clearfix">
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086127035863.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1553502823158mp.png' %}">
-                                </p>
-                                <div class="grid-title">HUAWEI WATCH GT</div>
-                                <p class="grid-price">¥1488</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086268042691.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1540544249192mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀手表</div>
-                                <p class="grid-price">¥699</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086761611038.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1552011301146mp.png' %}">
-                                </p>
-                                <div class="grid-title">华为手环 3 Pro</div>
-                                <p class="grid-price">¥399</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086698946208.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1562750353603mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀手环 5</div>
-                                <p class="grid-price">¥189</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086343311895.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1554811663118mp.png' %}">
-                                </p>
-                                <div class="grid-title">华为儿童手表 3</div>
-                                <p class="grid-price">¥398</p></a></li>
-                            <li class="grid-items" onmouseenter="fixCurrent(this)" onmouseleave="leaveCurrent(this)"><a
-                                    class="thumb" target="_blank"
-                                    href="https://www.vmall.com/product/10086686072684.html">
-                                <p class="grid-img"><img alt=""
-                                                         src="{% static 'images/142_142_1540628828647mp.png' %}">
-                                </p>
-                                <div class="grid-title">荣耀手环4 标准版</div>
-                                <p class="grid-price">¥169</p></a></li>
+                            {% for product in object_list.2 %}
+                                <li class="grid-items" onmouseenter="fixCurrent(this)"
+                                    onmouseleave="leaveCurrent(this)"><a
+                                        class="thumb" target="_blank"FF
+                                        href="https://www.vmall.com/product/10086127035863.html">
+                                    <p class="grid-img"><img alt=""
+                                                             src="/static/images/{{ product.image }}">
+                                    </p>
+                                    <div class="grid-title">{{ product.name }}</div>
+                                    <p class="grid-price">¥{{ product.price }}</p></a></li>
+                            {% endfor %}
                         </ul>
                         <input id="zxnav_2_skuIds" type="hidden"
                                value="10086020416497,10086253509221,10086031937715,10086233286421,10086017012148,10086455419044,">
