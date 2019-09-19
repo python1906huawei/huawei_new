@@ -51,6 +51,7 @@
         <meta name="keywords" content="【100元订金】荣耀Play3,【100元订金】荣耀Play3价格,【100元订金】荣耀Play3怎么样,华为商城">
         <meta name="description" content="【100元订金】荣耀Play3官方渠道售卖！华为商城提供最新款的【100元订金】荣耀Play3的价格、参数、图片等信息。官方品质保证，欢迎选购！">
         <link rel="shortcut icon" href="https://www.vmall.com/favicon.ico">
+
         <link href="{% static 'css/ec.css' %}" rel="stylesheet" type="text/css">
 
         <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
@@ -1265,7 +1266,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                 <div class="naver">
                     <ul id="naver" class="clearfix">
                         <li id="zxnav_0" data-id="0">
-                            <a href="{% url 'app:phonelist' %}?type=0" ><span>手机</span></a>
+                            <a href="{% url 'app:phonelist' %}?type=0"><span>手机</span></a>
                             <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
                         </li>
@@ -1288,28 +1289,22 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                     <div id="naverSub00" class="naver-sub-wrap hide" style="display: none;">
 
 
-
-                                <ul id="zxnav_0_prolist" class="grid-list clearfix">
-                                {{ products }}
-{% for product in object_list %}
-                                    <li class="grid-items" onmouseenter="fixCurrent(this)"
-                                        onmouseleave="leaveCurrent(this)"><a
-                                            class="thumb" target="_blank"
-                                            href="https://www.vmall.com/product/10086718678107.html">
-                                        <p class="grid-img"><img alt=""
-                                                                 src="/static/images/{{ product.image }}">
-                                        </p>
-                                        <div class="grid-title">{{ product.name }}777</div>
-                                        <p class="grid-price">¥{{ product.price }}100</p></a></li>
-                                    {% endfor %}
-
+                        <ul id="zxnav_0_prolist" class="grid-list clearfix">
+                            {{ products }}
+                            {% for product in object_list %}
+                                <li class="grid-items" onmouseenter="fixCurrent(this)"
+                                    onmouseleave="leaveCurrent(this)"><a
+                                        class="thumb" target="_blank"
+                                        href="https://www.vmall.com/product/10086718678107.html">
+                                    <p class="grid-img"><img alt=""
+                                                             src="/static/images/{{ product.image }}">
+                                    </p>
+                                    <div class="grid-title">{{ product.name }}777</div>
+                                    <p class="grid-price">¥{{ product.price }}100</p></a></li>
+                            {% endfor %}
 
 
-
-
-
-                                </ul>
-
+                        </ul>
 
 
                         <input id="zxnav_0_skuIds" type="hidden"

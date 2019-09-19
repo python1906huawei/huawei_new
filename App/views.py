@@ -346,3 +346,11 @@ class MyCenterView(ListView):
         return render(request, 'mycenter.html')
 
 
+class ShoppingView(ListView):
+    template_name = 'shopping.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'shopping.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'shopping.html')

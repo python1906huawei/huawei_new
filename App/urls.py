@@ -43,5 +43,8 @@ urlpatterns = [
     # 个人中心
     url(r'^mycenter/$', views.MyCenterView.as_view(), name='mycenter'),
 
+    # 购物车
+    url(r'^shopping/$', views.ShoppingView.as_view(), name='shopping')
+
 
 ]
