@@ -241,11 +241,11 @@ class LogOutView(ListView):
 #         }
 #         return context
 def topview(request):
-    if request.method=='POST':
-        products=Product.objects.filter(type=0)
+
     # products=[Product.objects.filter(type=0),Product.objects.filter(type=1),Product.objects.filter(type=2)]
     products=Product.objects.filter(type=0).all()
     print(products)
+
     return render(request,'base.html',locals())
 
 # class TopView2(ListView):
@@ -294,15 +294,24 @@ class DetailView(ListView):
 
 # 手机列表
 class PhoneListView(ListView):
-    queryset = Product.objects.filter(status=1,inventory__gt=0).all()
 
     template_name = 'phone_list.html'
-    paginate_by = 3
+
 
     def get_queryset(self):
-        if self.request.GET.get(''):
-            return self.queryset
-        return self.queryset
+        print(self.request.GET.get('type'),'=============')
+        if self.request.GET.get('type')=='0':
+            queryset=Product.objects.filter(status=1,is_delete=0,type=0,inventory__gt=0)
+            print('111111111111111111111111111',Product.objects.filter(status=1,is_delete=0,type=0,inventory__gt=0))
+            return queryset
+        elif self.request.GET.get('type')=='1':
+
+            queryset=Product.objects.filter(status=1,is_delete=0,type=1,inventory__gt=0)
+            return queryset
+        elif self.request.GET.get('type') == '2':
+            queryset=Product.objects.filter(status=1,is_delete=0,type=2,inventory__gt=0)
+            return queryset
+
 
 # 电脑平板列表
 class PcListView(ListView):

@@ -1265,17 +1265,17 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                 <div class="naver">
                     <ul id="naver" class="clearfix">
                         <li id="zxnav_0" data-id="0">
-                            <a href="{% url 'app:phonelist' %}" target="_blank"><span>手机</span></a>
+                            <a href="{% url 'app:phonelist' %}?type=0" ><span>手机</span></a>
                             <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
                         </li>
                         <li id="zxnav_1" data-id="1">
-                            <a href="{% url 'app:pclist' %}" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                            <a href="{% url 'app:phonelist' %}?type=1" target="_blank"><span>笔记本 &amp; 平板</span></a>
                             <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
                         </li>
                         <li id="zxnav_2" data-id="2">
-                            <a href="{% url 'app:watch' %}" target="_blank"><span>智能穿戴</span></a>
+                            <a href="{% url 'app:phonelist' %}?type=2" target="_blank"><span>智能穿戴</span></a>
                             <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">
                         </li>
@@ -1288,9 +1288,10 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                     <div id="naverSub00" class="naver-sub-wrap hide" style="display: none;">
 
 
-{% for product in products %}
-                                <ul id="zxnav_0_prolist" class="grid-list clearfix">
 
+                                <ul id="zxnav_0_prolist" class="grid-list clearfix">
+                                {{ products }}
+{% for product in object_list %}
                                     <li class="grid-items" onmouseenter="fixCurrent(this)"
                                         onmouseleave="leaveCurrent(this)"><a
                                             class="thumb" target="_blank"
@@ -1300,9 +1301,15 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </p>
                                         <div class="grid-title">{{ product.name }}777</div>
                                         <p class="grid-price">¥{{ product.price }}100</p></a></li>
+                                    {% endfor %}
+
+
+
+
+
 
                                 </ul>
-{% endfor %}
+
 
 
                         <input id="zxnav_0_skuIds" type="hidden"

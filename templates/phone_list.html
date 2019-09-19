@@ -103,11 +103,12 @@
             <div class="pro-list clearfix">
                 <ul>
                     {% for product in object_list %}
-                        <li data-pid="10086387384591" data-scode="2601010133204" data-sname="荣耀Play3e">
+
+                        <li data-pid="10086387384591" data-scode="2601010133204" data-sname="{{ product.name }}">
                             <div class="pro-panels">
                                 <p class="p-img"><a target="_blank"
                                                     href="https://www.vmall.com/product/10086387384591.html"
-                                                    title="荣耀Play3e"><img
+                                                    title="{{product.name}}"><img
                                         src="/static/images/{{ product.image }}"></a>
                                 </p>
                                 <p class="p-name">

@@ -76,7 +76,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'huawei1',
-        'HOST': '127.0.0.1',
+        'HOST': '10.0.104.40',
         'USER': 'root',
         'PASSWORD': '123456',
         'PORT': 3306,
