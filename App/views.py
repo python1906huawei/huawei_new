@@ -19,6 +19,17 @@ class IndexView(ListView):
         return render(request, 'index_new.html')
 
 
+# 首页 测试
+class Index1View(ListView):
+    template_name = 'index_new1.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'index_new1.html')
+
+    def post(self, request, *args, **kwargs):
+        return render(request, 'index_new1.html')
+
+
 # 验证码
 def yzm(request):
     # 将验证码保存到session

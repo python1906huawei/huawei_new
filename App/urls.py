@@ -5,6 +5,8 @@ from App import views
 urlpatterns = [
     # 首页
     url(r'^$', views.IndexView.as_view(), name='index'),
+    # 首页测试
+    url(r'^ceshi/$', views.Index1View.as_view(), name='index1'),
     # 注册
     url(r'^register/$', views.RegisterView.as_view(), name='register'),
     # 找回密码

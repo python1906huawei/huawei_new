@@ -1151,7 +1151,8 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
      &lt;/div&gt;    &lt;/div&gt;  &lt;/div&gt;&lt;/div&gt;
 </textarea>
 
-    <script type="text/javascript" id="miniCartToken"></script><!-- 2017-02-15-头部-start -->
+    <script type="text/javascript" id="miniCartToken"></script>
+    <!-- 2017-02-15-头部-start -->
     <div class="header">
         <div class="layout">
             <div class="left">
@@ -1166,17 +1167,17 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                 <div class="naver">
                     <ul id="naver" class="clearfix">
                         <li id="zxnav_0" data-id="0">
-                            <a href="https://www.vmall.com/list-36" target="_blank"><span>手机</span></a>
+                            <a href="{% url 'app:phonelist' %}" target="_blank"><span>手机</span></a>
                             <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
                         </li>
                         <li id="zxnav_1" data-id="1">
-                            <a href="https://www.vmall.com/list-40" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                            <a href="{% url 'app:pclist' %}" target="_blank"><span>笔记本 &amp; 平板</span></a>
                             <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
                         </li>
                         <li id="zxnav_2" data-id="2">
-                            <a href="https://www.vmall.com/list-59" target="_blank"><span>智能穿戴</span></a>
+                            <a href="{% url 'app:watch' %}" target="_blank"><span>智能穿戴</span></a>
                             <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="yes">
                             <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">
                         </li>
@@ -1425,7 +1426,8 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
             <!-- 2017-02-15-搜索条-end -->
         </div>
     </div>
-    </div><!-- 2017-02-15-头部-end -->
+    </div>
+    <!-- 2017-02-15-头部-end -->
 
     <script type="text/javascript">
         ec.load("ec.slider", {
