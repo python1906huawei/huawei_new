@@ -1,11 +1,13 @@
 from random import randint
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
 from django.views.generic import ListView
+from django.views.generic.list import MultipleObjectMixin
+
 from App.forms import RegisterForm, FindpasswordForm
 from tools.sms import send_sms
-from App.models import User, Userinfo
+from App.models import User, Userinfo, Product
 from django.contrib import auth
 
 # 首页
@@ -204,16 +206,58 @@ class LoginHuaweiView(ListView):
             return render(request, 'login.html')
 
 
-# 顶部+底部 的继承
-class TopView(ListView):
-    template_name = 'base.html'
-
+# 退出登录
+class LogOutView(ListView):
+    template_name = 'index_new.html'
     def get(self, request, *args, **kwargs):
-        return render(request, 'base.html')
+        logout(request)
+        return render(request, 'index_new.html')
 
     def post(self, request, *args, **kwargs):
-        return render(request, 'base.html')
+        logout(request)
+        return render(request, 'index_new.html')
 
+
+
+# 顶部+底部 的继承
+# class TopView(ListView):
+#     template_name = 'base.html'
+#
+#
+#     # queryset=[Product.objects.filter(type=0).all(),Product.objects.filter(type=1).all(),Product.objects.filter(type=2).all()]
+#     # queryset = Product.objects.filter(type=0).all()
+#     queryset = [Product.objects.filter(type=0).all(), Product.objects.filter(type=1).all(),
+#                 Product.objects.filter(type=2).all()]
+#     def get_queryset(self):
+#
+#         queryset=self.queryset
+#         return queryset
+#     def get_context_data(self, **kwargs):
+#         context = {
+#             'paginator': None,
+#             'page_obj': None,
+#             'is_paginated': False,
+#             'object_list': self.queryset
+#         }
+#         return context
+def topview(request):
+    if request.method=='POST':
+        products=Product.objects.filter(type=0)
+    # products=[Product.objects.filter(type=0),Product.objects.filter(type=1),Product.objects.filter(type=2)]
+    products=Product.objects.filter(type=0).all()
+    print(products)
+    return render(request,'base.html',locals())
+
+# class TopView2(ListView):
+#     template_name = 'base.html'
+#     context_object_name = 'phones'
+#     queryset=Product.objects.filter(type=0)
+#
+# class TopView3(ListView):
+#     template_name = 'base.html'
+#     context_object_name = 'phones'
+#     queryset=Product.objects.filter(type=0)
+#
 
 # 顶部+底部 的继承  测试1
 class Top1View(ListView):
@@ -250,14 +294,15 @@ class DetailView(ListView):
 
 # 手机列表
 class PhoneListView(ListView):
+    queryset = Product.objects.filter(status=1,inventory__gt=0).all()
+
     template_name = 'phone_list.html'
+    paginate_by = 3
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'phone_list.html')
-
-    def post(self, request, *args, **kwargs):
-        return render(request, 'phone_list.html')
-
+    def get_queryset(self):
+        if self.request.GET.get(''):
+            return self.queryset
+        return self.queryset
 
 # 电脑平板列表
 class PcListView(ListView):
@@ -292,12 +337,3 @@ class MyCenterView(ListView):
         return render(request, 'mycenter.html')
 
 
-# 个人中心-测试
-class MyCenter1View(ListView):
-    template_name = 'mycenter1.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, 'mycenter1.html')
-
-    def post(self, request, *args, **kwargs):
-        return render(request, 'mycenter1.html')

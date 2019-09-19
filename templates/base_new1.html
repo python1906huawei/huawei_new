@@ -210,162 +210,162 @@
         <div class="layout">
             <div class="s-sub">
                 <ul>
-                    <li><a href="https://www.vmall.com/" onclick="pushHeaderMsg('首页','https://www.vmall.com')">首页</a>
+                    <li><a href="{% url 'app:index' %}" >首页</a>
                     </li>
 
                 </ul>
             </div>
 
             <div class="s-main ">
-                <img src="{% static 'images/bg71.png' %}"
-                     class="hide">
+                <img src="{% static 'images/bg71.png' %}" class="hide">
                 <ul>
-                    <li id="unlogin_status">
-                        <div id="top_unlogin" class="header-toolbar">
-                            <!-- 2017-02-15-头部-工具栏-焦点为header-toolbar-item增加ClassName:hover -->
-                            <div class="header-toolbar-item">
-                                <div class="i-login">
-                                    <div class="h">
-                                        <div class="">
-                                            <!-- <script>document.write('<a id="top-index-loginUrl" href="https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D'+encodeURIComponent(encodeURIComponent(window.location.href))+'" rel="nofollow" onclick="pushLoginMsg(\'登录\',\'\')">请登录</a>');</script> -->
-                                            {#                                        <script>document.write('<a id="top-index-loginUrl" href="javascript:;" rel="nofollow" onclick="pushLoginMsgInfoPerson(\'登录\',\'\')">请登录</a>');</script>#}
-                                            <a href="{% url 'app:login-huawei' %}">请登录</a>
-                                            <a href="{% url 'app:register' %}">&nbsp;&nbsp;注册</a>
+                    {% if user.is_authenticated %}
+
+                        <li id="login_status" class="hide" style="display: list-item;">
+                            {#  登录后显示的                      #}
+                            <div id="top_login" class="header-toolbar">
+                                <div class="s-dropdown">
+                                    <div class="h h-wide" id="up_loginName-hover">
+                                        <a class="icon-dropdown" href="https://www.vmall.com/member?t=1568773504015"
+                                           rel="nofollow" target="_blank" onclick="pushLoginMsg('已登录','用户名')"><span
+                                                id="up_loginName">{{ user.username }}</span></a>&nbsp;
+                                    </div>
+                                    <div class="b">
+                                        <!-- 2017-06-19-个人信息-start -->
+                                        <div class="dropdown-i-mall">
+                                            <div class="i-mall-prompt clearfix">
+                                                <div class="user-head fl">
+                                                    <p class="user-img">
+                                                        <a href="https://www.vmall.com/member?t=15687735040151568773504021"
+                                                           rel="nofollow" timetype="timestamp" target="_blank"
+                                                           onclick="pushLoginMsg('已登录','头像')">
+                                                            <img id="customerPic"
+                                                                 src="{% static 'images/img_not_logged_in.png' %}"
+                                                                 alt="默认头像"
+                                                                 imgpath="https://res.vmallres.com/20190808/images">
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                                <div class="user-info fl">
+                                                    <div id="user-vip-level-tips-index"
+                                                         class="user-level icon-vip-level-0">
+                                                        <em></em>
+                                                        <p><span id="canvas-index" style="width: 0%"></span></p>
+                                                    </div>
+                                                    <div class="user-info-detail clearfix" id="vip-info">
+                                                        <a id="authentication_y" class="icon-realname hide"
+                                                           style="display: none;">已实名</a>
+                                                        <a id="authentication_n"
+                                                           href="https://www.vmall.com/authmember/accesstoken"
+                                                           rel="nofollow"
+                                                           class="icon-realname disabled hide"
+                                                           onclick="pushLoginMsg('已登录','未实名')"
+                                                           style="display: inline;">未实名</a>
+                                                        <a class="icon-mail"
+                                                           href="https://www.vmall.com/member/msg?t=15687735040151568773504021"
+                                                           rel="nofollow" timetype="timestamp"
+                                                           onclick="pushLoginMsg('已登录','消息中心')">消息(<span
+                                                                id="top-newMsgCount">0</span>)</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="i-mall-uc">
+                                                <dl class="clearfix">
+                                                    <dt><span class="fl">我的订单</span><a class="fr"
+                                                                                       href="https://www.vmall.com/member/order?t=15687735040151568773504021"
+                                                                                       timetype="timestamp"
+                                                                                       onclick="pushLoginMsg('已登录','更多')">更多</a>
+                                                    </dt>
+                                                </dl>
+                                                <div class="i-mall-uc-con">
+                                                    <dl class="clearfix">
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=unpaid"
+                                                               timetype="timestamp"
+                                                               onclick="pushLoginMsg('已登录','待支付')">待支付</a>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=send"
+                                                               timetype="timestamp"
+                                                               onclick="pushLoginMsg('已登录','待收货')">待收货</a>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=nocomment"
+                                                               timetype="timestamp"
+                                                               onclick="pushLoginMsg('已登录','待评价')">待评价</a>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/exchange?t=15687735040151568773504021"
+                                                               timetype="timestamp"
+                                                               onclick="pushLoginMsg('已登录','退换货')">退换货</a>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/recycle/index/aihuishou?t=15687735040151568773504021"
+                                                               timetype="timestamp"
+                                                               onclick="pushLoginMsg('已登录','旧机回收')">旧机回收</a></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                            <div class="i-mall-huaban">
+                                                <ul class="clearfix">
+                                                    <li>
+                                                        <a href="https://www.vmall.com/member/newpoint?t=1568773504015"
+                                                           target="_blank" id="point"
+                                                           onclick="pushLoginMsg('已登录','积分')">
+                                                            <p class="p-price"><span id="userPointBalance">0</span></p>
+                                                            <p class="p-dec">积分</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.vmall.com/member/coupon?t=1568773504015"
+                                                           rel="nofollow" target="_blank"
+                                                           onclick="pushLoginMsg('已登录','优惠券')">
+                                                            <p class="p-price"><span id="top-couponCount">--</span></p>
+                                                            <p class="p-dec">优惠券</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.vmall.com/member/balance?t=1568773504015"
+                                                           rel="nofollow" target="_blank"
+                                                           onclick="pushLoginMsg('已登录','代金券')">
+                                                            <p class="p-price"><span id="balanceAmount">0.00</span></p>
+                                                            <p class="p-dec">代金券</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="i-out">
+                                                <a href="{% url 'app:logout' %}" rel="nofollow">退出登录</a>
+                                            </div>
+                                        </div>
+                                        <!-- 2017-06-19-个人信息-end -->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="{% url 'app:mycenter' %}" timetype="timestamp">我的订单</a></li>
+                    {% else %}
+                        <li id="unlogin_status">
+                            <div id="top_unlogin" class="header-toolbar">
+                                <!-- 2017-02-15-头部-工具栏-焦点为header-toolbar-item增加ClassName:hover -->
+                                <div class="header-toolbar-item">
+                                    <div class="i-login">
+                                        <div class="h">
+                                            <div class="">
+                                                <!-- <script>document.write('<a id="top-index-loginUrl" href="https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D'+encodeURIComponent(encodeURIComponent(window.location.href))+'" rel="nofollow" onclick="pushLoginMsg(\'登录\',\'\')">请登录</a>');</script> -->
+                                                {#                                        <script>document.write('<a id="top-index-loginUrl" href="javascript:;" rel="nofollow" onclick="pushLoginMsgInfoPerson(\'登录\',\'\')">请登录</a>');</script>#}
+                                                <a href="{% url 'app:login-huawei' %}">请登录</a>
+                                                <a href="{% url 'app:register' %}">&nbsp;&nbsp;注册</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-
-                    <li id="login_status" class="hide" style="display: list-item;">
-{#  登录后显示的                      #}
-{#                        <div id="top_login" class="header-toolbar">#}
-{#                            <div class="s-dropdown">#}
-{#                                <div class="h h-wide" id="up_loginName-hover">#}
-{#                                    <a class="icon-dropdown" href="https://www.vmall.com/member?t=1568773504015"#}
-{#                                       rel="nofollow" target="_blank" onclick="pushLoginMsg('已登录','用户名')"><span#}
-{#                                            id="up_loginName">133****9317</span></a>&nbsp;#}
-{#                                </div>#}
-{#                                <div class="b">#}
-{#                                    <!-- 2017-06-19-个人信息-start -->#}
-{#                                    <div class="dropdown-i-mall">#}
-{#                                        <div class="i-mall-prompt clearfix">#}
-{#                                            <div class="user-head fl">#}
-{#                                                <p class="user-img">#}
-{#                                                    <a href="https://www.vmall.com/member?t=15687735040151568773504021"#}
-{#                                                       rel="nofollow" timetype="timestamp" target="_blank"#}
-{#                                                       onclick="pushLoginMsg('已登录','头像')">#}
-{#                                                        <img id="customerPic"#}
-{#                                                             src="{% static 'images/img_not_logged_in.png' %}"#}
-{#                                                             alt="默认头像"#}
-{#                                                             imgpath="https://res.vmallres.com/20190808/images">#}
-{#                                                    </a>#}
-{#                                                </p>#}
-{#                                            </div>#}
-{#                                            <div class="user-info fl">#}
-{#                                                <div id="user-vip-level-tips-index" class="user-level icon-vip-level-0">#}
-{#                                                    <em></em>#}
-{#                                                    <p><span id="canvas-index" style="width: 0%"></span></p>#}
-{#                                                </div>#}
-{#                                                <div class="user-info-detail clearfix" id="vip-info">#}
-{#                                                    <a id="authentication_y" class="icon-realname hide"#}
-{#                                                       style="display: none;">已实名</a>#}
-{#                                                    <a id="authentication_n"#}
-{#                                                       href="https://www.vmall.com/authmember/accesstoken"#}
-{#                                                       rel="nofollow"#}
-{#                                                       class="icon-realname disabled hide"#}
-{#                                                       onclick="pushLoginMsg('已登录','未实名')"#}
-{#                                                       style="display: inline;">未实名</a>#}
-{#                                                    <a class="icon-mail"#}
-{#                                                       href="https://www.vmall.com/member/msg?t=15687735040151568773504021"#}
-{#                                                       rel="nofollow" timetype="timestamp"#}
-{#                                                       onclick="pushLoginMsg('已登录','消息中心')">消息(<span#}
-{#                                                            id="top-newMsgCount">0</span>)</a>#}
-{#                                                </div>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{##}
-{#                                        <div class="i-mall-uc">#}
-{#                                            <dl class="clearfix">#}
-{#                                                <dt><span class="fl">我的订单</span><a class="fr"#}
-{#                                                                                   href="https://www.vmall.com/member/order?t=15687735040151568773504021"#}
-{#                                                                                   timetype="timestamp"#}
-{#                                                                                   onclick="pushLoginMsg('已登录','更多')">更多</a>#}
-{#                                                </dt>#}
-{#                                            </dl>#}
-{#                                            <div class="i-mall-uc-con">#}
-{#                                                <dl class="clearfix">#}
-{#                                                    <dd>#}
-{#                                                        <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=unpaid"#}
-{#                                                           timetype="timestamp"#}
-{#                                                           onclick="pushLoginMsg('已登录','待支付')">待支付</a>#}
-{#                                                    </dd>#}
-{#                                                    <dd>#}
-{#                                                        <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=send"#}
-{#                                                           timetype="timestamp"#}
-{#                                                           onclick="pushLoginMsg('已登录','待收货')">待收货</a>#}
-{#                                                    </dd>#}
-{#                                                    <dd>#}
-{#                                                        <a href="https://www.vmall.com/member/order?t=15687735040151568773504021&amp;tab=nocomment"#}
-{#                                                           timetype="timestamp"#}
-{#                                                           onclick="pushLoginMsg('已登录','待评价')">待评价</a>#}
-{#                                                    </dd>#}
-{#                                                    <dd>#}
-{#                                                        <a href="https://www.vmall.com/member/exchange?t=15687735040151568773504021"#}
-{#                                                           timetype="timestamp"#}
-{#                                                           onclick="pushLoginMsg('已登录','退换货')">退换货</a>#}
-{#                                                    </dd>#}
-{#                                                    <dd>#}
-{#                                                        <a href="https://www.vmall.com/member/recycle/index/aihuishou?t=15687735040151568773504021"#}
-{#                                                           timetype="timestamp"#}
-{#                                                           onclick="pushLoginMsg('已登录','旧机回收')">旧机回收</a></dd>#}
-{#                                                </dl>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{##}
-{#                                        <div class="i-mall-huaban">#}
-{#                                            <ul class="clearfix">#}
-{#                                                <li>#}
-{#                                                    <a href="https://www.vmall.com/member/newpoint?t=1568773504015"#}
-{#                                                       target="_blank" id="point" onclick="pushLoginMsg('已登录','积分')">#}
-{#                                                        <p class="p-price"><span id="userPointBalance">0</span></p>#}
-{#                                                        <p class="p-dec">积分</p>#}
-{#                                                    </a>#}
-{#                                                </li>#}
-{#                                                <li>#}
-{#                                                    <a href="https://www.vmall.com/member/coupon?t=1568773504015"#}
-{#                                                       rel="nofollow" target="_blank"#}
-{#                                                       onclick="pushLoginMsg('已登录','优惠券')">#}
-{#                                                        <p class="p-price"><span id="top-couponCount">--</span></p>#}
-{#                                                        <p class="p-dec">优惠券</p>#}
-{#                                                    </a>#}
-{#                                                </li>#}
-{#                                                <li>#}
-{#                                                    <a href="https://www.vmall.com/member/balance?t=1568773504015"#}
-{#                                                       rel="nofollow" target="_blank"#}
-{#                                                       onclick="pushLoginMsg('已登录','代金券')">#}
-{#                                                        <p class="p-price"><span id="balanceAmount">0.00</span></p>#}
-{#                                                        <p class="p-dec">代金券</p>#}
-{#                                                    </a>#}
-{#                                                </li>#}
-{#                                            </ul>#}
-{#                                        </div>#}
-{##}
-{#                                        <div class="i-out">#}
-{#                                            <a href="https://www.vmall.com/account/logout" rel="nofollow">退出登录</a>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <!-- 2017-06-19-个人信息-end -->#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-                    </li>
-
-                    <!-- <li><a href="https://www.vmall.com/member/order?t=1568773504015timestamp" timeType="timestamp" onclick = "pushMyOrderMsg()">我的订单</a></li>-->
-                    <li><a href="javascript:;" timetype="timestamp" onclick="pushMyOrderMsg()">我的订单</a></li>
-
-
+                        </li>
+                    {% endif %}
 
                     <li>
                         <div class="s-dropdown s-dropdown-minicart">

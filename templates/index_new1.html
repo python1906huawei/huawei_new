@@ -104,25 +104,6 @@
             <ul>
                 {% if user.is_authenticated %}
 
-
-                    <li id="unlogin_status">
-                        <div id="top_unlogin" class="header-toolbar">
-                            <!-- 2017-02-15-头部-工具栏-焦点为header-toolbar-item增加ClassName:hover -->
-                            <div class="header-toolbar-item">
-                                <div class="i-login">
-                                    <div class="h">
-                                        <div class="">
-                                            <!-- <script>document.write('<a id="top-index-loginUrl" href="https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D'+encodeURIComponent(encodeURIComponent(window.location.href))+'" rel="nofollow" onclick="pushLoginMsg(\'登录\',\'\')">请登录</a>');</script> -->
-                                            {#                                        <script>document.write('<a id="top-index-loginUrl" href="javascript:;" rel="nofollow" onclick="pushLoginMsgInfoPerson(\'登录\',\'\')">请登录</a>');</script>#}
-                                            <a href="{% url 'app:login-huawei' %}">请登录</a>
-                                            <a href="{% url 'app:register' %}">&nbsp;&nbsp;注册</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                {% else %}
                     <li id="login_status" class="hide" style="display: list-item;">
                         {#  登录后显示的                      #}
                         <div id="top_login" class="header-toolbar">
@@ -130,7 +111,7 @@
                                 <div class="h h-wide" id="up_loginName-hover">
                                     <a class="icon-dropdown" href="https://www.vmall.com/member?t=1568773504015"
                                        rel="nofollow" target="_blank" onclick="pushLoginMsg('已登录','用户名')"><span
-                                            id="up_loginName">133****9317</span></a>&nbsp;
+                                            id="up_loginName">{{ user.username }}</span></a>&nbsp;
                                 </div>
                                 <div class="b">
                                     <!-- 2017-06-19-个人信息-start -->
@@ -238,7 +219,7 @@
                                         </div>
 
                                         <div class="i-out">
-                                            <a href="https://www.vmall.com/account/logout" rel="nofollow">退出登录</a>
+                                            <a href="{% url 'app:logout' %}" rel="nofollow">退出登录</a>
                                         </div>
                                     </div>
                                     <!-- 2017-06-19-个人信息-end -->
@@ -246,9 +227,28 @@
                             </div>
                         </div>
                     </li>
+                    <li><a href="{% url 'app:mycenter' %}" timetype="timestamp" >我的订单</a></li>
+                {% else %}
+                    <li id="unlogin_status">
+                        <div id="top_unlogin" class="header-toolbar">
+                            <!-- 2017-02-15-头部-工具栏-焦点为header-toolbar-item增加ClassName:hover -->
+                            <div class="header-toolbar-item">
+                                <div class="i-login">
+                                    <div class="h">
+                                        <div class="">
+                                            <!-- <script>document.write('<a id="top-index-loginUrl" href="https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D'+encodeURIComponent(encodeURIComponent(window.location.href))+'" rel="nofollow" onclick="pushLoginMsg(\'登录\',\'\')">请登录</a>');</script> -->
+                                            {#                                        <script>document.write('<a id="top-index-loginUrl" href="javascript:;" rel="nofollow" onclick="pushLoginMsgInfoPerson(\'登录\',\'\')">请登录</a>');</script>#}
+                                            <a href="{% url 'app:login-huawei' %}">请登录</a>
+                                            <a href="{% url 'app:register' %}">&nbsp;&nbsp;注册</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
                     <!-- <li><a href="https://www.vmall.com/member/order?t=1568773504015timestamp" timeType="timestamp" onclick = "pushMyOrderMsg()">我的订单</a></li>-->
-                    <li><a href="javascript:;" timetype="timestamp" onclick="pushMyOrderMsg()">我的订单</a></li>
+                    <li><a href="{% url 'app:login-huawei' %}" timetype="timestamp" >我的订单</a></li>
 
 
                 {% endif %}
@@ -5323,17 +5323,25 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                     <img src="{% static 'images/img_not_logged_in.png' %}" alt="">
                                 </div>
                                 <div class="fl">
-                                    <div id="gg_login_url" class="w-reg">
-                                        您好！请
-                                        <script>document.write('<a href="javascript:;"  rel="nofollow"  onclick = "pushMemberMsg(\'登录\',\'https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D' + encodeURIComponent(encodeURIComponent(window.location.href)) + '\')">登录</a>');</script>
-                                        <a href="javascript:;" rel="nofollow"
-                                           onclick="pushMemberMsg('登录','https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn&amp;loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&amp;service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3Dhttps%253A%252F%252Fwww.vmall.com%252Findex.html')">登录</a>
-                                        <span>&nbsp;/&nbsp;</span>
-                                        <a href="https://hwid1.vmall.com/CAS/portal/userRegister/regbyphone.html?service=https://www.vmall.com/account/caslogin&amp;loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn"
-                                           rel="nofollow" target="_blank"
-                                           onclick="pushMemberMsg('注册','https://hwid1.vmall.com/CAS/portal/userRegister/regbyphone.html?service=https://www.vmall.com/account/caslogin&amp;loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn')">注册</a>
+                                    {% if user.is_authenticated %}
+                                        <div id="gg_login_url" class="w-reg">
+                                            <div class="w-info">您好！<span id="gg_loginName">{{ user.username }}</span>。</div>
+                                        </div>
+                                    {% else %}
 
-                                    </div>
+
+                                        <div id="gg_login_url" class="w-reg">
+                                            您好！请
+                                            {#                                        <script>document.write('<a href="javascript:;"  rel="nofollow"  onclick = "pushMemberMsg(\'登录\',\'https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D' + encodeURIComponent(encodeURIComponent(window.location.href)) + '\')">登录</a>');</script>#}
+                                            <a href="javascript:;" rel="nofollow"
+                                               onclick="pushMemberMsg('登录','https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn&amp;loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&amp;service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3Dhttps%253A%252F%252Fwww.vmall.com%252Findex.html')">登录</a>
+                                            <span>&nbsp;/&nbsp;</span>
+                                            <a href="https://hwid1.vmall.com/CAS/portal/userRegister/regbyphone.html?service=https://www.vmall.com/account/caslogin&amp;loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn"
+                                               rel="nofollow" target="_blank"
+                                               onclick="pushMemberMsg('注册','https://hwid1.vmall.com/CAS/portal/userRegister/regbyphone.html?service=https://www.vmall.com/account/caslogin&amp;loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn')">注册</a>
+
+                                        </div>
+                                    {% endif %}
                                     <div class="w-btn">
                                         <a class="new" href="https://sale.vmall.com/welcome.html" target="_blank"
                                            onclick="pushMemberMsg('新人福利','https://sale.vmall.com/welcome.html')">新人福利</a>
