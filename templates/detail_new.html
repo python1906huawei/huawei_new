@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'phone_list.html' %}
 {% load static %}
 
 
@@ -12,11 +12,11 @@
                 <div class="relative">
                     <div class="product-gallery-img" id="pic-container">
                         <div id="wrap" style="position:relative;"><a id="product-img"
-                                                                     href="/static/images/{{ object_list.3.image }}"
+                                                                     href="https://res.vmallres.com/pimages//product/6901443293513/800_800_1555464685019mp.png"
                                                                      class="cloud-zoom"
                                                                      rel="adjustX: 10, adjustY:0, zoomWidth:400, zoomHeight:400"
                                                                      style="position: relative; display: block;">
-                            <img src="/static/images/{{ object_list.3.image }}"
+                            <img src="{% static 'images/428_428_1555464685019mp.png' %}"
                                  alt="HUAWEI P30 Pro" style="display: block;">
                         </a>
                             <div class="mousetrap"
@@ -105,7 +105,7 @@
                     <div class="product-gallery-thumbs">
                         <ul id="pro-gallerys" style="left: 0px;">
                             <li class="current"><a href="javascript:;"><img
-                                    src="/static/images/{{ object_list.3.image }}"
+                                    src="{% static 'images/78_78_1555464685019mp.png' %}"
                                     alt="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"></a></li>
                         </ul>
                     </div>
@@ -167,13 +167,13 @@
                 <div id="product-property-recommand">
                     <!-- 20170518-商品简介-商品信息-start -->
                     <div class="product-meta">
-                        <h1 id="pro-name">{{ object_list.3.name }}&nbsp;&nbsp;  {{  object_list.3.desc}}</h1>
+                        <h1 id="pro-name">HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）</h1>
                         <input class="hide" value="10086407020352" id="product_sku">
                         <input class="hide" value="10086102942203" id="product_productId">
                         <div class="product-slogan" id="skuPromWord" style="display: block;"><a href="javascript:;"
                                                                                                 class="product-slogan-btn"
                                                                                                 style="display: none;"></a>
-                            <span class="product-slogan-link">晒单赠好礼</span> <span>华为P30 Pro尊享金卡专属服务权益包含：商品价格的20%转为积分,积分可以10比1抵扣消费金额(普通用户只返回10%的价格积分)</span>
+                            <span class="product-slogan-link">晒单赠好礼</span> <span>华为P30 Pro尊享金卡专属服务权益包含：①保修期内（不含延保）可享2次免费保养②1小时快修服务③金卡专属热线服务</span>
                         </div>
                     </div>
 
@@ -183,7 +183,7 @@
                             <div class="product-price clearfix">
                                 <div class="product-price-info">
                                     <span id="pro-price-label" class="f24" style="display: none;"></span>
-                                    <span id="pro-price" class="f24"><em>¥</em>{{ object_list.3.price }}</span>
+                                    <span id="pro-price" class="f24"><em>¥</em>4988.00</span>
                                     <input type="hidden" id="pro-price-hide" value="4988.00">
                                     <s id="pro-price-old" style="display: none;"></s>
                                     <b id="pro-price-label-deposit" style=""></b>
@@ -281,10 +281,9 @@
                     <!-- 20171024-商品简介-商品编码-start -->
                     <div class="product-description clearfix">
                         <label>商品编码</label>
-                        <div class="fl" id="pro-sku-code2">{{ object_list.3.pid }}</div>
+                        <div class="fl" id="pro-sku-code2">2601010102603</div>
                     </div>
                     <!-- 20171024-商品简介-商品编码-end -->
-
                     <div class="hr-5"></div>
                     <div class="line"></div>
                     <div class="hr-16"></div>
@@ -292,51 +291,165 @@
 
 
                     <!--联通合约机套餐-->
-                    {#                    <div id="contractLst" class="hide">#}
-                    {#                        <dl class="product-choose clearfix">#}
-                    {#                            <label>合约机</label>#}
-                    {#                            <div class="product-choose-detail">#}
-                    {#                                <ul id="contractList-ol">#}
-                    {#                                </ul>#}
-                    {#                            </div>#}
-                    {#                        </dl>#}
-                    {#                        <form action="/contract/choose-{id}" id="contractForm" class="hide">#}
-                    {#                            <input type="hidden" value="" id="gifts" name="gifts">#}
-                    {#                            <input name="CsrfToken" type="hidden"#}
-                    {#                                   value="DA874ADADA71486E6FBAE7AB6C9948C3993CA39ED38E7343"></form>#}
-                    {#                    </div>#}
-                    {##}
-                    {##}
-                    {#                    <input type="hidden" value="" id="interestOrderNow">#}
+                    <div id="contractLst" class="hide">
+                        <dl class="product-choose clearfix">
+                            <label>合约机</label>
+                            <div class="product-choose-detail">
+                                <ul id="contractList-ol">
+                                </ul>
+                            </div>
+                        </dl>
+                        <form action="/contract/choose-{id}" id="contractForm" class="hide">
+                            <input type="hidden" value="" id="gifts" name="gifts">
+                            <input name="CsrfToken" type="hidden"
+                                   value="DA874ADADA71486E6FBAE7AB6C9948C3993CA39ED38E7343"></form>
+                    </div>
+                    <dl class="product-choose clearfix" id="giftBuy_dl"><label>增值业务</label>
+                        <div class="product-choose-detail">
+                            <ul>
+                                <li class="selected" data-attrname="无增值服务"><a href="javascript:;" title="无增值服务"><p>
+                                    <span>无增值服务</span></p></a></li>
+                                <li class="" data-skuid="10086430001419"><a href="javascript:;" title="礼品包装服务"
+                                                                            data-code="3201070002001"
+                                                                            interest-price="¥25.00"
+                                                                            data-pid="10086989037882"><p>
+                                    <span>礼品包装服务</span></p></a></li>
+                                <a href="javascript:;" target="_blank" class="btn-product-more hidden"
+                                   id="gift-service-detail-link"><span>了解详情</span>&gt;</a></ul>
+                        </div>
+                    </dl>
+
+                    <!-- 20170518-商品简介-保障服务-start -->
+                    <div class="clearfix hide" id="pro-service" style="display: block;">
+                        <label>保障服务</label>
+                        <div class="product-property-con fl clearfix">
+                            <!-- 组合保 -->
+                            <div class="product-service" id="j-ucare">
+                                <span class="hide" id="ucareSelect" skuid="" data-scode="" interest-price=""></span>
+                                <a href="javascript:;" onclick="ec.product.click_function(this)"
+                                   class="product-service-btn"><span class="fl max-w">华为无忧服务</span><span class="fl">&nbsp;￥969</span></a>
+                                <div class="product-service-detail">
+                                    <div class="product-service-list" id="ucareProtected">
+                                        <ul>
+                                            <li>
+                                                <div class="fl"
+                                                     onclick="checkedThis(this,'3201020013901','ucareName','ucareProtected');">
+                                                    <input type="checkbox" name="ucareName">
+                                                    <div id="3201020013901" class="product-service-listcon"
+                                                         title="华为无忧服务" skuid="10086792140888"
+                                                         data-scode="3201020013901" data-price="969"><span
+                                                            class="fl max-w">华为无忧服务</span>
+                                                        <p class="fl"><span class="fl">&nbsp;￥969</span><a
+                                                                target="_blank"
+                                                                href="https://www.vmall.com/product/10086204175388.html">详情&nbsp;&gt;</a>
+                                                        </p></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 意外保 -->
+                            <div class="product-service">
+                                <span class="hide" id="accidentSelect" skuid="" data-scode="" interest-price=""></span>
+                                <a href="javascript:;" onclick="ec.product.click_function(this)"
+                                   class="product-service-btn"><span class="fl max-w">碎屏(含后盖)服务宝1年</span><span
+                                        class="fl">&nbsp;￥299</span></a>
+                                <div class="product-service-detail">
+                                    <div class="product-service-list" id="accidentProtected">
+                                        <ul>
+                                            <li>
+                                                <div class="fl"
+                                                     onclick="checkedThis(this,'3201020003901','accidentName','accidentProtected');">
+                                                    <input type="checkbox" name="accidentName">
+                                                    <div id="3201020003901" class="product-service-listcon"
+                                                         title="碎屏(含后盖)服务宝1年" skuid="10086844837652"
+                                                         data-scode="3201020003901" data-price="299"><span
+                                                            class="fl max-w">碎屏(含后盖)服务宝1年</span>
+                                                        <p class="fl"><span class="fl">&nbsp;￥299</span><a
+                                                                target="_blank"
+                                                                href="https://www.vmall.com/product/10086811704433.html">详情&nbsp;&gt;</a>
+                                                        </p></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 延保 -->
+                            <div class="product-service">
+                                <span class="hide" id="extendSelect" skuid="" data-scode="" interest-price=""></span>
+                                <a href="javascript:;" onclick="ec.product.click_function(this)"
+                                   class="product-service-btn"><span class="fl max-w">延长服务宝半年</span><span class="fl">&nbsp;￥198</span></a>
+                                <div class="product-service-detail">
+                                    <div class="product-service-list" id="extendProtected">
+                                        <ul>
+                                            <li>
+                                                <div class="fl"
+                                                     onclick="checkedThis(this,'3201010004601','extendedName','extendProtected');">
+                                                    <input type="checkbox" name="extendedName">
+                                                    <div id="3201010004601" class="product-service-listcon"
+                                                         title="延长服务宝半年" skuid="10086975147243"
+                                                         data-scode="3201010004601" data-price="198"><span
+                                                            class="fl max-w">延长服务宝半年</span>
+                                                        <p class="f1"><span class="fl">&nbsp;￥198</span><a
+                                                                target="_blank"
+                                                                href="https://www.vmall.com/product/10086840746918.html">详情&nbsp;&gt;</a>
+                                                        </p></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="fl"
+                                                     onclick="checkedThis(this,'3201010004101','extendedName','extendProtected');">
+                                                    <input type="checkbox" name="extendedName">
+                                                    <div id="3201010004101" class="product-service-listcon"
+                                                         title="延长服务宝1年" skuid="10086600251270"
+                                                         data-scode="3201010004101" data-price="218"><span
+                                                            class="fl max-w">延长服务宝1年</span>
+                                                        <p class="f1"><span class="fl">&nbsp;￥218</span><a
+                                                                target="_blank"
+                                                                href="https://www.vmall.com/product/10086705268979.html">详情&nbsp;&gt;</a>
+                                                        </p></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 20170518-商品简介-保障服务-end -->
+
+                    <input type="hidden" value="" id="interestOrderNow">
 
 
                     <!-- 20170518-商品简介-物流现货-start -->
-                    {#                    <div class="product-pulldown clearfix hide">#}
-                    {#                        <label>物流售后</label>#}
-                    {#                        <div class="product-pulldown-main relative">#}
-                    {#                            <!--鼠标悬浮按钮的图标span选择后 class="product-pulldown-main relative" 改为 class="product-pulldown-main product-pulldown-main-show relative"-->#}
-                    {#                            <a href="#" class="product-pulldown-btn">江苏省&gt;南京市&gt;玄武区<span></span></a>#}
-                    {#                            <div class="product-pulldown-detail">#}
-                    {#                                <div class="product-pulldown-detailmain">#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
+                    <div class="product-pulldown clearfix hide">
+                        <label>物流售后</label>
+                        <div class="product-pulldown-main relative">
+                            <!--鼠标悬浮按钮的图标span选择后 class="product-pulldown-main relative" 改为 class="product-pulldown-main product-pulldown-main-show relative"-->
+                            <a href="#" class="product-pulldown-btn">江苏省&gt;南京市&gt;玄武区<span></span></a>
+                            <div class="product-pulldown-detail">
+                                <div class="product-pulldown-detailmain">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 20170518-商品简介-物流现货-end -->
 
 
-                    <div id = "Recommend" class="clearfix">
+                    <div class="product-operation-main product-operation-location" style="min-height: 49px;">
                         <!-- 20170518-商品简介-已选择商品-start -->
                         <div class="product-description clearfix">
                             <label>已选择商品:</label>
-                            <div id="pro-select-sku" class="product-selected">{{ object_list.3.name }}
-                                <div id="giftBuy-selected" class="inline">&nbsp;\&nbsp;{{ object_list.3.desc }}</div>
+                            <div id="pro-select-sku" class="product-selected">天空之境 / 全网通 8GB+128GB / 官方标配
+                                <div id="giftBuy-selected" class="inline">&nbsp;/&nbsp;无增值服务</div>
                             </div>
                         </div>
                         <!-- 20170518-商品简介-已选择商品-end -->
 
                         <!-- 20170518-商品简介-提示-end -->
-
+                        <div id="product-tips" class="product-tips hide" style="display: none;"></div>
                         <!-- 20170518-商品简介-提示-end -->
 
                         <!-- 20170518-商品简介-提交操作-start -->
@@ -380,7 +493,7 @@
                                     <!-- 20170518-商品简介-按钮-start -->
                                     <div id="pro-operation" class="product-button clearfix"
                                          style="visibility: visible;"><a href="javascript:;"
-
+                                                                         onclick="ec.product.addCart()"
                                                                          class="product-button01"><span>加入购物车</span></a><a
                                             href="javascript:;" onclick="ec.product.orderNow()"
                                             class="product-button02"><span>立即下单</span></a></div>

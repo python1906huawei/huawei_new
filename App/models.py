@@ -20,7 +20,7 @@ class User(AbstractUser,BaseModel):
     birthday = models.DateField(blank=True, null=True)
     # portrait = models.FileField(max_length=100, blank=True, null=True)
     portrait = models.CharField(max_length=100, blank=True, null=True)
-
+    score=models.IntegerField(blank=True, default=0)
     class Meta:
         managed = True
         db_table = 'user'

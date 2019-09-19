@@ -240,12 +240,12 @@ class LogOutView(ListView):
 #             'object_list': self.queryset
 #         }
 #         return context
-def topview(request):
-    # products=[Product.objects.filter(type=0),Product.objects.filter(type=1),Product.objects.filter(type=2)]
-    products = Product.objects.filter(type=0).all()
-    print(products)
-
-    return render(request, 'base.html', locals())
+# def topview(request):
+#
+#     products = Product.objects.filter(type=0).all()
+#     print(products)
+#
+#     return render(request, 'base.html', locals())
 
 
 # class TopView2(ListView):
@@ -285,9 +285,19 @@ class Top2View(ListView):
 class DetailView(ListView):
     template_name = 'detail_1.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'detail_1.html')
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    Product.objects.get(pid=int(self.request.GET.get('pid')))
+                    ]
 
+
+        return queryset
+    # def get(self, request, *args, **kwargs):
+    #     pid=self.request.GET.get('pid')
+    #     smallproduct=Product.objects.get(pid=int(pid))
+    #     return render(request,'detail_1.html',locals())
     def post(self, request, *args, **kwargs):
         return render(request, 'detail_1.html')
 
@@ -362,3 +372,5 @@ class ShoppingView(ListView):
 
     def post(self, request, *args, **kwargs):
         return render(request, 'shopping.html')
+
+
