@@ -15,11 +15,13 @@ from django.contrib import auth
 class IndexView(ListView):
     template_name = 'index_new.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'index_new.html')
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0)
+                    ]
 
-    def post(self, request, *args, **kwargs):
-        return render(request, 'index_new.html')
+        return queryset
 
 
 # 首页 测试
@@ -292,8 +294,8 @@ class DetailView(ListView):
                     Product.objects.get(pid=int(self.request.GET.get('pid')))
                     ]
 
-
         return queryset
+
     # def get(self, request, *args, **kwargs):
     #     pid=self.request.GET.get('pid')
     #     smallproduct=Product.objects.get(pid=int(pid))
@@ -372,5 +374,3 @@ class ShoppingView(ListView):
 
     def post(self, request, *args, **kwargs):
         return render(request, 'shopping.html')
-
-

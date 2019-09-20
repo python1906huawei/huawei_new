@@ -109,7 +109,7 @@
     <div class="layout">
         <div class="s-sub">
             <ul>
-                <li><a href="{% url 'app:index' %}" >首页</a></li>
+                <li><a href="{% url 'app:index' %}">首页</a></li>
             </ul>
         </div>
 
@@ -243,7 +243,7 @@
                         </div>
 
                     </li>
-                    <li><a href="{% url 'app:mycenter' %}" timetype="timestamp" >我的订单</a></li>
+                    <li><a href="{% url 'app:mycenter' %}" timetype="timestamp">我的订单</a></li>
                 {% else %}
                     <li id="unlogin_status">
                         <div id="top_unlogin" class="header-toolbar">
@@ -5142,152 +5142,78 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
     <!--ads start-->
     <div class="ec-slider" id="index_slider">
         <ul>
-            <li id="firstImg"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/7FOL2aShluJiRsHRQ4sV.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: block; position: absolute;"
-                class="ec-slider-item">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/product/10086608835751.html"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/7FOL2aShluJiRsHRQ4sV.jpg','https://www.vmall.com/product/10086608835751.html','1')"></a>
-                </div>
-            </li>
+            {% for phone in object_list.0 %}
+                <li id="firstImg"
+                    style="background: url('/static/images/{{ phone.showpicture }}') 50% 0px no-repeat; ; width: 100%; height: 550px; display: block; position: absolute;"
+                    class="ec-slider-item">
+                    <div style="width:100%;" class="ec-slider-item-img"><a
+                            style="width:100%;height:550px;display:block;"
+                            href="{% url 'app:detail' %}?pid={{ phone.pid }}"
+                            target="_blank"
+                            onclick="pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086608835751.html','1')"></a>
+                    </div>
+                    <script>
+                        var indexSliderBtnDap = function (current, next) {
+                            function backgroundImgUrl(a) {
+                                var m;
+                                if (m = /^url\(\"(.+)\"\)$/.exec(a)) {
+                                    return m[1];
+                                }
+                                return '';
+                            }
 
-            <li class="ec-slider-item"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/tdYv5DIjcnBQpY2KQFca.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/product/10086291072503.html"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/tdYv5DIjcnBQpY2KQFca.jpg','https://www.vmall.com/product/10086291072503.html',2);"></a>
-                </div>
-            </li>
-            <li class="ec-slider-item"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/y7abLXoxR0fcKvqSW0wn.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/product/10086244199203.html"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/y7abLXoxR0fcKvqSW0wn.jpg','https://www.vmall.com/product/10086244199203.html',3);"></a>
-                </div>
-            </li>
-            <li class="ec-slider-item"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/qzVSh9D5skKp5Sso6H4t.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/huawei"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/qzVSh9D5skKp5Sso6H4t.jpg','https://www.vmall.com/huawei',4);"></a>
-                </div>
-            </li>
-            <li class="ec-slider-item"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/ZrwL0uSVWiokNkCxqPNP.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/product/10086912255346.html"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/ZrwL0uSVWiokNkCxqPNP.jpg','https://www.vmall.com/product/10086912255346.html',5);"></a>
-                </div>
-            </li>
-            <li class="ec-slider-item"
-                style="background: url('https://res.vmallres.com/pimages//pages/picImages/g4zpcwVSrb9pfnKrtbiw.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;">
-                <div style="width:100%;" class="ec-slider-item-img"><a style="width:100%;height:550px;display:block;"
-                                                                       href="https://www.vmall.com/product/10086102942203.html"
-                                                                       target="_blank"
-                                                                       onclick="pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/g4zpcwVSrb9pfnKrtbiw.jpg','https://www.vmall.com/product/10086102942203.html',6);"></a>
-                </div>
-            </li>
+                            ec.dapClick('300010702', {
+                                ADID: backgroundImgUrl($($('#index_slider ul li')[current]).css('background-image')),
+                                URL: $($('#index_slider ul li')[current]).find('a').attr('href'),
+                                nextADID: backgroundImgUrl($($('#index_slider ul li')[next]).css('background-image')),
+                                nextURL: $($('#index_slider ul li')[next]).find('a').attr('href'),
+                                location: current + 1,
+                                nextLocation: next + 1,
+                                click: 1
+                            });
+                        };
+                        ec.ready(function () {
+                            var imgLi = document.createElement("li");
+                            imgLi.setAttribute("class", "ec-slider-item");
+                            imgLi.setAttribute("style", "background: url('/static/images/{{ phone.showpicture }}') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
+                            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086291072503.html\" target=\"_blank\" onclick=\"pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086291072503.html',2);\"></a></div>";
+                            $("#index_slider").children("ul").append(imgLi);
+
+
+                            ec.load("ec.slider", {
+                                callback: function () {
+                                    $("#index_slider").slider({
+                                        width: '100%', //必须
+                                        height: 550, //必须
+                                        style: 3, //1显示分页，2只显示左右箭头,3两者都显示
+                                        pause: 5000, //间隔时间
+                                        auto: true,
+                                        minWidth: 1200,
+                                        showNumber: false,
+                                        btnPrevEvent: indexSliderBtnDap,
+                                        btnNextEvent: indexSliderBtnDap,
+                                        circleBtn: true
+                                    });
+                                }
+                            });
+
+                            setTimeout(function () {
+                                $("#index_slider").children("ul").children("li").first().attr("class", "ec-slider-item");
+                                $("#index_slider").children("ul").children("li").first().attr("style", "background: url('/static/images/{{ phone.showpicture }}') 50% 0px no-repeat; ; width: 100%; height: 550px; display: block; position: absolute;");
+                                $("#index_slider").children("ul").children("li").first().html("<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086608835751.html\" target=\"_blank\" onclick=\"pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086608835751.html','1')\"></a></div>");
+
+                            }, 7000);
+                        });
+
+                        //首页轮播数据上报
+
+                    </script>
+                </li>
+            {% endfor %}
         </ul>
     </div>
-    <ul></ul>
-    <ul></ul>
 
-    <script>
-        var indexSliderBtnDap = function (current, next) {
-            function backgroundImgUrl(a) {
-                var m;
-                if (m = /^url\(\"(.+)\"\)$/.exec(a)) {
-                    return m[1];
-                }
-                return '';
-            }
 
-            ec.dapClick('300010702', {
-                ADID: backgroundImgUrl($($('#index_slider ul li')[current]).css('background-image')),
-                URL: $($('#index_slider ul li')[current]).find('a').attr('href'),
-                nextADID: backgroundImgUrl($($('#index_slider ul li')[next]).css('background-image')),
-                nextURL: $($('#index_slider ul li')[next]).find('a').attr('href'),
-                location: current + 1,
-                nextLocation: next + 1,
-                click: 1
-            });
-        };
-        ec.ready(function () {
-            var imgLi = document.createElement("li");
-            imgLi.setAttribute("class", "ec-slider-item");
-            imgLi.setAttribute("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/tdYv5DIjcnBQpY2KQFca.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086291072503.html\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/tdYv5DIjcnBQpY2KQFca.jpg','https://www.vmall.com/product/10086291072503.html',2);\"></a></div>";
-            $("#index_slider").children("ul").append(imgLi);
-            var imgLi = document.createElement("li");
-            imgLi.setAttribute("class", "ec-slider-item");
-            imgLi.setAttribute("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/y7abLXoxR0fcKvqSW0wn.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086244199203.html\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/y7abLXoxR0fcKvqSW0wn.jpg','https://www.vmall.com/product/10086244199203.html',3);\"></a></div>";
-            $("#index_slider").children("ul").append(imgLi);
-            var imgLi = document.createElement("li");
-            imgLi.setAttribute("class", "ec-slider-item");
-            imgLi.setAttribute("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/qzVSh9D5skKp5Sso6H4t.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/huawei\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/qzVSh9D5skKp5Sso6H4t.jpg','https://www.vmall.com/huawei',4);\"></a></div>";
-            $("#index_slider").children("ul").append(imgLi);
-            var imgLi = document.createElement("li");
-            imgLi.setAttribute("class", "ec-slider-item");
-            imgLi.setAttribute("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/ZrwL0uSVWiokNkCxqPNP.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086912255346.html\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/ZrwL0uSVWiokNkCxqPNP.jpg','https://www.vmall.com/product/10086912255346.html',5);\"></a></div>";
-            $("#index_slider").children("ul").append(imgLi);
-            var imgLi = document.createElement("li");
-            imgLi.setAttribute("class", "ec-slider-item");
-            imgLi.setAttribute("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/g4zpcwVSrb9pfnKrtbiw.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-            imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086102942203.html\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/g4zpcwVSrb9pfnKrtbiw.jpg','https://www.vmall.com/product/10086102942203.html',6);\"></a></div>";
-            $("#index_slider").children("ul").append(imgLi);
-
-            ec.load("ec.slider", {
-                callback: function () {
-                    $("#index_slider").slider({
-                        width: '100%', //必须
-                        height: 550, //必须
-                        style: 3, //1显示分页，2只显示左右箭头,3两者都显示
-                        pause: 5000, //间隔时间
-                        auto: true,
-                        minWidth: 1200,
-                        showNumber: false,
-                        btnPrevEvent: indexSliderBtnDap,
-                        btnNextEvent: indexSliderBtnDap,
-                        circleBtn: true
-                    });
-                }
-            });
-
-            setTimeout(function () {
-                $("#index_slider").children("ul").children("li").first().attr("class", "ec-slider-item");
-                $("#index_slider").children("ul").children("li").first().attr("style", "background: url('https://res.vmallres.com/pimages//pages/picImages/7FOL2aShluJiRsHRQ4sV.jpg') 50% 0px no-repeat; ; width: 100%; height: 550px; display: block; position: absolute;");
-                $("#index_slider").children("ul").children("li").first().html("<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086608835751.html\" target=\"_blank\" onclick=\"pushSliderMsg('https://res.vmallres.com/pimages//pages/picImages/7FOL2aShluJiRsHRQ4sV.jpg','https://www.vmall.com/product/10086608835751.html','1')\"></a></div>");
-
-            }, 7000);
-        });
-
-        //首页轮播数据上报
-        function pushSliderMsg(adid, url, location) {
-            var value = {
-                "UID": ec.util.cookie.get("uid"),
-                "TID": getPtid(),
-                "TIME": getTime(),
-                "CONTENT":
-                    {
-                        "ADID": adid,
-                        "URL": url,
-                        "location": location,
-                        "click": "1"
-                    }
-            };
-            ec.code.addAnalytics({hicloud: true});
-            _paq.push(["trackLink", "300010701", "link", value]);
-            ec.account.dapPushMsg("300010701", value, "click");
-        }
-    </script>
     <div class="mask"><span></span></div>
     <!--ads end-->
 </div><!-- 20130904-热门板-end -->
@@ -5342,7 +5268,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                     {% else %}
                                         <div id="gg_login_url" class="w-reg">
                                             您好！请
-                                            <a href="{% url 'app:login-huawei' %}" rel="nofollow" >登录</a>
+                                            <a href="{% url 'app:login-huawei' %}" rel="nofollow">登录</a>
                                             <span>&nbsp;/&nbsp;</span>
                                             <a href="{% url 'app:register' %}" rel="nofollow" target="_blank">注册</a>
 

@@ -53,7 +53,7 @@ class Product(BaseModel):
     sales = models.IntegerField(default=0, verbose_name='销量')
     status = models.SmallIntegerField(default=1, choices=PRODUCT_STATUS, verbose_name='商品状态')
     type = models.IntegerField(null=False, verbose_name='所属分类')
-
+    showpicture= models.CharField(max_length=512, verbose_name='商品展示图片',null=True)
     class Meta:
         managed = True
         db_table = 'product'
