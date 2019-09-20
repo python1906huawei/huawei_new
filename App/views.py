@@ -18,7 +18,7 @@ class IndexView(ListView):
     def get_queryset(self):
         queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
                     Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
-                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0)
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
                     ]
 
         return queryset
