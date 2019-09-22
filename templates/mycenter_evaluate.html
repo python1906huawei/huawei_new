@@ -1,0 +1,207 @@
+{% extends 'mycenter.html' %}
+{% load static %}
+{% block title %}
+    <title>个人中心 - 评价</title>
+{% endblock title %}
+
+
+
+
+{% block xinxi %}
+<div id="base_index" class="mc-index">
+
+    <div class="hr-10"></div>
+    <div class="g">
+    </div>
+    <div class="hr-10"></div>
+
+    <div class="g">
+        <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+            <div class="section-header">
+                <div class="fl">
+                    <h2><span>商品评价</span></h2>
+                </div>
+                <div class="fr">
+                    <div class="ec-tab" id="ec-tab">
+                        <ul>
+                            <li class="current"><a href="javascript:;"
+                                                   onclick="ec.member.commodity.seltime(this,0);"><span>最近六个月商品</span></a>
+                            </li>
+                            <li><a href="javascript:;"
+                                   onclick="ec.member.commodity.seltime(this,1);"><span>六个月之前商品</span></a></li>
+                        </ul>
+                        <div class="ec-tab-arrow" style="width: 124px; left: 0px;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 20141212-栏目-end -->
+            <div class="hr-20"></div>
+            <!-- 20141225-我的评价-列表-start -->
+            <div class="myEval-record">
+                <div class="list-group-title" id="list-group-title">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <thead>
+                        <tr>
+                            <th class="col-pro">商品</th>
+                            <th class="col-operate">评价</th>
+                            <th class="col-int">评价经验值</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="list-group" id="list-group">
+                    <div class="list-group-empty">您暂时没有相关记录。</div>
+                </div>
+                <div class="list-group-page">
+                    <div class="pager" id="list-pager"></div>
+                </div>
+            </div>
+
+            <input type="hidden" id="colid" value="0">
+
+            <textarea id="realNameComment" class="hide">	&lt;!-- 20170914-提示-start
+--&gt;
+	    &lt;div class="box-phone01"&gt;
+	        &lt;div class="h"&gt;
+	            &lt;i&gt;&lt;/i&gt;
+	        &lt;/div&gt;
+	        &lt;div class="b"&gt;
+	        	&lt;p class="title"&gt;绑定手机号码&lt;/p&gt;
+
+&lt;p&gt;根据国家相关规定，只有帐号经过实名验证的用户才可以跟帖评论或发布信息。为保障您的帐号正常使用，请尽快完成手机号绑定验证，感谢您
+的理解及支持！&lt;/p&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	    &lt;div class="box-button"&gt;
+	        &lt;a href="javascript:;"
+class="box-cancel"&gt;&lt;span&gt;取消&lt;/span&gt;&lt;/a&gt;
+	        &lt;a
+href="https://hwid1.vmall.com/oauth2/userCenter/hwAccount?reqClientType=26&amp;loginChannel=26000000&amp;themeName=cloudTheme&amp;lang=zh-cn"
+ class="box-sure"&gt;&lt;span&gt;去绑定&lt;/span&gt;&lt;/a&gt;
+	    &lt;/div&gt;
+    &lt;!-- 20170914-提示-end --&gt;
+</textarea>
+
+            <script src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/remarkResultCode.js"></script>
+            <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                    src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/jquery.js"
+                    charset="utf-8"></script>
+            <script>(function () {
+                var time = 0, el = document.getElementById('jsapi_loader7');
+                if (!el || (el.readyState && 'complete' != el.readyState)) {
+                    if (time < 10) {
+                        setTimeout(arguments.callee, 30);
+                        time++;
+                    } else {
+                        logger.error('load the script of id jsapi_loader7 fail!');
+                    }
+                    return;
+                }
+                ol._setLoadStatus("jquery.form", "complete");
+            })();</script>
+            <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                    src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/ajax.js"
+                    charset="utf-8"></script>
+            <script>(function () {
+                var time = 0, el = document.getElementById('jsapi_loader8');
+                if (!el || (el.readyState && 'complete' != el.readyState)) {
+                    if (time < 10) {
+                        setTimeout(arguments.callee, 30);
+                        time++;
+                    } else {
+                        logger.error('load the script of id jsapi_loader8 fail!');
+                    }
+                    return;
+                }
+                ol._setLoadStatus("ajax", "complete");
+            })();</script>
+            <script src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/uploadImage.js"></script>
+            <script src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/list.js"></script>
+            <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
+                    src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/movebar.js"></script>
+            <script>(function () {
+                var time = 0, el = document.getElementById('jsapi_loader9');
+                if (!el || (el.readyState && 'complete' != el.readyState)) {
+                    if (time < 10) {
+                        setTimeout(arguments.callee, 30);
+                        time++;
+                    } else {
+                        logger.error('load the script of id jsapi_loader9 fail!');
+                    }
+                    return;
+                }
+                ol._setLoadStatus("jquery.movebar/movebar.min.js", "complete");
+            })();</script>
+            <script>
+                ec.load("ec.pager");
+                ec.mediaPath = "https://res.vmallres.com/pimages/";
+            </script>
+            <script id="jsapi_loader10" loadtype="insert" type="text/javascript"
+                    src="%E5%95%86%E5%93%81%E8%AF%84%E4%BB%B7_%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83_%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E_files/pager-min.js"
+                    charset="gbk"></script>
+            <script>(function () {
+                var time = 0, el = document.getElementById('jsapi_loader10');
+                if (!el || (el.readyState && 'complete' != el.readyState)) {
+                    if (time < 10) {
+                        setTimeout(arguments.callee, 30);
+                        time++;
+                    } else {
+                        logger.error('load the script of id jsapi_loader10 fail!');
+                    }
+                    return;
+                }
+                ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+            })();</script>
+        </div>
+
+        <div class="fl u-1-5">
+
+
+                <!-- 20170823-左边菜单-start -->
+                <div class="mc-menu-area">
+                    <div class="h"><a href="{% url 'app:mycenter' %}"><span>个人中心</span></a></div>
+                    <div class="b">
+                        <ul>
+                        <li>
+                            <h3 class="icon-mc-order"><span>订单中心</span></h3>
+                            <ol>
+                                <li id="li-order"><a
+                                        href="{% url 'app:mycenter_order' %}"><span>我的订单</span></a>
+                                </li>
+
+                                <li id="li-prdRemark"><a
+                                        href="{% url 'app:mycenter_evaluate' %}"><span>商品评价</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-asset"><span>我的资产</span></h3>
+                            <ol>
+                                <li id="li-newpoint"><a
+                                        href="{% url 'app:mycenter_score' %}"><span>我的积分</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-support"><span>购买支持</span></h3>
+                            <ol>
+                                <li id="li-myAddress"><a
+                                        href="{% url 'app:mycenter_site' %}"><span>收货地址管理</span></a>
+                                </li>
+                            </ol>
+                        </li>
+
+                    </ul>
+                    </div>
+                </div>
+                <!-- 20170823-左边菜单-end -->
+                <script src="{% static 'mycenter/js/leftMenu.js' %}"></script>
+            </div>
+    </div>
+    <div class="hr-80"></div>
+
+</div>
+
+
+
+{% endblock xinxi %}

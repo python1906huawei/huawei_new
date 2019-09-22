@@ -13,14 +13,17 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class User(AbstractUser,BaseModel):
+# 用户表
+class User(AbstractUser, BaseModel):
     uid = models.AutoField(primary_key=True)
 
     gender = models.IntegerField(blank=True, null=True)
     birthday = models.DateField(blank=True, null=True)
     # portrait = models.FileField(max_length=100, blank=True, null=True)
     portrait = models.CharField(max_length=100, blank=True, null=True)
-    score=models.IntegerField(blank=True, default=0)
+    score = models.IntegerField(blank=True, default=0)
+    detailaddress = models.CharField(max_length=200, blank=True, null=True)
+
     class Meta:
         managed = True
         db_table = 'user'
@@ -37,7 +40,36 @@ class Userinfo(BaseModel):
         db_table = 'userinfo'
 
 
-# 商品模型类SKU
+# 订单表
+
+
+class Order(BaseModel):
+    ORDER_status = (
+        (1, '待支付'),
+        (2, '待发货'),
+        (3, '待收货'),
+        (4, '待评价'),
+        (5, '已完成'),
+    )
+
+    user_id = models.ForeignKey(User, models.DO_NOTHING, verbose_name='用户', related_name='orders')
+
+    # 订单创建时间
+    create_time = models.DateTimeField(blank=True, null=True, verbose_name='创建时间')
+
+    order_status = models.SmallIntegerField(choices=ORDER_status, default=1, verbose_name='订单状态')
+
+    productnum = models.IntegerField(verbose_name='产品数量', null=True)
+
+    total = models.IntegerField(null=True)
+
+    class Meta:
+        db_table = 'order'
+        verbose_name = '订单'
+        verbose_name_plural = verbose_name
+
+
+# 商品表
 class Product(BaseModel):
     pid = models.AutoField(primary_key=True)
     PRODUCT_STATUS = (
@@ -53,7 +85,9 @@ class Product(BaseModel):
     sales = models.IntegerField(default=0, verbose_name='销量')
     status = models.SmallIntegerField(default=1, choices=PRODUCT_STATUS, verbose_name='商品状态')
     type = models.IntegerField(null=False, verbose_name='所属分类')
-    showpicture= models.CharField(max_length=512, verbose_name='商品展示图片',null=True)
+    showpicture = models.CharField(max_length=512, verbose_name='商品展示图片', null=True)
+    order = models.ForeignKey(Order, models.DO_NOTHING, related_name='products', null=True)
+
     class Meta:
         managed = True
         db_table = 'product'
@@ -62,6 +96,19 @@ class Product(BaseModel):
 
     def __str__(self):
         return self.name
+
+# # 　中间表＿商品和订单的中间表
+# class Midmid(BaseModel):
+#     pid = models.ForeignKey(Product, models.DO_NOTHING, related_name='pidnum')
+#     oid = models.ForeignKey(Order, models.DO_NOTHING, related_name='oidnum')
+#     num = models.IntegerField(null=False)
+#
+#     class Meta:
+#         managed = True
+#         db_table = 'Mid'
+#         verbose_name = '中间表'
+#         verbose_name_plural = verbose_name
+
 
 # # 应用
 # class Third_app(BaseModel):

@@ -1,0 +1,230 @@
+{% extends 'mycenter.html' %}
+{% load static %}
+{% block title %}
+    <title>个人中心 - 我的订单</title>
+{% endblock title %}
+
+
+
+
+
+
+{% block xinxi %}
+    <div id="base_index" class="mc-index">
+
+        <div class="hr-10"></div>
+        <div class="g">
+        </div>
+        <div class="hr-10"></div>
+
+        <div class="g">
+
+            <div class="fr u-4-5">        <!-- 20170824-我的商城-用户信息-start -->
+                <div class="section-header">
+                    <div class="fl">
+                        <h2><span>我的订单</span></h2>
+                    </div>
+                    <div class="fr">
+                        <div class="ec-tab" id="ec-tab">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="myOrder-cate" id="myOrder-cate">
+                    {#                    <ul>#}
+                    {#                        <li class="current"><a href="javascript:;"#}
+                    {#                                               onclick="ec.member.orderList.check(this,'all');"><span>全部有效订单<em></em></span></a>#}
+                    {#                        </li>#}
+                    {#                        <li>#}
+                    {#                            <a href="javascript:;" onclick="ec.member.orderList.check(this,'unpaid');">#}
+                    {#				<span>#}
+                    {#					待支付#}
+                    {#					<em id="count-seltime-2" class="hide" data-num="0">#}
+                    {#							0#}
+                    {#					</em>#}
+                    {#				</span>#}
+                    {#                            </a>#}
+                    {#                        </li>#}
+                    {#                        <em id="count-seltime-2-wechat" style="display:none">#}
+                    {#                            0#}
+                    {#                        </em>#}
+                    {#                        <em id="count-seltime-3-wechat" style="display:none">#}
+                    {#                            0#}
+                    {#                        </em>#}
+                    {#                        <li><a href="javascript:;" onclick="ec.member.orderList.check(this,'nocomment');"><span>待评价<em#}
+                    {#                                id="nocommentNum" style="display: none;" data-num="0" data-his="0">0</em></span></a>#}
+                    {#                        </li>#}
+                    {#                        <li><a href="javascript:;" onclick="ec.member.orderList.check(this,'send');"><span>待收货<em#}
+                    {#                                id="count-seltime-3" class="hide" data-num="0">0</em></span></a></li>#}
+                    {#                        <li><a href="javascript:;"#}
+                    {#                               onclick="ec.member.orderList.check(this,'finished');"><span>已完成</span></a></li>#}
+                    {#                        <li><a href="javascript:;"#}
+                    {#                               onclick="ec.member.orderList.check(this,'canceled');"><span>已取消</span></a></li>#}
+                    {#                    </ul>#}
+                </div>
+
+                <script>
+                    function imgError(img) {
+                        img.onerror = null;
+                        img.src = ol.libPath + "../../images/echannel/loading/mask.png";
+                        return true;
+                    }
+                </script>
+                <!-- 20141222-我的订单-订单类别-end -->
+                <!-- 20141222-我的订单-列表-start -->
+                <div class="myOrder-record" id="myOrders-list-content">
+
+                    <!-- 20141222-我的订单-列表-订单合并-end -->
+                    <div class="list-group-title">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <thead>
+                            <tr>
+                                <th class="col-pro">商品</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="list-group" id="list-group">
+                        <div class="o-pro">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                <!-- 普通商品列表 -->
+
+                                {% for product in object_list.3 %}
+                                    <tr>
+                                        <td class="col-pro-img">
+                                            <p class="p-img">
+                                                <a title="HUAWEI"
+                                                   href="{% url 'app:detail' %}?pid={{ product.pid }}"
+                                                   target="_blank">
+                                                    <img
+                                                            src="/static/images/{{ product.image }}"
+                                                            style="width: 150px"
+                                                            onerror="imgError(this)">
+                                                </a>
+                                            </p>
+                                        </td>
+
+                                        <td class="col-price">
+                                            <em>¥</em><span>{{ product.price }}</span>
+                                        </td>
+                                        <td class="col-pro-info">
+                                            <p class="p-name">
+
+                                                <a href="{% url 'app:detail' %}?pid={{ product.pid }}"
+                                                   target="_blank"
+                                                   title="{{ product.name }}&nbsp;&nbsp;&nbsp;{{ product.desc }}"
+                                                   class="p-name"><!---->
+                                                    {{ product.name }}&nbsp;&nbsp;&nbsp;{{ product.desc }}</a>
+                                            </p>
+                                        </td>
+
+
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- 20141222-我的订单-列表-订单合并-start -->
+                    <div class="myOrder-control hide" id="myOrder-control-bottom">
+                        <label class="inputbox" id="bottomCheckBoxDiv" name="bottomCheckBoxDiv">
+                            <!-- 20140819-我的订单-合并付款-start -->
+                            <input type="checkbox" class="checkbox" id="bottomCheckAllBox"
+                                   name="bottomCheckAllBox"><span>全选</span>
+                            <!-- 20140819-我的订单-合并付款-end -->
+                        </label>
+                        <a href="javascript:;" class="button-operate-merge-pay" id="bottomButton"
+                           onclick="ec.member.orderList.mergePay();"><span>合并支付</span></a>
+                    </div>
+                    <!-- 20141222-我的订单-列表-订单合并-end -->
+                    <div class="list-group-page">
+                        <div class="pager" id="list-pager"></div>
+                    </div>
+                </div>
+
+                <!-- 20170824-我的商城-用户信息-end -->
+
+                <div class="clearfix">
+                    <!-- 20190220-我的商城-我的订单-start -->
+
+                    <!-- 20190220-我的商城-我的订单-end -->
+                    <div class="hr-18"></div>
+
+
+                    <!-- 20190220-我的商城-会员专享-start -->
+
+                    <div id="personal_center_hr hide" class="hr-18"></div>
+                    <!-- 20190220-我的商城-会员专享-end -->
+
+
+                </div>
+                <div class="fr mc-right">
+
+                    <!--20190220-我的服务-start-->
+                    <div id="grid_config_box" class="mc-detail hide">
+                    </div>
+                    <div id="grid_config_hr" class="hr-18 hide"></div>
+                    <!--20190220-我的服务-end-->
+
+
+                    <div class="hr-18"></div>
+                    <!--20190220-华为移动生活-end-->
+                </div>
+
+
+            </div>
+
+            <div class="fl u-1-5">
+
+
+                <!-- 20170823-左边菜单-start -->
+                <div class="mc-menu-area">
+                    <div class="h"><a href="{% url 'app:mycenter' %}"><span>个人中心</span></a></div>
+                    <div class="b">
+                        <ul>
+                            <li>
+                                <h3 class="icon-mc-order"><span>订单中心</span></h3>
+                                <ol>
+                                    <li id="li-order"><a
+                                            href="{% url 'app:mycenter_order' %}"><span>我的订单</span></a>
+                                    </li>
+
+                                    <li id="li-prdRemark"><a
+                                            href="{% url 'app:mycenter_evaluate' %}"><span>商品评价</span></a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h3 class="icon-mc-asset"><span>我的资产</span></h3>
+                                <ol>
+                                    <li id="li-newpoint"><a
+                                            href="{% url 'app:mycenter_score' %}"><span>我的积分</span></a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h3 class="icon-mc-support"><span>购买支持</span></h3>
+                                <ol>
+                                    <li id="li-myAddress"><a
+                                            href="{% url 'app:mycenter_site' %}"><span>收货地址管理</span></a>
+                                    </li>
+                                </ol>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- 20170823-左边菜单-end -->
+                <script src="{% static 'mycenter/js/leftMenu.js' %}"></script>
+            </div>
+        </div>
+        <div class="hr-80"></div>
+
+    </div>
+
+
+{% endblock xinxi %}

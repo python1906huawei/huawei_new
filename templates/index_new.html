@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-
 <!DOCTYPE html>
 <html>
-{% block head %}
+
+{% block content %}
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -51,8 +51,7 @@
     <![endif]--><!--[if IE 8]><script>ol.isIE8=true;</script><![endif]-->
         <!--[if lt IE 9]><script src="https://res9.vmallres.com/20190808/js/common/html5shiv.js"></script> <![endif]-->
     </head>
-{% endblock head %}
-{% block content %}
+
     <body class="wide" style="min-width: 1200px; overflow-x: hidden;">
     <img src="{% static 'images/icon-common.svg' %}" class="hide">
     <img src="{% static 'images/icon01.svg' %}" class="hide">
@@ -980,685 +979,6 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
             <div class="category category-index" id="category-block">
                 <!-- 20170223-分类-start -->
                 <div class="b">
-                    {#                <ol class="category-list">#}
-                    {#                    <!-- 鼠标悬停增加ClassName： hover -->#}
-                    {#                    <li id="zxnav_0" class="category-item">#}
-                    {#                        <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-36" target="_blank">#}
-                    {#                                            <span>手机</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-75" target="_blank">#}
-                    {#                                        <span>荣耀</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-285" target="_blank">#}
-                    {#                                        <span>HUAWEI P系列</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-3 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="荣耀">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-75" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/vQgeYhJ8nzPnL57QQikv.png' %}">#}
-                    {#                                        <span>荣耀</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="HUAWEI P系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-285" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/o2bkSM98by71VqqvM8oS.png' %}">#}
-                    {#                                        <span>HUAWEI P系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="HUAWEI Mate系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-76" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/TNtLR6VLtf33ZLwYCI7Y.png' %}">#}
-                    {#                                        <span>HUAWEI Mate系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="荣耀畅玩系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-77" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/rPzFyIRhovqmj0xTAHRJ.png' %}">#}
-                    {#                                        <span>荣耀畅玩系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="HUAWEI nova系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-277" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/1coLENn8BWwp0uk83Z8v.png' %}">#}
-                    {#                                        <span>HUAWEI nova系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="华为畅享系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-275" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/UzzOHEwr5zds7unUk9IF.png' %}">#}
-                    {#                                        <span>华为畅享系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="HUAWEI 麦芒系列">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-81" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/Ij4d8D0psfX5qo36dANk.png' %}">#}
-                    {#                                        <span>HUAWEI 麦芒系列</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="移动4G+专区">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-38" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/KJrjsCp9tWK5cb69sqPZ.png' %}">#}
-                    {#                                        <span>移动4G+专区</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-36" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li id="zxnav_1" class="category-item odd">#}
-                    {#                        <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-40" target="_blank">#}
-                    {#                                            <span>笔记本 &amp; 平板</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-41" target="_blank">#}
-                    {#                                        <span>平板电脑</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-42" target="_blank">#}
-                    {#                                        <span>笔记本电脑</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-1 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="平板电脑">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-41" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/MHjoMStq3oJZh2noPo37.png' %}">#}
-                    {#                                        <span>平板电脑</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="笔记本电脑">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-42" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/SeR9qy8YQtRqReGFsv6K.png' %}">#}
-                    {#                                        <span>笔记本电脑</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="笔记本配件">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-317" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/zJrzC3PB3eRxHgMa4gZp.png' %}">#}
-                    {#                                        <span>笔记本配件</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-40" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li id="zxnav_2" class="category-item">#}
-                    {#                        <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-59" target="_blank">#}
-                    {#                                            <span>智能穿戴</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-241" target="_blank">#}
-                    {#                                        <span>手环</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-247" target="_blank">#}
-                    {#                                        <span>手表</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-329" target="_blank">#}
-                    {#                                        <span>VR</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-1 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="手环">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-241" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/mdCqMsUUZa0ffupVTN1Z.png' %}">#}
-                    {#                                        <span>手环</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="手表">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-247" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/WiJpmV0tMyVz7QdPq1a7.png' %}">#}
-                    {#                                        <span>手表</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="VR">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-329" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/16dyKlLvXNE0uyrhQnRF.png' %}">#}
-                    {#                                        <span>VR</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-59" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li id="zxnav_3" class="category-item odd">#}
-                    {#                        <input id="zxnav_3_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_3_name" type="hidden" autocomplete="off" value="智能家居 &amp; 智慧屏">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-43" target="_blank">#}
-                    {#                                            <span>智能家居 &amp; 智慧屏</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-626" target="_blank">#}
-                    {#                                        <span>智慧屏</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-45" target="_blank">#}
-                    {#                                        <span>路由器</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-371" target="_blank">#}
-                    {#                                        <span>照明</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-5 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="智慧屏">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-626" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/yROZ5rZaT5oKUkO1aECV.png' %}">#}
-                    {#                                        <span>智慧屏</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="路由器">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-45" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/gB9fmcvyptXFOkUsKW0P.png' %}">#}
-                    {#                                        <span>路由器</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="照明">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-371" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/0fiZED1M3bzCZCtrmVuv.png' %}">#}
-                    {#                                        <span>照明</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="电视盒子">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-46" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/lnlE6GEuuWly2PHxKKeW.png' %}">#}
-                    {#                                        <span>电视盒子</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="清洁">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-421" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/IFVtkj665KI49A3ym523.png' %}">#}
-                    {#                                        <span>清洁</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="子母/分布式路由">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-263" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/0lCP0qxeMaoDPOLACYbR.png' %}">#}
-                    {#                                        <span>子母/分布式路由</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="电力猫/wifi放大器">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-44" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/dW5bJU5lzj5OxkwNdP87.png' %}">#}
-                    {#                                        <span>电力猫/wifi放大器</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="移动路由">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-97" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/htvruJplPJccOUulB520.png' %}">#}
-                    {#                                        <span>移动路由</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="节能">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-423" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/VF4WLfAXu0lG2X6ZEnxH.png' %}">#}
-                    {#                                        <span>节能</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="环境">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-373" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/EhmOYEJxAkrdpZsolbI9.png' %}">#}
-                    {#                                        <span>环境</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="安防">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-379" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/y7vaoWpus2AfktoTN0wy.png' %}">#}
-                    {#                                        <span>安防</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="健康">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-403" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/1CGfUr0UDawHCUV4D7mG.png' %}">#}
-                    {#                                        <span>健康</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="运动">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-640" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/TpanIrrPjwMu34d3hCgP.png' %}">#}
-                    {#                                        <span>运动</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="厨电">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-377" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/qPe5p6fzBZg1YHMz1qtg.png' %}">#}
-                    {#                                        <span>厨电</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="影音">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-407" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/5KAnARU4uIjSgYk4OVgS.png' %}">#}
-                    {#                                        <span>影音</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="卫浴">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-375" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/ixQkwcWecC8xgBhuxQPy.png' %}">#}
-                    {#                                        <span>卫浴</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="其他">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-381" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/Tkcmu4245ICZHW7DWTYA.png' %}">#}
-                    {#                                        <span>其他</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-43" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li id="zxnav_4" class="category-item">#}
-                    {#                        <input id="zxnav_4_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_4_name" type="hidden" autocomplete="off" value="热销配件">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-54" target="_blank">#}
-                    {#                                            <span>热销配件</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-580" target="_blank">#}
-                    {#                                        <span>保护壳</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-56" target="_blank">#}
-                    {#                                        <span>移动电源</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-229" target="_blank">#}
-                    {#                                        <span>耳机</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-5 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="保护壳">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-580" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/RyT80PAF3dD0VUy9XTgz.png' %}">#}
-                    {#                                        <span>保护壳</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="移动电源">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-56" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/jSg15QyIzY9GE4mVOHaI.jpg' %}">#}
-                    {#                                        <span>移动电源</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="耳机">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-229" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/DNzsmlZ7WcB99QjnLQZW.png' %}">#}
-                    {#                                        <span>耳机</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="保护套">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-582" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/nxlajbLtHHaH00OhSaAv.png' %}">#}
-                    {#                                        <span>保护套</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="贴膜">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-584" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/UWVgAL2WFNeoVHZRRE8s.png' %}">#}
-                    {#                                        <span>贴膜</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="音箱">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-55" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/RqRG1BiNzrtZ8AWkIHIO.png' %}">#}
-                    {#                                        <span>音箱</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="自拍杆/支架">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-231" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/v3FdBs1CVsEMnhsWcXh2.png' %}">#}
-                    {#                                        <span>自拍杆/支架</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="充电器/线材">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-58" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/4JwK2I1Eqty0bakRT9YY.png' %}">#}
-                    {#                                        <span>充电器/线材</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="U盘/存储卡">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-83" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/yXKgwCBDFLvIPYpEtAlq.png' %}">#}
-                    {#                                        <span>U盘/存储卡</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="摄像机/镜头">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-235" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/GMpfFA5G7UIbwRRClwvI.png' %}">#}
-                    {#                                        <span>摄像机/镜头</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="智能眼镜">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-636" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/lVmSzxWu3zc0ZTVqD48u.png' %}">#}
-                    {#                                        <span>智能眼镜</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="智能硬件">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-239" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/71puISALSy0Bepi1nSQl.png' %}">#}
-                    {#                                        <span>智能硬件</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="表带">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-588" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/ecDhrcKmmX2lMEJ6EWUN.png' %}">#}
-                    {#                                        <span>表带</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="生活周边">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-237" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/B7R6qLbvn8J6DbwODyWS.png' %}">#}
-                    {#                                        <span>生活周边</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="盒子专属配件">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-586" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/PWIcWmhZNMDgg2gXmgCh.png' %}">#}
-                    {#                                        <span>盒子专属配件</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="触控笔/取卡针">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-568" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/Mrfryy8YSHN2KME98dM8.png' %}">#}
-                    {#                                        <span>触控笔/取卡针</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-54" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li id="zxnav_5" class="category-item odd">#}
-                    {#                        <input id="zxnav_5_flag" type="hidden" autocomplete="off" value="no">#}
-                    {#                        <input id="zxnav_5_name" type="hidden" autocomplete="off" value="增值服务 &amp; 其他">#}
-                    {#                        <div class="category-item-bg">#}
-                    {#                            <div class="category-info">#}
-                    {#                                <div class="category-info-detail">#}
-                    {#                                    <div class="category-title">#}
-                    {#                                        <a href="https://www.vmall.com/list-34" target="_blank">#}
-                    {#                                            <span>增值服务 &amp; 其他</span>#}
-                    {#                                        </a>#}
-                    {#                                    </div>#}
-                    {#                                    <a href="https://www.vmall.com/list-578" target="_blank">#}
-                    {#                                        <span>服务器</span>#}
-                    {#                                    </a>#}
-                    {#                                    <a href="https://www.vmall.com/list-576" target="_blank">#}
-                    {#                                        <span>增值卡</span>#}
-                    {#                                    </a>#}
-                    {#                                    <i class=""></i>#}
-                    {#                                </div>#}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                        <div class="category-panels category-panels-2 none">#}
-                    {##}
-                    {##}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="服务器">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-578" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/alMghfvLjM8qE4wuTjY4.png' %}">#}
-                    {#                                        <span>服务器</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="增值卡">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-576" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/9bu2TLFAeElbfTBW9qyU.png' %}">#}
-                    {#                                        <span>增值卡</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="AI 计算平台">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-594" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/9xgKp8DlHGYOJTcuc4Qx.png' %}">#}
-                    {#                                        <span>AI 计算平台</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                                <li class="subcate-item">#}
-                    {#                                    <input id="child_name" type="hidden" value="电池服务">#}
-                    {#                                    <input id="child_status" type="hidden" value="1">#}
-                    {#                                    <input id="child_type" type="hidden" value="1">#}
-                    {#                                    <a href="https://www.vmall.com/list-622" target="_blank">#}
-                    {#                                        <img class="" src="{% static 'images/8J0Q5RpbK23FoBD4nX2h.png' %}">#}
-                    {#                                        <span>电池服务</span>#}
-                    {#                                    </a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                            <ul class="subcate-list clearfix">#}
-                    {#                                <li class="subcate-btn">#}
-                    {#                                    <a href="https://www.vmall.com/list-34" target="_blank">查看全部</a>#}
-                    {#                                </li>#}
-                    {#                            </ul>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                </ol>#}
                 </div>
                 <!-- 20170223-分类-end -->
 
@@ -4655,8 +3975,8 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                         <div style="width:100%;" class="ec-slider-item-img"><a
                                 style="width:100%;height:550px;display:block;"
                                 href="{% url 'app:detail' %}?pid={{ phone.pid }}"
-                                target="_blank"
-                                onclick="pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086608835751.html','1')"></a>
+
+                                ></a>
                         </div>
                         <script>
                             var indexSliderBtnDap = function (current, next) {
@@ -4682,7 +4002,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                 var imgLi = document.createElement("li");
                                 imgLi.setAttribute("class", "ec-slider-item");
                                 imgLi.setAttribute("style", "background: url('/static/images/{{ phone.showpicture }}') 50% 0px no-repeat; ; width: 100%; height: 550px; display: none; position: absolute;");
-                                imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086291072503.html\" target=\"_blank\" onclick=\"pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086291072503.html',2);\"></a></div>";
+                                {#imgLi.innerHTML = "<div style=\"width:100%;\" class=\"ec-slider-item-img\"><a style=\"width:100%;height:550px;display:block;\" href=\"https://www.vmall.com/product/10086291072503.html\" target=\"_blank\" onclick=\"pushSliderMsg('/static/images/{{ phone.showpicture }}','https://www.vmall.com/product/10086291072503.html',2);\"></a></div>";#}
                                 $("#index_slider").children("ul").append(imgLi);
 
 
@@ -4724,15 +4044,14 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <!--ads end-->
     </div><!-- 20130904-热门板-end -->
 
-    <!--//20161123 弹出框-->
+
+
+
 
 
     <!-- 2017-02-15-菜单栏-start -->
     <div class="home-channel-menu">
-
         <div class="layout relative">
-
-
             <div class="channel-floor-0 relative">
                 <div class="h">
                     <div class="home-channel-main">
@@ -4755,17 +4074,17 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                             <a id="oldPeople" style="display:none" class="new"
                                                href="https://www.vmall.com/member/msg?t=1568209383248timestamp"
                                                onclick="pushMemberMsg('消息中心','/member/msg?t=1568209383248timestamp')">消息中心</a>
-                                            <a id="newPeople" class="new" href="https://sale.vmall.com/welcome.html"
-                                               target="_blank"
-                                               onclick="pushMemberMsg('新人福利','https://sale.vmall.com/welcome.html')">新人福利</a>
-                                            <a class="" href="https://www.vmall.com/privilege" target="_blank"
-                                               onclick="pushMemberMsg('特权频道','/privilege')">会员频道</a>
+{#                                            <a id="newPeople" class="new" href="https://sale.vmall.com/welcome.html"#}
+{#                                               target="_blank"#}
+{#                                               onclick="pushMemberMsg('新人福利','https://sale.vmall.com/welcome.html')">新人福利</a>#}
+{#                                            <a class="" href="https://www.vmall.com/privilege" target="_blank"#}
+{#                                               onclick="pushMemberMsg('特权频道','/privilege')">会员频道</a>#}
                                         </div>
                                     </div>
                                 </div>
                                 <div id="gg_unlogin" class="i-mall-prompt clearfix">
                                     <div class="relative fl w-name">
-                                        <img src="{% static 'images/img_not_logged_in.png' %}" alt="">
+                                        <img src="/static/uploda/{{ request.user.portrait }}" alt="">
                                     </div>
                                     <div class="fl">
                                         {% if user.is_authenticated %}
@@ -4783,10 +4102,10 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                             </div>
                                         {% endif %}
                                         <div class="w-btn">
-                                            <a class="new" href="https://sale.vmall.com/welcome.html" target="_blank"
-                                               onclick="pushMemberMsg('新人福利','https://sale.vmall.com/welcome.html')">新人福利</a>
-                                            <a class="" href="https://www.vmall.com/privilege" target="_blank"
-                                               onclick="pushMemberMsg('会员频道','/privilege')">会员频道</a>
+{#                                            <a class="new" href="https://sale.vmall.com/welcome.html" target="_blank"#}
+{#                                               onclick="pushMemberMsg('新人福利','https://sale.vmall.com/welcome.html')">新人福利</a>#}
+{#                                            <a class="" href="https://www.vmall.com/privilege" target="_blank"#}
+{#                                               onclick="pushMemberMsg('会员频道','/privilege')">会员频道</a>#}
                                         </div>
                                     </div>
                                 </div>
@@ -4794,8 +4113,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                             <li class="fl s2">
                                 <ul class="clearfix">
                                     <li>
-                                        <a href="http://company.vmall.com/" target="_blank"
-                                           onclick="pushMsgMenu(1,'300010901','PC首页功能导航_\u4F01\u4E1A\u8D2D\u7279\u60E0','http\x3A\x2F\x2Fcompany.vmall.com')">
+                                        <a href="">
                                             <div class="p-img">
                                                 <img class="img0"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4805,8 +4123,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.vmall.com/privilege" target="_blank"
-                                           onclick="pushMsgMenu(2,'300010901','PC首页功能导航_\u4F1A\u5458\u9886\u5238','https\x3A\x2F\x2Fwww.vmall.com\x2Fprivilege')">
+                                        <a href="">
                                             <div class="p-img">
                                                 <img class="img1"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4816,8 +4133,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.vmall.com/recycle" target="_blank"
-                                           onclick="pushMsgMenu(3,'300010901','PC首页功能导航_\u4EE5\u65E7\u6362\u65B0','https\x3A\x2F\x2Fwww.vmall.com\x2Frecycle')">
+                                        <a href="" >
                                             <div class="p-img">
                                                 <img class="img2"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4827,8 +4143,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.vmall.com/product/10086291072503.html" target="_blank"
-                                           onclick="pushMsgMenu(4,'300010901','PC首页功能导航_\u7545\u4EAB10\x20Plus','https\x3A\x2F\x2Fwww.vmall.com\x2Fproduct\x2F10086291072503.html')">
+                                        <a href="" >
                                             <div class="p-img">
                                                 <img class="img3"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4838,8 +4153,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://sale.vmall.com/honorhome.html" target="_blank"
-                                           onclick="pushMsgMenu(5,'300010901','PC首页功能导航_\u8363\u8000\u6570\u7801','https\x3A\x2F\x2Fsale.vmall.com\x2Fhonorhome.html')">
+                                        <a href="" >
                                             <div class="p-img">
                                                 <img class="img4"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4849,8 +4163,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://sale.vmall.com/hwsmh.html" target="_blank"
-                                           onclick="pushMsgMenu(6,'300010901','PC首页功能导航_\u534E\u4E3A\u6570\u7801','https\x3A\x2F\x2Fsale.vmall.com\x2Fhwsmh.html')">
+                                        <a href="" >
                                             <div class="p-img">
                                                 <img class="img5"
                                                      src="{% static 'images/35ce494e9a43751016a5032ff0ec7a7b.png' %}"
@@ -4919,33 +4232,18 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                             </li>
                         </ul>
                     </div>
-                    {#                <div class="">#}
-                    {##}
-                    {#                    <ul class="home-promo-list clearfix">#}
-                    {#                        {% for object in object_list.0 %}#}
-                    {##}
-                    {##}
-                    {##}
-                    {#                        <li><a href="{% url 'app:detail' %}?pid={{ object.pid }}"#}
-                    {#                               class="item"><img alt="华为" src="/static/images/{{ object.image }}"></a></li>#}
-                    {##}
-                    {#{% endfor %}#}
-                    {#                    </ul>#}
-                    {#                </div>#}
                 </div>
                 <div class="b">
-                    <!--20170222 限时特惠 start-->
-                    <!--20170222 限时特惠 end-->
                 </div>
-
-                <div></div>
+                <div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 锚点 -->
     <div class="event-float-layout index-channel-floor" style="height: 376px; top: 319px;">
         <!--添加 fixed  position: fixed !important;top: 20px;z-index: 500;-->
-        <!-- 锚点 -->
         <div class="event-float">
             <div>
                 <ul class="hover-list">
@@ -4976,12 +4274,12 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <!-- 优先填充第一行数据 -->
         <!-- 排除非4倍数的商品 -->
         <!-- 非对称式 asym_array -->
-
+        {#手机#}
         <div class="layout" id="lc_879482">
             <div class="home-channel-floor">
                 <div class="h">
                     <h2 class="channel-title fl">手机</h2>
-                    <div class="channel-more fr"><span></span><span></span><span></span>
+                    <div class="channel-more fr">
                         <a href="{% url 'app:phonelist' %}?type=0">查看更多</a>
                     </div>
                 </div>
@@ -5017,13 +4315,13 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <!-- 商品是否为4的倍数 -->
         <!-- 优先填充第一行数据 -->
         <!-- 非对称式 asym_array -->
-
+        {#笔记本电脑#}
         <div class="layout" id="lc_879490">
             <div class="home-channel-floor">
                 <div class="h">
                     <h2 class="channel-title fl">笔记本电脑</h2>
 
-                    <div class="channel-more fr"><span></span><span></span><span></span>
+                    <div class="channel-more fr">
                         <a href="{% url 'app:phonelist' %}?type=1">查看更多</a>
                     </div>
                 </div>
@@ -5032,7 +4330,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                         <ul class="grid-list clearfix">
                             {% for pc in object_list.1 %}
                                 <li class="grid-items">
-                                    <a class="thumb" href="{% url 'app:detail' %}?pid={{ pc.pid }}">
+                                    <a class="thumb" href="{% url 'app:detail' %}?pid={{ pc.pid }}"  >
                                         <div class="grid-info">
                                             <p class="grid-img">
                                                 <img alt="{{ pc.name }}"
@@ -5060,17 +4358,16 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <!-- 非对称式 asym_array -->
 
 
-
         <!-- 初始值 -->
         <!-- 分列式 march-past 计算显示商品数量-->
         <!-- 非对称式 asym_array -->
-
+        {#智能穿戴#}
         <div class="layout" id="lc_879478">
             <div class="home-channel-floor">
                 <div class="h">
                     <h2 class="channel-title fl">智能穿戴</h2>
 
-                    <div class="channel-more fr"><span></span><span></span><span></span>
+                    <div class="channel-more fr">
                         <a href="{% url 'app:phonelist' %}?type=2">查看更多</a>
                     </div>
                 </div>
@@ -5078,24 +4375,24 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
                     <div class="goods-list">
                         <ul class="grid-list clearfix">
                             <!--通过添加current 来实现 hover效果-->
-{% for sh in object_list.2 %}
+                            {% for sh in object_list.2 %}
 
 
 
-                            <li class="grid-items">
-                                <a class="thumb" href="{% url 'app:detail' %}?pid={{ sh.pid }}">
-                                    <div class="grid-info">
-                                        <p class="grid-img">
-                                            <img alt="{{ sh.name }}"
-                                                 src="/static/images/{{ sh.image }}">
-                                        </p>
-                                    </div>
-                                    <div class="grid-title">{{ sh.name }}</div>
-                                    <p class="grid-desc">{{ sh.desc }}</p>
-                                    <p class="grid-price">¥{{ sh.price }}</p>
-                                </a>
-                            </li>
-{% endfor %}
+                                <li class="grid-items">
+                                    <a class="thumb" href="{% url 'app:detail' %}?pid={{ sh.pid }}">
+                                        <div class="grid-info">
+                                            <p class="grid-img">
+                                                <img alt="{{ sh.name }}"
+                                                     src="/static/images/{{ sh.image }}">
+                                            </p>
+                                        </div>
+                                        <div class="grid-title">{{ sh.name }}</div>
+                                        <p class="grid-desc">{{ sh.desc }}</p>
+                                        <p class="grid-price">¥{{ sh.price }}</p>
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
 
@@ -5159,38 +4456,7 @@ src="https://res.vmallres.com/pimages//sale/2018-12/6Y7SW4v4hnJ9kl9fDC9d.jpg"
         <div class="hr-60"></div>
     </div>
 
-    <!-- 2017-02-15-top-banner-start -->
-    <textarea id="top-banner" class="hide">	&lt;!-- 顶部banner --&gt;
-	&lt;div class="top-banner-max hide" id="top-banner-max"&gt;
-		&lt;div class="top-banner-img"&gt;
 
-			&lt;a title="折叠" href="javascript:;" class="button-top-banner-min"
-id="top-banner-max-toggle"&gt;-&lt;/a&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="top-banner-min hide" id="top-banner-min"&gt;
-		&lt;div class="top-banner-img"&gt;
-			&lt;p style="font-size:0;"&gt;
-			&lt;a
-style="display:block;position:relative;width:1920px;text-align:center;left:50%;background-color:;margin-left:-960px;"
- title="华为" target="_blank"
-href="https://www.vmall.com/product/10086244199203.html"&gt;&lt;img
-src="https://res.vmallres.com/pimages//pages/picImages/Fe9FN4v1OUpl2zfo1Hjv.jpg"
- title="华为" /&gt;&lt;/a&gt;
-&lt;/p&gt;
-			&lt;a title="展开" href="javascript:;" class="button-top-banner-max
-hide" id="top-banner-min-toggle"&gt;+&lt;/a&gt;
-			&lt;a class="button-top-banner-close" href="javascript:;" title="关闭"
-id="top-banner-min-close"&gt;关闭&lt;/a&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;!-- 顶部banner end --&gt;
-</textarea>
-    <!-- 2017-02-15-top-banner-end -->
-
-    <!-- 2017-09-21-bottom-banner-start -->
-
-    <!-- 2017-09-21-bottom-banner-end -->
 
     <script>
         // 改为异步调用
@@ -5944,799 +5210,5 @@ id="top-banner-min-close"&gt;关闭&lt;/a&gt;
         });
     </script>
 {% endblock content %}
-{% block foot %}
-    <!--口号-20121025 -->
-    <div class="slogan-container">
-        <div class="slogan">
-            <ul>
-                <li class="s1"><a target="_blank" href="https://www.vmall.com/help/faq-934.html" rel="nofollow"
-                                  onclick="pushFootAdvertMsg('公司介绍','https://www.vmall.com/help/faq-934.html')"><i></i>百强企业&nbsp;品质保证</a>
-                </li>
-                <li class="s2"><a target="_blank" href="https://www.vmall.com/help/faq-834.html" rel="nofollow"
-                                  onclick="pushFootAdvertMsg('退换货政策','https://www.vmall.com/help/faq-834.html')"><i></i>7天退货&nbsp;15天换货</a>
-                </li>
-                <li class="s3">
-                    <a target="_blank" href="https://www.vmall.com/help/faq-4367.html" rel="nofollow"
-                       onclick="pushFootAdvertMsg('物流帮助','https://www.vmall.com/help/faq-4367.html')"><i></i>
-                        <span>48元起免运费</span>
-                    </a>
-                </li>
-                <li class="s4"><a target="_blank" href="http://consumer.huawei.com/cn/support/service-center/index.htm"
-                                  rel="nofollow"
-                                  onclick="pushFootAdvertMsg('服务中心','http://consumer.huawei.com/cn/support/service-center/index.htm')"><i></i>1000家维修网点&nbsp;全国联保</a>
-                </li>
-            </ul>
-        </div>
-    </div><!--口号-end -->
-
-    <!-- 2017-02-15-服务-start -->
-    <div class="service-container">
-        <div class="service">
-            <div class="service-l fl">
-                <dl class="s1">
-                    <dt>
-                        <p class="title">购物相关</p>
-                    </dt>
-                    <dd>
-                        <ol>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-4355.html"
-                                   rel="nofollow">购物指南</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-4367.html"
-                                   rel="nofollow">配送方式</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-4357.html"
-                                   rel="nofollow">支付方式</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/category-16.html"
-                                   rel="nofollow">常见问题</a></li>
-                        </ol>
-                    </dd>
-                </dl>
-                <dl class="s2">
-                    <dt>
-                        <p class="title">保修与退换货</p>
-                    </dt>
-                    <dd>
-                        <ol>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-833.html"
-                                   rel="nofollow">保修政策</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-834.html"
-                                   rel="nofollow">退换货政策</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-5259.html"
-                                   rel="nofollow">退换货流程</a>
-                            </li>
-                            <li><a target="_blank" href="http://consumer.huawei.com/cn/support/warranty-query/index.htm"
-                                   rel="nofollow">保修状态查询</a></li>
-                            <li><a target="_blank" href="http://c-ver.huawei.com/web/" rel="nofollow">配件防伪查询</a></li>
-                        </ol>
-                    </dd>
-                </dl>
-                <dl class="s3">
-                    <dt>
-                        <p class="title">维修与技术支持</p></dt>
-                    <dd>
-                        <ol>
-                            <li><a target="_blank" href="http://consumer.huawei.com/cn/support/service-center/index.htm"
-                                   rel="nofollow">售后网点</a></li>
-                            <li><a target="_blank" href="http://consumer.huawei.com/cn/support/reservation/index.htm"
-                                   rel="nofollow">预约维修</a></li>
-                            <li><a target="_blank" href="http://consumer.huawei.com/cn/support/express-repair/index.htm"
-                                   rel="nofollow">手机寄修</a></li>
-                            <li><a target="_blank"
-                                   href="http://consumer.huawei.com/cn/support/sparepart-price/index.htm"
-                                   rel="nofollow">备件价格查询</a></li>
-                            <li><a target="_blank" href="http://consumer.huawei.com/cn/support/door-to-door-service/"
-                                   rel="nofollow">上门服务</a></li>
-                        </ol>
-                    </dd>
-                </dl>
-                <dl class="s4">
-                    <dt>
-                        <p class="title">特色服务</p></dt>
-                    <dd>
-                        <ol>
-                            <li><a target="_blank" href="https://consumer.huawei.com/cn/support/distinguish/"
-                                   rel="nofollow">防伪查询</a></li>
-                            <li><a target="_blank" href="https://www.vmall.com/order/tcsProductIndex"
-                                   rel="nofollow">补购保障</a></li>
-                            <li><a target="_blank" href="https://www.vmall.com/recycle" rel="nofollow">以旧换新</a></li>
-                            <li><a target="_blank"
-                                   href="https://www.vmall.com/product/10086344499475.html#10086230774569"
-                                   rel="nofollow">礼品包装</a></li>
-                        </ol>
-                    </dd>
-                </dl>
-                <dl class="s5">
-                    <dt>
-                        <p class="title">关于我们</p></dt>
-                    <dd>
-                        <ol>
-                            <li><a target="_blank" href="https://www.huawei.com/cn/about-huawei/corporate-information"
-                                   rel="nofollow">公司介绍</a></li>
-                            <li><a target="_blank" href="https://www.vmall.com/help/faq-939.html"
-                                   rel="nofollow">华为商城简介</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/offshop/hwshoplist"
-                                   rel="nofollow">华为线下门店</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/offshop/shoplist"
-                                   rel="nofollow">荣耀线下门店</a>
-                            </li>
-                            <li><a target="_blank" href="https://www.vmall.com/job" rel="nofollow">诚征英才</a></li>
-                            <li><a href="javascript:;" title="意见反馈"
-                                   onclick="ec.survery.open();pushRightHelpMsg(3)">意见反馈</a>
-                            </li>
-                        </ol>
-                    </dd>
-                </dl>
-                <dl class="s6" id="serverlink">
-                    <dt class="relative">
-                        <p class="title">友情链接</p>
-                        <p class="button"><span class="btn btn-prev disabled"> &lt; </span><span
-                                class="btn btn-next"> &gt; </span></p>
-                    </dt>
-                    <dd class="">
-                        <div class="service-list clearfix" style="width: 1431px;">
-                            <ol>
-                                <li><a onclick="jump_link('http://www.huawei.com/cn/')" target="_blank"
-                                       href="http://www.huawei.com/cn/">华为集团</a></li>
-                                <li><a onclick="jump_link('https://consumer.huawei.com/cn/')" target="_blank"
-                                       href="https://consumer.huawei.com/cn/">华为CBG官网</a></li>
-                                <li><a onclick="jump_link('http://www.honor.cn/')" target="_blank"
-                                       href="http://www.honor.cn/">荣耀官网</a></li>
-                                <li><a onclick="jump_link('http://club.huawei.com/')" target="_blank"
-                                       href="http://club.huawei.com/">花粉俱乐部</a></li>
-                                <li><a onclick="jump_link('https://www.huaweicloud.com/')" target="_blank"
-                                       href="https://www.huaweicloud.com/">华为云</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('https://www.vmall.com/shopdc/sitemap.html/')" target="_blank"
-                                       href="https://www.vmall.com/shopdc/sitemap.html/">网站地图</a></li>
-                                <li><a onclick="jump_link('http://app.hicloud.com/')" target="_blank"
-                                       href="http://app.hicloud.com/">华为应用市场</a></li>
-                                <li><a onclick="jump_link('http://www.wbiao.cn/')" target="_blank"
-                                       href="http://www.wbiao.cn/">万表网</a></li>
-                                <li><a onclick="jump_link('http://www.askci.com/')" target="_blank"
-                                       href="http://www.askci.com/">中商情报网</a></li>
-                                <li><a onclick="jump_link('http://www.shuame.com/')" target="_blank"
-                                       href="http://www.shuame.com/">刷机精灵</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('https://www.vmall.com/')" target="_blank"
-                                       href="https://www.vmall.com/">华为手机</a></li>
-                                <li><a onclick="jump_link('http://www.17ugo.com/')" target="_blank"
-                                       href="http://www.17ugo.com/">优购物官网</a></li>
-                                <li><a onclick="jump_link('http://www.znds.com/')" target="_blank"
-                                       href="http://www.znds.com/">智能电视</a></li>
-                                <li><a onclick="jump_link('http://www.uc.cn/')" target="_blank"
-                                       href="http://www.uc.cn/">UC浏览器</a>
-                                </li>
-                                <li><a onclick="jump_link('http://www.zol.com/')" target="_blank"
-                                       href="http://www.zol.com/">中关村商城</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://www.kugou.com/')" target="_blank"
-                                       href="http://www.kugou.com/">酷狗音乐</a></li>
-                                <li><a onclick="jump_link('http://www.958shop.com/')" target="_blank"
-                                       href="http://www.958shop.com/">百信手机网</a></li>
-                                <li><a onclick="jump_link('http://www.cardbaobao.com/')" target="_blank"
-                                       href="http://www.cardbaobao.com/">卡宝宝网</a></li>
-                                <li><a onclick="jump_link('http://www.duote.com/')" target="_blank"
-                                       href="http://www.duote.com/">多特软件下载</a></li>
-                                <li><a onclick="jump_link('http://www.tongbu.com/')" target="_blank"
-                                       href="http://www.tongbu.com/">同步助手</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://www.fengniao.com/')" target="_blank"
-                                       href="http://www.fengniao.com/">蜂鸟摄影网</a></li>
-                                <li><a onclick="jump_link('http://www.7po.com/')" target="_blank"
-                                       href="http://www.7po.com/">奇珀论坛</a></li>
-                                <li><a onclick="jump_link('http://www.homekoo.com/')" target="_blank"
-                                       href="http://www.homekoo.com/">家具商城</a></li>
-                                <li><a onclick="jump_link('http://www.paixie.net/')" target="_blank"
-                                       href="http://www.paixie.net/">拍鞋网商城</a></li>
-                                <li><a onclick="jump_link('http://www.obolee.com/')" target="_blank"
-                                       href="http://www.obolee.com/">欧宝丽珠宝</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://www.xungou.com/')" target="_blank"
-                                       href="http://www.xungou.com/">寻购网</a></li>
-                                <li><a onclick="jump_link('http://www.yzmg.com/')" target="_blank"
-                                       href="http://www.yzmg.com/">亿智蘑菇</a></li>
-                                <li><a onclick="jump_link('http://www.wandoujia.com/')" target="_blank"
-                                       href="http://www.wandoujia.com/">安卓市场</a></li>
-                                <li><a onclick="jump_link('http://baike.1688.com/')" target="_blank"
-                                       href="http://baike.1688.com/">阿里巴巴生意经</a></li>
-                                <li><a onclick="jump_link('http://product.cnmo.com/')" target="_blank"
-                                       href="http://product.cnmo.com/">手机大全</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://www.anzow.com/')" target="_blank"
-                                       href="http://www.anzow.com/">安卓软件园</a></li>
-                                <li><a onclick="jump_link('http://www.wpxap.com/')" target="_blank"
-                                       href="http://www.wpxap.com/">智机论坛</a></li>
-                                <li><a onclick="jump_link('http://www.eepw.com.cn/')" target="_blank"
-                                       href="http://www.eepw.com.cn/">电子产品世界</a></li>
-                                <li><a onclick="jump_link('http://www.liqucn.com/')" target="_blank"
-                                       href="http://www.liqucn.com/">历趣网</a></li>
-                                <li><a onclick="jump_link('http://www.51bi.com/')" target="_blank"
-                                       href="http://www.51bi.com/">网购返利</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://www.apple110.com/')" target="_blank"
-                                       href="http://www.apple110.com/">Apple110</a></li>
-                                <li><a onclick="jump_link('http://www.91.com/')" target="_blank"
-                                       href="http://www.91.com/">91手机门户网</a>
-                                </li>
-                                <li><a onclick="jump_link('http://www.ydss.cn/')" target="_blank"
-                                       href="http://www.ydss.cn/">移动叔叔</a></li>
-                                <li><a onclick="jump_link('http://www.outlets365.com/')" target="_blank"
-                                       href="http://www.outlets365.com/">奥特莱斯</a></li>
-                                <li><a onclick="jump_link('https://www.vmall.com/')" target="_blank"
-                                       href="https://www.vmall.com/">荣耀Magic</a></li>
-                            </ol>
-                            <ol>
-                                <li><a onclick="jump_link('http://car.ctrip.com/')" target="_blank"
-                                       href="http://car.ctrip.com/">携程租车</a></li>
-                                <li><a onclick="jump_link('http://www.hwtrip.com/')" target="_blank"
-                                       href="http://www.hwtrip.com/">爱旅官网</a></li>
-                            </ol>
-                        </div>
-                        <script type="text/javascript">
-                            jump_link = function (url) {
-                                var win = window.open(url, "_blank");
-                                win.opener = null;
-                            }
-                        </script>
-                    </dd>
-                </dl>
-            </div>
-            <div class="service-r fl">
-                <dl class="s7">
-                    <dt>
-                        <p class="title">400-088-6888</p></dt>
-                    <dd>
-                        <ol>
-                            <li><a>7x24小时客服热线（仅收市话费）</a></li>
-                        </ol>
-                    </dd>
-                    <dd>
-                        <a id="tools-nav-service-robotim-button" rel="nofollow" class="service-btn btn-line-primary"
-                           href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Findex.html&amp;k=1&amp;from=06&amp;remark="
-                           target="_blank" style="display: block;"><i class=""></i> 在线客服</a>
-                    </dd>
-                </dl>
-                <div class="service-code clearfix">
-                    <h2>关注Vmall：</h2>
-                    <ul class="clearfix">
-                        <li class="iconfont">
-                            <a href="javascript:;"></a>
-                            <div class="service-code-img"><img src="{% static 'images/20181116180507506.jpg' %}"></div>
-                        </li>
-                        <li class="iconfont">
-                            <a target="_blank" href="https://www.toutiao.com/c/user/52373534151/#mid=52586950033"
-                               rel="nofollow"></a>
-                        </li>
-                        <li class="iconfont">
-                            <a target="_blank" href="https://weibo.com/shophuawei" rel="nofollow"></a>
-                        </li>
-                        <li class="iconfont">
-                            <a target="_blank" href="https://club.huawei.com/" rel="nofollow"></a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 2017-02-15-服务-end -->
-
-    <!--确认对话框-->
-    <div id="ec_ui_confirm" class="popup-area popup-define-area hide">
-        <div class="b">
-            <p id="ec_ui_confirm_msg"></p>
-            <div class="popup-button-area"><a id="ec_ui_confirm_yes" href="javascript:;"
-                                              class="button-action-yes"><span>是</span></a><a id="ec_ui_confirm_no"
-                                                                                             href="javascript:;"
-                                                                                             class="button-action-no"><span>否</span></a>
-            </div>
-        </div>
-        <div class="f"><s class="icon-arrow-down"></s></div>
-    </div>
-
-    <!--新确认对话框-->
-    <div id="ec_ui_confirm_new" class="popup-area-new hide">
-        <div class="b">
-            <p id="ec_ui_confirm_new_msg"></p>
-            <div class="popup-button-area"><a id="ec_ui_confirm_new_yes" href="javascript:;"
-                                              class="box-button-style-1"><span>是</span></a><a id="ec_ui_confirm_new_no"
-                                                                                              href="javascript:;"
-                                                                                              class="box-button-style-1"><span>否</span></a>
-            </div>
-        </div>
-        <div class="f"><s class="icon-arrow-down-new"></s></div>
-    </div>
-
-    <!--提示对话框-->
-    <div id="ec_ui_tips" class="popup-area popup-define-area hide">
-        <div class="b">
-            <p id="ec_ui_tips_msg" class="tac"></p>
-            <div class="popup-button-area tac"><a id="ec_ui_tips_yes" href="javascript:;" class="button-action-yes"
-                                                  title="确定"><span>确定</span></a></div>
-        </div>
-        <div class="f"><s class="icon-arrow-down"></s></div>
-    </div>
-
-    <!-- 2018-10-26-悬浮工具栏-start -->
-    <div class="hungBar j-hungBar">
-        <div class="hungBar-content">
-            <a target="_blank" onclick="pushRightHelpMsg(1)" href="https://www.vmall.com/cart2" timetype="timestamp"
-               class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>
-            <a target="_blank" id="tools-nav-service-robotim" onclick="pushRightHelpMsg(2)"
-               href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Findex.html&amp;k=1&amp;from=06&amp;remark="
-               class="hungBar-service" title="在线客服" style="display: block;"><i>在线客服</i></a>
-            <a id="tools-nav-survery" onclick="ec.survery.open();pushRightHelpMsg(3)" href="javascript:;"
-               class="hungBar-feedback" title="意见反馈" style="display: block;"><i>意见反馈</i></a>
-            <a href="javascript:;" class="hungBar-top" title="返回顶部" id="hungBar-top" style="opacity: 1; display: none;"><i>返回顶部</i></a>
-        </div>
-    </div>
-    <!-- 2018-10-26-悬浮工具栏-end -->
-
-    <!--意见反馈box-->
-    <div id="survery-box" class="ol_box_4 hide" style="width:600px;">
-        <div class="box-ct">
-            <div class="box-header">
-                <div class="box-tl"></div>
-                <div class="box-tc">
-                    <div class="box-tc1"></div>
-                    <div class="box-tc2"><a class="box-close" title="关闭" onclick="ec.survery.close();"
-                                            href="javascript:;"></a><span class="box-title">意见反馈</span></div>
-                </div>
-                <div class="box-tr"></div>
-            </div>
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tbody>
-                <tr>
-                    <td class="box-cl"></td>
-                    <td class="box-cc">
-                        <div class="box-content">
-                            <!-- -表单-意见反馈-start -->
-                            <div class="form-feedback-area">
-                                <div class="b">
-                                    <div class="form-edit-area">
-                                        <form autocomplete="off" id="form-feedback">
-                                            <div class="form-edit-table">
-                                                <table cellspacing="0" cellpadding="0" border="0">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <select name="type" id="surverytype">
-                                                                <option selected="selected">请选择疑问类型</option>
-                                                                <option>商品质量（手机、平板等软、硬件质量）</option>
-                                                                <option>商品缺货</option>
-                                                                <option>物流发货（发货快慢、发错货、送件人态度等）</option>
-                                                                <option>售后服务（服务网点、维修、退换货、客服）</option>
-                                                                <option>网站问题（商城功能失效、不好用等）</option>
-                                                                <option>其他问题</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <b>您的问题与建议</b><span id="errMsg"></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><textarea name="content" id="surveryContent" type="textarea"
-                                                                      class="textarea"></textarea></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>您的联系方式</b></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="text" name="contact" id="surveryContact"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="fl">
-                                                                <input type="text" maxlength="4" class="identify"
-                                                                       name="code" id="surveryVerify"
-                                                                       onkeyup="if(this.value.length==4){ec.survery.validate();}">&nbsp;&nbsp;<img
-                                                                    id="surveryVerifyImg"
-                                                                    onclick="ec.survery.reloadCode()"
-                                                                    class="vam" alt="验证码">&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                                                    class="vam"><a class="u" href="javascript:;"
-                                                                                   onclick="ec.survery.reloadCode();">换一张</a></span>
-                                                            </div>
-                                                            <div class="fr">
-                                                                <a href="javascript:;" onclick="ec.survery.submit();"
-                                                                   class="button-action-yes"><span>提交</span></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <input name="CsrfToken" type="hidden"
-                                                   value="9A8592C078F074E78ABD2887DD7293B3208ACF2002560EA8"></form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- -表单-意见反馈-end -->
-                        </div>
-                    </td>
-                    <td class="box-cr"></td>
-                </tr>
-                </tbody>
-            </table>
-            <div class="box-bottom">
-                <div class="box-bl"></div>
-                <div class="box-bc"></div>
-                <div class="box-br"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="globleParameter" class="hide" context="" stylepath="https://res8.vmallres.com/20190808/css"
-         scriptpath="https://res9.vmallres.com/20190808/js" imagepath="https://res.vmallres.com/20190808/images"
-         mediapath="https://res.vmallres.com/pimages/"></div>
-
-    <form action="/order/confirmcart" id="miniCartForm" method="post"><input name="CsrfToken" type="hidden"
-                                                                             value="9A8592C078F074E78ABD2887DD7293B3208ACF2002560EA8">
-    </form>
-    <!-- 2017-02-15-底部-start -->
-    <div class="footer-container" style="padding-bottom: 0px;">
-        <div class="footer">
-            <div class="footer-warrant-area clearfix"><p class="footer-warrant-logo fl"><a
-                    href="https://www.vmall.com/"><img src="{% static 'images/wLelYbpMVWbj9Xpaa5Fk.png' %}"
-                                                       title="华为商城"></a></p>
-                <div class="fl">
-                    <ul class="footer-warrant-link">
-                        <li><a href="https://www.huawei.com/cn/">华为集团</a></li>
-                        <li><a href="https://consumer.huawei.com/cn/">华为CBG官网</a></li>
-                        <li><a href="http://www.honor.cn/">荣耀官网</a></li>
-                        <li><a href="https://club.huawei.com/">花粉俱乐部</a></li>
-                        <li><a href="http://appstore.huawei.com/">华为应用市场</a></li>
-                        <li><a href="https://emui.huawei.com/cn/">EMUI</a></li>
-                        <li><a href="https://cloud.huawei.com/">华为终端云空间</a></li>
-                        <li><a href="https://developer.huawei.com/cn/">开发者联盟</a></li>
-                        <li><a href="https://m.vmall.com/">华为商城手机版</a></li>
-                        <li><a href="https://www.vmall.com/shopdc/sitemap.html">网站地图</a></li>
-                    </ul>
-                    <a href="https://www.vmall.com/help/faq-2635.html" rel="nofollow" target="_blank"
-                       title="隐私声明">隐私声明</a>
-                    <a href="https://www.vmall.com/help/faq-778.html" rel="nofollow" target="_blank"
-                       title="服务协议">服务协议</a>
-                    <a href="https://www.vmall.com/help/faq-11810.html" rel="nofollow" target="_blank" title="COOKIES">COOKIES</a>
-                    Copyright © 2012-2019 华为终端有限公司 版权所有 <a href="http://beian.miit.gov.cn/"
-                                                           target="_blank">粤ICP备19015064号</a><em>|</em><a
-                        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44190002003939"
-                        target="_blank">粤公网安备
-                    44190002003939号</a><br>增值电信业务经营许可证：粤B2-20190762<em>|</em>备案主体编号：44201919072182
-                </div>
-                <p class="fr footer-warrant-img"><a class="fl"
-                                                    href="http://privacy.truste.com/privacy-seal/validation?rid=81be9ca0-c821-4e2c-ad4b-ff7cff98f75f&amp;lang=zh-cn"
-                                                    rel="nofollow" target="_blank"><img alt="TRUSTe隐私认证"
-                                                                                        src="{% static 'images/20180522101715775.jpg' %}"
-                                                                                        title="TRUSTe隐私认证"></a> <a
-                        class="fl" href="https://res.vmallres.com/pimages///sale/2019-04/Vhy8y3yxVJXg0FE74dh0.png"
-                        target="_blank"><img alt="电子营业执照" src="{% static 'images/20160226162415360.png' %}"
-                                             title="电子营业执照"></a></p>
-            </div>
-        </div>
-    </div>
-    <!-- 2017-02-15-底部-end -->
-    <!--<script src="https://res9.vmallres.com/20190808/js/echannel/slider.min.js?20170426"></script>-->
-    <!--<script src="https://res9.vmallres.com/20190808/js/echannel/swiper.min.js?20170426"></script>-->
-    <script>
-        new Slider({//友情链接
-            objid: '#serverlink',
-            listname: '.service-list',
-            listitem: 'ol',
-            shownum: 1
-        }).init();
-
-        ec.load("ec.box", {loadType: "lazy"});
-        /**
-         *功能：给鼠标移动到s-dropdown上面的时候，记得给他多添加一个hover类样式
-         *目的是兼容ie6
-         *@author 李峰
-         */
-        $(function () {
-            $(".s-dropdown").hover(function () {
-                var jTpl = $(this).attr('data-tpl');
-                if (jTpl && $(this).find('.b').length < 1) {
-                    $(this).append($('#' + jTpl).val());
-                    $(this).removeAttr('data-tpl');
-                }
-                $(this).addClass("hover");
-            }, function () {
-                $(this).removeClass("hover");
-            });
-            var maxcolor = $('.top-banner-max').find('p').children('a').css("background-color");
-            var mincolor = $('.top-banner-min').find('p').children('a').css("background-color");
-
-            $('.top-banner-max').css({"background-color": maxcolor, overflow: "hidden"});
-            $('.top-banner-min').css({"background-color": mincolor, overflow: "hidden"});
-        });
-
-        //显示全球导航选择层
-        function showSelectRegion() {
-            var box = new ec.box($("#selectRegion-tips").val(),
-                {
-                    boxid: "region-select-box",
-                    boxclass: "ol_box_4",
-                    title: "Please select your country or region",
-                    width: 700,
-                    showButton: false,
-                    autoPosition: false,
-                    onopen: function (box) {
-                    },
-                    onok: function (box) {
-                    },
-                    oncancel: function (box) {
-                        box.close();
-                        $(".ol_box_mask").remove();
-                    },
-                    onclose: function (box) {
-                        $(".ol_box_mask").remove();
-                    }
-                });
-
-            box.open();
-
-            $(".box-title").css("font-size", "24px");
-            $("#region-select-box").css("height", "auto");
-            $(".ol_box_mask").click(function () {
-                box.close();
-            });
-
-            $(".box-header").unbind("mousemove");
-            $(".box-header").unbind("mousedown");
-
-            var divTop = document.getElementById("region-select-box").offsetTop;
-            $("#region-select-box").mousedown(function (e) {
-                var e = e || window.event;
-                var region = document.getElementById("region-select-box");
-
-                var leftX = e.clientX - region.offsetLeft;
-                var topY = e.clientY - region.offsetTop;
-                $("#region-select-box").mousemove(function (event) {
-                    var e = event || window.event;
-                    var left = e.clientX - leftX;
-                    var top = e.clientY - topY;
-
-                    if (e.clientX - leftX < 20 - region.offsetWidth) {
-                        left = 20 - region.offsetWidth;
-                    }
-                    if (e.clientY - topY < 20 - region.offsetHeight) {
-                        top = 20 - region.offsetHeight;
-                    }
-
-                    if (e.clientY - topY + 20 >= $(window).height()) {
-                        top = $(window).height() - 20;
-                    }
-                    if (e.clientX - leftX + 20 >= $(window).width()) {
-                        left = $(window).width() - 20;
-                    }
-                    $("#region-select-box").css({"left": left, "top": top});
-                    divTop = top;
-
-                });
-            });
-            $("#region-select-box").mouseup(function () {
-                $("#region-select-box").unbind("mousemove");
-            });
-            $(window).scroll(function () {
-                $("#region-select-box").offset({top: divTop});
-            });
-        }
-
-        ec.load("ec.slider", {
-            loadType: "lazy",
-            callback: function () {
-                $("#ec-erweima").slider({
-                    width: 91, //必须
-                    height: 96, //必须
-                    style: 1,                    //1显示分页，2只显示左右箭头,3两者都显示
-                    pause: 120000,           //间隔时间
-                    auto: true
-                });
-            }
-        });
-
-        ec.ready(function () {
-            try {
-                ec.minicart.readyContent();
-                ec.minicart.microCartTpl = new ec.template($('#micro-cart-tpl').val());
-                var $miniCart = $('#header-toolbar-minicart-content');
-                $('#header-toolbar-minicart').hover(function () {
-                    if (ec.checkBrowerIE()) {
-                        var act = (document.activeElement || {}).id;
-                        if (act == 'search-kw') {
-                            $("#search-kw").blur();
-                        }
-                    }
-
-                    $(this).unbind("mouseenter");
-                    ec.minicart.content();
-                }, function () {
-                    $(this).bind("mouseenter", function () {
-                        if (ec.checkBrowerIE()) {
-                            var act = (document.activeElement || {}).id;
-                            if (act == 'search-kw') {
-                                $("#search-kw").blur();
-                            }
-                        }
-
-                        $(this).unbind("mouseenter");
-                        ec.minicart.content();
-                    });
-                });
-
-                $('#up_loginName-hover').hover(function () {
-                    if (ec.checkBrowerIE()) {
-                        var act = (document.activeElement || {}).id;
-                        if (act == 'search-kw') {
-                            $("#search-kw").blur();
-                        }
-                    }
-
-                    $(this).unbind("mouseenter");
-                }, function () {
-                    $(this).bind("mouseenter", function () {
-                        if (ec.checkBrowerIE()) {
-                            var act = (document.activeElement || {}).id;
-                            if (act == 'search-kw') {
-                                $("#search-kw").blur();
-                            }
-                        }
-
-                        $(this).unbind("mouseenter");
-                    });
-                });
-
-            } catch (err) {
-                // console.log(err);
-            }
-
-        });
-        // 更新购物车数字
-        $(function () {
-            $('.j-hungBar .hungBar-cart').hover(function () {
-                ec.minicart.updateMiniCartNum();
-            });
-        });
-
-        (function () {
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            } else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-
-        function pushMyOrderMsg() {
-            ec.account.afterLogin(function () {
-                ec.redirectTo("https://www.vmall.com/member/order?t=1568209383280timestamp");
-            });
-            ec.dapClick(300000301, {
-                "click": "1"
-            });
-        }
-
-        function pushMyCartMsg() {
-            ec.dapClick(300000401, {
-                "click": "1"
-            });
-        }
-
-
-        function pushCartProMsg(skuId, url, location) {
-            ec.dapClick(300000402, {
-                "SKUID": skuId,
-                "URL": url,
-                "location": location,
-                "click": "1"
-            });
-        }
-
-        function pushFootAdvertMsg(name, url) {
-            ec.dapClick(300000501, {
-                "name": name,
-                "URL": url,
-                "click": "1"
-            });
-        }
-
-        $(".fl").find("dd").find("a").bind("click", function () {
-            var HREF = "";
-            HREF = this.href;
-            var name = this.innerHTML;
-            if (HREF == null || HREF == "") {
-                return;
-            }
-            if (this.id == "tools-nav-service-robotim-button") {
-                name = "在线客服";
-            }
-            if (this.className == "service-btn btn-report") {
-                name = "不良信息举报";
-            }
-            pushFootAdvertMsg(name, HREF);
-        });
-
-
-        $('.footer-warrant-area.clearfix a').click(function () {
-            var dapData = {
-                "URL": $(this).attr("href"),
-                "click": "1"
-            };
-            if ($(this).find('img').length > 0) {
-                dapData.ADID = $(this).find("img").attr("src");
-            } else {
-                dapData.name = $(this).text();
-            }
-            ec.dapClick(300000502, dapData);
-        });
-
-        function pushRightHelpMsg(index) {
-            var buttonName = ['', '购物车', '在线客服', '意见反馈'][index];
-            ec.dapClick(300000601, {
-                "buttonName": buttonName,
-                "click": "1",
-                'index': index
-            });
-        }
-
-        jump = function (url, obj) {
-            if (typeof (obj.html()) != "undefined" && obj.html() != null && obj.html() != "") {
-                pushFootAdvertMsg($(this).html(), url);
-            }
-            var win = ec.openWindow(url);
-            win.opener = null;
-        }
-
-        function pushProRelationMsg(productId, column) {
-            ec.dapClick(300020601, {
-                "productId": productId,
-                "row": "1",
-                "column": column,
-                "click": "1"
-            });
-        }
-
-        function pushProHotMsg(skuCode) {
-            ec.dapClick(300020701, {
-                "SKUCode": skuCode,
-                "click": "1"
-            });
-        }
-
-        $('#serverlink a').each(function () {
-            var $a = $(this);
-            var url = $a.attr('onclick') || '';
-            url = url.toString();
-            var m = url.match(/jump_link\('([^']+)'\)/);
-            if (m && m[1]) {
-                url = m[1];
-                $a.attr('target', '_blank').attr('href', url);
-            }
-        });
-        jump_link = function (url) {
-            return;
-        }
-    </script>
-
-    <iframe style="display: none;" src="javascript:false"></iframe>
-    <script src="{% static 'js/dmpa-min.js' %}" async="" id="dmpa"></script>
-    <script src="{% static 'js/vmallcsrf.js' %}"></script>
-{% endblock foot %}
 </body>
 </html>

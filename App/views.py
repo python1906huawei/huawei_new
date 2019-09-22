@@ -1,4 +1,7 @@
+from datetime import datetime
 from random import randint
+
+from alipay import AliPay
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
@@ -6,8 +9,10 @@ from django.views.generic import ListView
 from django.views.generic.list import MultipleObjectMixin
 
 from App.forms import RegisterForm, FindpasswordForm
+from huawei_new.settings import MEDIA_ROOT, ALI_APP_ID, APP_PRIVATE_KEY, ALIPAY_PUBLIC_KEY
+from tools.fileupload import FileUpload
 from tools.sms import send_sms
-from App.models import User, Userinfo, Product
+from App.models import User, Userinfo, Product, Order
 from django.contrib import auth
 
 
@@ -22,17 +27,6 @@ class IndexView(ListView):
                     ]
 
         return queryset
-
-
-# 首页 测试
-class Index1View(ListView):
-    template_name = 'index_new1.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, 'index_new1.html')
-
-    def post(self, request, *args, **kwargs):
-        return render(request, 'index_new1.html')
 
 
 # 验证码
@@ -214,52 +208,9 @@ class LogOutView(ListView):
 
     def get(self, request, *args, **kwargs):
         logout(request)
-        return render(request, 'index_new.html')
 
-    def post(self, request, *args, **kwargs):
-        logout(request)
-        return render(request, 'index_new.html')
+        return redirect(reverse('app:index'))
 
-
-# 顶部+底部 的继承
-# class TopView(ListView):
-#     template_name = 'base.html'
-#
-#
-#     # queryset=[Product.objects.filter(type=0).all(),Product.objects.filter(type=1).all(),Product.objects.filter(type=2).all()]
-#     # queryset = Product.objects.filter(type=0).all()
-#     queryset = [Product.objects.filter(type=0).all(), Product.objects.filter(type=1).all(),
-#                 Product.objects.filter(type=2).all()]
-#     def get_queryset(self):
-#
-#         queryset=self.queryset
-#         return queryset
-#     def get_context_data(self, **kwargs):
-#         context = {
-#             'paginator': None,
-#             'page_obj': None,
-#             'is_paginated': False,
-#             'object_list': self.queryset
-#         }
-#         return context
-# def topview(request):
-#
-#     products = Product.objects.filter(type=0).all()
-#     print(products)
-#
-#     return render(request, 'base.html', locals())
-
-
-# class TopView2(ListView):
-#     template_name = 'base.html'
-#     context_object_name = 'phones'
-#     queryset=Product.objects.filter(type=0)
-#
-# class TopView3(ListView):
-#     template_name = 'base.html'
-#     context_object_name = 'phones'
-#     queryset=Product.objects.filter(type=0)
-#
 
 # 顶部+底部 的继承  测试1
 class Top1View(ListView):
@@ -333,44 +284,242 @@ class PhoneListView(ListView):
             return queryset
 
 
-# 电脑平板列表
-class PcListView(ListView):
-    template_name = 'pclist.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, 'pclist.html')
-
-    def post(self, request, *args, **kwargs):
-        return render(request, 'pclist.html')
-
-
-# 智能穿戴
-class WatchView(ListView):
-    template_name = 'watchlist.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, 'watchlist.html')
-
-    def post(self, request, *args, **kwargs):
-        return render(request, 'watchlist.html')
-
-
 # 个人中心
 class MyCenterView(ListView):
     template_name = 'mycenter.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'mycenter.html')
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    ]
 
-    def post(self, request, *args, **kwargs):
-        return render(request, 'mycenter.html')
+        return queryset
 
 
-class ShoppingView(ListView):
-    template_name = 'shopping.html'
+# 个人中心_订单
+class MyCenterOrderView(ListView):
+    template_name = 'mycenter_order.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, 'shopping.html')
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    [i.products.first() for i in Order.objects.filter(order_status=2, user_id=self.request.user.uid)],
+                    [int(sum([i.products.first().price * i.productnum for i in Order.objects.filter(order_status=1,
+                                                   user_id=self.request.user.uid)])) - self.request.user.score / 10,
+                     len([i.products.first() for i in Order.objects.filter(order_status=1,
+                                                                           user_id=self.request.user.uid)]),
+                     self.request.user.score / 10]
 
-    def post(self, request, *args, **kwargs):
-        return render(request, 'shopping.html')
+                    ]
+
+        return queryset
+
+
+# 个人中心_评价
+class MyCenterEvaluateView(ListView):
+    template_name = 'mycenter_evaluate.html'
+
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    ]
+
+        return queryset
+
+
+# 个人中心_积分
+class MyCenterScoreView(ListView):
+    template_name = 'mycenter_score.html'
+
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    self.request.user.score / 10
+                    ]
+
+        return queryset
+
+
+# 个人中心_收货地址
+class MyCenterSiteView(ListView):
+    template_name = 'mycenter_site.html'
+
+    def get_queryset(self):
+        queryset = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                    Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                    ]
+
+        return queryset
+
+
+# 个人信息_头像上传
+def mycentermassage(request):
+    if request.method == "POST":
+        user = User.objects.get(pk=request.user.uid)
+        user.first_name = request.POST.get('nicheng')  # 昵称
+        user.last_name = request.POST.get('realname')  # 真是真实姓名
+        user.birthday = request.POST.get('sr')  # 保存生日
+        # 省
+        user.detailaddress = request.POST.get("address")
+        # 性别
+        if request.POST.get('sex') == '2':
+            user.gender = 2
+
+        elif request.POST.get('sex') == '1':
+            user.gender = 1
+        else:
+            user.gender = 0
+
+        user.save()
+        id = request.POST.get('profilesubmitbtn')
+        print(request.FILES)
+        file_obj = request.FILES.get('pic')
+        print(file_obj)
+        obj = FileUpload(file_obj, is_randomname=True)
+        path = MEDIA_ROOT
+        print(path)
+        if obj.upload(path) > 0:
+            user.portrait = obj.file_name
+            user.save()
+        return render(request, 'mycenter_massage.html', locals())
+    else:
+        return render(request, 'mycenter_massage.html')
+
+
+# 购物车
+def shopping(request):
+    if request.GET.get('pid'):
+        product = Product.objects.get(pid=request.GET.get('pid'))
+        if request.user.orders and product.order:
+            if request.GET.get('deletepid'):
+                order = product.order
+                product = Product.objects.get(order_id=order.id)
+                product.order_id = None
+                product.save()
+                order.delete()
+                if request.user.orders.first():
+
+                    object_list = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                                   Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                                   Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                                   [i.products.first() for i in
+                                    Order.objects.filter(order_status=1, user_id=request.user.uid)],
+                                   [int(sum([i.products.first().price * i.productnum for i in
+                                             Order.objects.filter(order_status=1,
+                                                                  user_id=request.user.uid)])) - request.user.score / 10,
+                                    len([i.products.first() for i in Order.objects.filter(order_status=1,
+                                                                                          user_id=request.user.uid)]),
+                                    request.user.score / 10]
+
+                                   ]
+
+                    return render(request, 'shopping.html', locals())
+                else:
+                    return redirect(reverse('app:index'))
+            order = product.order
+            order.productnum += int(request.GET.get('num'))
+            order.save()
+            print([i.products.first().price * i.productnum for i in
+                   Order.objects.filter(order_status=1, user_id=request.user.uid)])
+            object_list = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                           Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                           Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                           # Product.objects.filter(order=order.id)[0]
+                           [i.products.first() for i in Order.objects.filter(order_status=1, user_id=request.user.uid)],
+                           [int(sum([i.products.first().price * i.productnum for i in
+                                     Order.objects.filter(order_status=1,
+                                                          user_id=request.user.uid)])) - request.user.score / 10,
+                            len([i.products.first() for i in Order.objects.filter(order_status=1,
+                                                                                  user_id=request.user.uid)]),
+                            request.user.score / 10]
+
+                           ]
+
+            return render(request, 'shopping.html', locals())
+
+        order = Order()
+        order.user_id = request.user
+        order.create_time = datetime.now()
+        order.order_status = 1
+        order.productnum = request.GET.get('num')
+        order.total = int(product.price) * int(request.GET.get('num'))
+        order.save()
+        product.order = order
+        product.save()
+
+        object_list = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                       Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                       Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                       # Product.objects.filter(order=order.id)[0]
+                       [i.products.first() for i in Order.objects.filter(order_status=1, user_id=request.user.uid)],
+                       [int(sum([i.products.first().price * i.productnum for i in Order.objects.filter(order_status=1,
+                                                                                                       user_id=request.user.uid)])) - request.user.score / 10,
+                        len([i.products.first() for i in Order.objects.filter(order_status=1,
+                                                                              user_id=request.user.uid)]),
+                        request.user.score / 10]
+
+                       ]
+
+        return render(request, 'shopping.html', locals())
+    else:
+        print(1111111111111111111)
+        object_list = [Product.objects.filter(status=1, is_delete=0, type=0, inventory__gt=0),
+                       Product.objects.filter(status=1, is_delete=0, type=1, inventory__gt=0),
+                       Product.objects.filter(status=1, is_delete=0, type=2, inventory__gt=0),
+                       # Product.objects.filter(order=order.id)[0]
+                       [i.products.first() for i in Order.objects.filter(order_status=1, user_id=request.user.uid)],
+                       [int(sum([i.products.first().price * i.productnum for i in Order.objects.filter(order_status=1,
+                                                                                                       user_id=request.user.uid)])) - request.user.score / 10,
+                        len([i.products.first() for i in Order.objects.filter(order_status=1,
+                                                                              user_id=request.user.uid)]),
+                        request.user.score / 10]
+
+                       ]
+
+        return render(request, 'shopping.html', locals())
+
+
+# 支付
+def ali_buy(request):
+    # order_no = "2019082102983"
+
+    alipay = AliPay(
+        appid=ALI_APP_ID,
+        app_notify_url=None,  # 默认回调url
+        app_private_key_string=APP_PRIVATE_KEY,
+        # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+        alipay_public_key_string=ALIPAY_PUBLIC_KEY,
+        sign_type="RSA2",  # RSA 或者 RSA2
+        debug=False  # 默认False
+    )
+    # trade_no = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    jine = int(sum([i.products.first().price * i.productnum for i in
+                    Order.objects.filter(order_status=1, user_id=request.user.uid)])) - request.user.score / 10
+    trade_no = Order.objects.filter(user_id=request.user.uid).first().id
+    print(trade_no)
+    order_string = alipay.api_alipay_trade_page_pay(
+        out_trade_no=trade_no,  # 订单号
+        total_amount=jine,  # 金额
+        subject="macpro",  # 描述
+        return_url="http://127.0.0.1:8000/app/",
+        # notify_url="http://online.xiaohaitao.wang/callback/"  # 可选, 不填则使用默认notify url
+    )
+    print(request.POST.get('money'))
+
+    # print(order_string)
+
+    # 支付宝网关
+    net = "https://openapi.alipaydev.com/gateway.do?"
+
+    order = Order.objects.filter(user_id=request.user.uid)
+    for i in order:
+        print(11111)
+        i.order_status = 2
+        i.save()
+
+    return redirect(net + order_string)

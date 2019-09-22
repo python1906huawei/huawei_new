@@ -26,9 +26,11 @@ class FileUpload:
         """
         #1 判断文件类型是否匹配
         if not self.check_type():
+            print('pipei')
             return -1
         #2 判断文件大小是否符合要求
         if not self.check_size():
+            print('fuhe')
             return -2
         #3 如果是随机文件名，要生成随机文件名
         if self.is_randomname:
@@ -37,11 +39,13 @@ class FileUpload:
             self.file_name = self.file.name
         #4 拼接目标文件路径
         path = os.path.join(dest,self.file_name)
+        print(path)
         #5 保存文件
         self.write_file(path)
         return 1
 
     def check_type(self):
+        print(self.file,'aaaa')
         ext = os.path.splitext(self.file.name)
         if len(ext) > 1:
             ext = ext[1].lstrip('.')

@@ -126,4 +126,10 @@ STATICFILES_DIRS = [
 # 应该使用我们自己的User进行认证
 AUTH_USER_MODEL = 'App.User'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/upload')
+# 头像上传目录
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploda')
+
+# ＃确保您的密钥文件符合标准。
+APP_PRIVATE_KEY = open(os.path.join(BASE_DIR, 'alipay/app_private_key.pem')).read()
+ALIPAY_PUBLIC_KEY = open(os.path.join(BASE_DIR, 'alipay/alipay_public_key.pem')).read()
+ALI_APP_ID = "2016100100641498"

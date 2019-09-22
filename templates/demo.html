@@ -1,0 +1,26 @@
+{% load static %}
+<tr>
+    <td class="col-pro-img">
+        <p class="p-img">
+            <a title="HUAWEI"
+               href="{% url 'app:detail' %}?pid={{ product.pid }}"
+               target="_blank" >
+                <img
+                     src="/static/images/{{ product.image }}" style="width: 150px"
+                     onerror="imgError(this)">
+            </a>
+        </p>
+    </td>
+
+    <td class="col-price">
+        <em>¥</em><span>{{ product.price }}</span>
+    </td>
+    <td class="col-quty">{{ product.order.productnum }}</td>
+    <td rowspan="9" class="col-pay">
+        <p>
+            <em>¥</em><span>{{ object_list.4.0 }}</span>
+
+        </p>
+    </td>
+
+</tr>

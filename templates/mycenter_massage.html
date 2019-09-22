@@ -1,0 +1,350 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>帐号中心</title>
+
+
+    <link href="https://id1.cloud.huawei.com/CAS/up/amw_rss_40/logos/icons/huawei.ico" type="image/x-icon"
+          rel="shortcut icon">
+
+    <link href="{% static 'mycenter_massage/css/ec.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/jquery-ui.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/jquery.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/common_002.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/dialog.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/common.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'mycenter_massage/css/zh-cn_css.css' %}" rel="stylesheet" type="text/css">
+
+
+    <script type="text/javascript">var pageToken = "9382ae2eb8607f7a4311f0df633302682ba62e4d7b266715e34188fae34e97d6";
+    var casPageFlowID = "c39d19a6-c557-43e3-ba91-1abbedd12d58";
+    var isOpenCasPageStat = "true";</script>
+    <script type="text/javascript">var localHttps = "https://id1.cloud.huawei.com/AMW";
+    var currentSiteID = "1";
+    var webAppName = "AMW";
+    var localHttps_IDMW = "https://id1.cloud.huawei.com/CAS";
+    var languageCode = "zh-cn";
+    var resourse_js_img_css_webUrl = "https://id1.cloud.huawei.com/CAS/up/amw_rss_40";</script>
+
+
+    <script src="{% static 'mycenter_massage/js/zh-cn.js' %}"></script>
+
+
+    <script src="{% static 'mycenter_massage/js/_portal_includes_getPCUserCenterRssPath.js' %}"
+            type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+
+        var localInfo = {
+            headPicSrc: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;amw_rss_40&#x2f;css&#x2f;portal&#x2f;userCenter_rss&#x2f;images&#x2f;headPic.jpg&#x3f;cas20190804"),
+            reqClientType: htmlDecodeJQ("26"),
+            urlQurey: htmlDecodeJQ("?reqClientType=26&loginChannel=26000000&countryCode=cn&loginUrl=https%3A%2F%2Fid1.cloud.huawei.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fid1.cloud.huawei.com%2FAMW%2Fportal%2FuserCenter%2Findex.html&lang=zh-cn&themeName=blue"),
+            avatPath: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;amw_rss_40&#x2f;css&#x2f;portal&#x2f;userCenter_rss&#x2f;images&#x2f;pic.png&#x3f;cas20190804"),
+            siteID: htmlDecodeJQ("1"),
+            isSpecial: htmlDecodeJQ("false"),
+            accountSiteID: htmlDecodeJQ("1"),
+            defaultPic: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;CAS&#x2f;up&#x2f;amw_rss_40&#x2f;css&#x2f;portal&#x2f;userCenter_rss&#x2f;images&#x2f;pic.png&#x3f;cas20190804"),
+            allowModifyForumNickname: htmlDecodeJQ("true"),
+            ageLimit: htmlDecodeJQ("14"),
+            needShowCompleteAge: htmlDecodeJQ("false"),
+            userInfoUrl: htmlDecodeJQ("https&#x3a;&#x2f;&#x2f;id1.cloud.huawei.com&#x2f;AMW&#x2f;portal&#x2f;userCenter&#x2f;info.html"),
+            hasNotifyCompleteAge: htmlDecodeJQ("false"),
+            lang: htmlDecodeJQ("zh-cn"),
+            nickName: htmlDecodeJQ(""),
+            loginID: htmlDecodeJQ("hw_loginid"),
+            forumNickName: htmlDecodeJQ("huafans01406712531"),
+            gender: htmlDecodeJQ("-1"),
+            firstName: htmlDecodeJQ(""),
+            lastName: htmlDecodeJQ(""),
+            province: htmlDecodeJQ(""),
+            city: htmlDecodeJQ(""),
+            formatBirthDate: htmlDecodeJQ("1996&#x5e74;9&#x6708;23&#x65e5;"),
+            loginID: htmlDecodeJQ("hw_008613311259317_01"),
+            birthDate: htmlDecodeJQ("19960923"),
+            allowModifyLoginID: htmlDecodeJQ("true")
+        };
+
+
+    </script>
+
+
+</head>
+<body class="userCenter-ucInfo">
+
+
+<div class="topbar1">
+    <div class="tp wp mkcl">
+        <div class="childLogo1">
+            <span class="s1"> <img src="{% static 'mycenter_massage/head-top.png' %}"></span>
+        </div>
+
+
+        <div class="tbr1">
+            {% if user.is_authenticated %}
+                <b class="user"></b>
+                <a id="authTest_loginUserName" class="account userAccount space-pre completeInfo"
+                   href="">{{ request.user.username }}</a>
+                <span> | </span>
+                <a id="logoutUrl"
+                   href="{% url 'app:logout' %}">退出</a>
+            {% endif %}
+        </div>
+
+
+        <div class="left1">
+            <p class="s2"><span>|</span>
+                <span class="logo_text1">帐号中心</span></p>
+        </div>
+
+    </div>
+</div>
+
+<div id="showSupportInfo" style="display:none;"></div>
+
+<div class="menu wp mkcl">
+    <div class="mnr">
+        <ul class="nav mkcl">
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+                <a class="menuSlt_info_a completeInfo"
+                   href="{% url 'app:index' %}">首页
+                    <span class="menuSlt_info_circle_red"></span>
+                </a>
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+            </li>
+            <li data-menu="2" class="sel" id="authTest_personal_info">
+                <a class="menuSlt_info_a completeInfo"
+                   href="">个人信息
+                    <span class="menuSlt_info_circle_red"></span>
+                </a>
+
+
+            </li>
+
+
+        </ul>
+        <b class="navsign" style="display:none"></b>
+    </div>
+</div>
+
+<form action="{% url 'app:mycenter_massage' %}" method="post" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table cellspacing="0" cellpadding="0" class="tfm" id="profilelist">
+        <div class="wp">
+            <div class="pannel">
+                <div class="upic">
+                    <a href="#" id="uploadImg" onclick="up()">
+                        <img id="headPic"
+                             src="/static/uploda/{{ request.user.portrait }}"
+                             height:"160px"="" onerror="loadDefaultPic(this);"
+                        orginsrc="https://id1.cloud.huawei.com/CAS/up/amw_rss_40/css/portal/userCenter_rss/images/pic.png?cas20190804"
+                        width="160px"></a>
+                    <p id="uploadImgDiv">编辑头像</p>
+                    <input name="pic" type="file" style="visibility:hidden" id="upup">
+                    <script>
+                        function up() {
+                            document.getElementById('upup').click()
+                        }
+                    </script>
+
+                </div>
+
+                <div id="upload_dialog_show" class="hidden"></div>
+
+                <div class="umsg">
+                    <p class="title">公开信息</p>
+                    <p class="line">
+                        昵称：
+                        <input type="text" name="nicheng" class="px" value="{{ user.first_name }}"/>
+                    </p>
+                    <p class="line">
+
+                        性别：
+                        <select name="sex" id="sex" class="ps" style="width: 80px;height: 25px;line-height: 25px">
+                            <option value='0' {% if user.gender == 0 %}  selected='selected' {% endif %}>保密
+                            </option>
+                            <option value='1' {% if user.gender == 1 %} selected='selected' {% endif %}>女
+                            </option>
+                            <option value='2'  {% if user.gender == 2 %} selected='selected' {% endif %}>男
+                            </option>
+                        </select>
+                    </p>
+                    {#                    <p class="line">#}
+
+                    <p class="line" id="birthdistrictbox">
+                        地区：
+                        <!--
+                        <select name="place" id="place" class="ps" style="width: 80px;height: 25px;line-height: 25px">
+                            <option value="">-省份-</option>
+                            <option did="1" value="北京市">北京市</option>
+                            <option did="2" value="天津市">天津市</option>
+                            <option did="3" value="河北省">河北省</option>
+                            <option did="4" value="山西省">山西省</option>
+                            <option did="5" value="内蒙古自治区">内蒙古自治区</option>
+                            <option did="6" value="辽宁省">辽宁省</option>
+                            <option did="7" value="吉林省">吉林省</option>
+                            <option did="8" value="黑龙江省">黑龙江省</option>
+                            <option did="9" value="上海市">上海市</option>
+                            <option did="10" value="江苏省">江苏省</option>
+                            <option did="11" value="浙江省">浙江省</option>
+                            <option did="12" value="安徽省">安徽省</option>
+                            <option did="13" value="福建省">福建省</option>
+                            <option did="14" value="江西省">江西省</option>
+                            <option did="15" value="山东省">山东省</option>
+                            <option did="16" value="河南省">河南省</option>
+                            <option did="17" value="湖北省">湖北省</option>
+                            <option did="18" value="湖南省">湖南省</option>
+                            <option did="19" value="广东省">广东省</option>
+                            <option did="20" value="广西壮族自治区">广西壮族自治区</option>
+                            <option did="21" value="海南省">海南省</option>
+                            <option did="22" value="重庆市">重庆市</option>
+                            <option did="23" value="四川省">四川省</option>
+                            <option did="24" value="贵州省">贵州省</option>
+                            <option did="25" value="云南省">云南省</option>
+                            <option did="26" value="西藏自治区">西藏自治区</option>
+                            <option did="27" value="陕西省">陕西省</option>
+                            <option did="28" value="甘肃省">甘肃省</option>
+                            <option did="29" value="青海省">青海省</option>
+                            <option did="30" value="宁夏回族自治区">宁夏回族自治区</option>
+                            <option did="31" value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                            <option did="32" value="台湾省">台湾省</option>
+                            <option did="33" value="香港特别行政区">香港特别行政区</option>
+                            <option did="34" value="澳门特别行政区">澳门特别行政区</option>
+                            <option did="35" value="海外">海外</option>
+                            <option did="36" value="其他">其他</option>
+                        </select>
+                        -->
+                        <input type="text" name="address" id="option" value="{{ request.user.detailaddress }}">
+                    </p>
+                    {#                    </p>#}
+                    <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非公开信息</p>
+
+
+                    <div class="line member_name">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：
+                        <input type="text" name="realname" class="px" value="{{ request.user.last_name }}"/>
+                    </div>
+
+
+                    <div class="line birthday_set_guide">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生日：
+                        <input type="date" name="sr" value="{{ request.user.birthday }}">
+                        <!-- 生日设置引导弹出框 -->
+                        <div id="guideBg" class="guide_bg">
+                        </div>
+
+                    </div>
+                    <div style="align-content: center">
+                        {#                    <button type="submit" name="profilesubmitbtn" id="profilesubmitbtn"#}
+                        {#                            value=""#}
+                        {#                            class="pn pnc" style="margin-left: 100px;width: 100px;border-radius: 3px; color: whitesmoke  ">#}
+                        {#                        <strong>提交</strong>#}
+                        {##}
+                        {##}
+                        {#                    </button>#}
+                        {#                    <button type="button" class="btn btn-default">（默认样式）Default</button>#}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+                            type="submit" class="btn btn-danger" name="profilesubmitbtn" id="profilesubmitbtn"
+                            value="{{ request.user.uid }}">提交
+                    </button>
+                    </div>
+
+
+                    <script>
+                        $("#birthdistrictbox select").change(function () {
+                            console.log($("#birthdistrictbox select option:selected").text());
+                            // console.log($("#option").val());
+                            var value = $("#birthdistrictbox select option:selected").text();
+                            $("#option").attr("value", value);
+                            console.log($("#option").val());
+                        })
+                    </script>
+                </div>
+            </div>
+    </table>
+</form>
+<!-- 底部  -->
+
+<div class="wp ft">
+    <p>
+
+
+        <a href="https://id1.cloud.huawei.com/AMW/portal/agreements/userAgreement/zh-cn_userAgreement.html?version=china&amp;countryCode=CN&amp;reqClientType=26"
+           class="rule" target="_blank">华为帐号与云空间用户协议</a>
+        <em class="foot_em">|</em>
+        <a href="https://id1.cloud.huawei.com/AMW/portal/agreements/accPrivacyStatement/zh-cn_accPrivacyStatement.html?version=china&amp;reqClientType=26"
+           class="rule" target="_blank">关于华为帐号与云空间隐私的声明</a>
+        <em class="foot_em">|</em>
+        <a href="https://id1.cloud.huawei.com/AMW/portal/faq/zh-cn_faq.html?version=china&amp;countryCode=cn&amp;lang=zh-cn&amp;reqClientType=26"
+           class="ifaq" target="_blank">常见问题</a>
+
+
+        <em class="foot_em">|</em>
+        <a href="https://consumer.huawei.com/cn/legal/cookie-policy/" class="rule" target="_blank">Cookies</a>
+
+
+    </p>
+
+
+    <p>Copyright © 2011-2019 华为技术有限公司 版权所有 保留一切权利&nbsp;&nbsp;苏B2-20070200号 | 苏ICP备09062682号-9</p>
+    <p></p>
+
+
+</div>
+
+
+<script src="{% static 'mycenter_massage/js/_portal_userCenter_uc_info.js' %}" type="text/javascript"></script>
+
+</body>
+</html>

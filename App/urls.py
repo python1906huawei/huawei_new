@@ -5,8 +5,7 @@ from App import views
 urlpatterns = [
     # 首页
     url(r'^$', views.IndexView.as_view(), name='index'),
-    # 首页测试
-    url(r'^ceshi/$', views.Index1View.as_view(), name='index1'),
+
     # 注册
     url(r'^register/$', views.RegisterView.as_view(), name='register'),
     # 找回密码
@@ -28,24 +27,29 @@ urlpatterns = [
     # 商品详情
     url(r'^detail/$', views.DetailView.as_view(), name='detail'),
 
-
     # 验证码
     url(r'^yzm/$', views.yzm, name='yzm'),
 
     # 手机列表
     url(r'^phonelist/$', views.PhoneListView.as_view(), name='phonelist'),
 
-    # 电脑平板列表
-    url(r'^pclist/$', views.PcListView.as_view(), name='pclist'),
-
-    # 智能穿戴
-    url(r'^watch/$', views.WatchView.as_view(), name='watch'),
-
     # 个人中心
     url(r'^mycenter/$', views.MyCenterView.as_view(), name='mycenter'),
+    # 个人中心_我的订单
+    url(r'^mycenter_order/$', views.MyCenterOrderView.as_view(), name='mycenter_order'),
+    # 个人中心_评价
+    url(r'^mycenter_evaluate/$', views.MyCenterEvaluateView.as_view(), name='mycenter_evaluate'),
+    # 个人中心_积分
+    url(r'^mycenter_score/$', views.MyCenterScoreView.as_view(), name='mycenter_score'),
+    # 个人中心_收货地址
+    url(r'^mycenter_site/$', views.MyCenterSiteView.as_view(), name='mycenter_site'),
+    # 个人信息+头像修改
+    url(r'^mycenter_massage/$', views.mycentermassage, name='mycenter_massage'),
 
     # 购物车
-    url(r'^shopping/$', views.ShoppingView.as_view(), name='shopping')
+    url(r'^shopping/$', views.shopping, name='shopping'),
 
+    # 阿里pay
+    url(r'^ali_buy/$', views.ali_buy, name='ali_buy'),
 
 ]

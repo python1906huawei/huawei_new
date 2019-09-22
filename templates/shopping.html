@@ -9,25 +9,25 @@
 
 
 
-        <script src="{% static 'shopping/js/csrftoken.js' %}"></script>
-        <script>
-            var mediaPath = 'https://res.vmallres.com/pimages/';
-            var b2cDomain = 'https://www.vmall.com';
-            var openApiDomain = 'https://openapi.vmall.com';
-            var accountCenterUrl = 'https://hwid1.vmall.com/CAS/portal/userCenter/index.html?reqClientType=26';
-            var cdnPath = 'https://res.vmallres.com/20190808';
-            var dapDomain = 'https://dap.vmall.com';
-            document.write("<!--[if lt IE 9]><script type='text/javascript' src='" + cdnPath + "/staticpc/base.js' ><\/script><![endif]-->");
+    <script src="{% static 'shopping/js/csrftoken.js' %}"></script>
+    <script>
+        var mediaPath = 'https://res.vmallres.com/pimages/';
+        var b2cDomain = 'https://www.vmall.com';
+        var openApiDomain = 'https://openapi.vmall.com';
+        var accountCenterUrl = 'https://hwid1.vmall.com/CAS/portal/userCenter/index.html?reqClientType=26';
+        var cdnPath = 'https://res.vmallres.com/20190808';
+        var dapDomain = 'https://dap.vmall.com';
+        document.write("<!--[if lt IE 9]><script type='text/javascript' src='" + cdnPath + "/staticpc/base.js' ><\/script><![endif]-->");
 
-            var csrftoken = '';
-            var target = document.getElementsByTagName('script')[0] || document.head;
-            var script = document.createElement('script');
-            script.src = openApiDomain + '/csrftoken.js?' + Math.random();
-            target.parentNode.insertBefore(script, target);
-        </script>
-        <!--[if lt IE 9]><script type='text/javascript' src='https://res.vmallres.com/20190808/staticpc/base.js' ></script>
+        var csrftoken = '';
+        var target = document.getElementsByTagName('script')[0] || document.head;
+        var script = document.createElement('script');
+        script.src = openApiDomain + '/csrftoken.js?' + Math.random();
+        target.parentNode.insertBefore(script, target);
+    </script>
+    <!--[if lt IE 9]><script type='text/javascript' src='https://res.vmallres.com/20190808/staticpc/base.js' ></script>
     <![endif]-->
-        <link href="{% static 'shopping/css/app.css' %}" rel="stylesheet">
+    <link href="{% static 'shopping/css/app.css' %}" rel="stylesheet">
 
 
     <body>
@@ -54,102 +54,75 @@
                                 <div class="sc-pro-list clearfix"><label class="checkbox"><input readonly="readonly"
                                                                                                  class="vam checked"
                                                                                                  value="true"> </label>
-                                    <div class="sc-pro-area">
-                                        <div class="sc-pro-main clearfix"><a
-                                                href="https://www.vmall.com/product/10086225607276.html#10086757941174"
-                                                target="_blank" class="p-img"><img
-                                                src="{% static 'images/428_428_1561518789796mp.png' %}"
-                                                alt="HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像 6GB+128GB 全网通版（天空之境）"></a>
-                                            <div class="tips-1 p-stock-tips" style="display: none;">限购件</div>
-                                            <ul>
-                                                <li>
-                                                    <a href="https://www.vmall.com/product/10086225607276.html#10086757941174"
-                                                       target="_blank"
-                                                       title="HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像 6GB+128GB 全网通版（天空之境）"
-                                                       class="p-name"><!---->
-                                                        HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像 6GB+128GB 全网通版（天空之境）</a>
-                                                    <!----> <!----></li>
-                                                <li>
-                                                    <div class="p-price"><span>¥&nbsp;3688.00</span> <!----></div>
-                                                </li>
-                                                <li>
-                                                    <div class="p-stock">
-                                                        <div class="p-stock-area"><input type="number"
-                                                                                         class="p-stock-text" value="1">
-                                                            <p class="p-stock-btn"><a href="javascript:;"
-                                                                                      class="disabled">−</a> <a
-                                                                    href="javascript:;" class="">+</a></p></div>
-                                                    </div>
-                                                </li>
-                                                <li class="p-price-total">¥&nbsp;3688.00
-                                                    <!----></li>
-                                                <li><a href="javascript:;" seed="cart-item-del" class="p-del">删除</a>
-                                                </li>
-                                            </ul>
-                                        </div>
 
-                                    </div>
+
+                                    {% for product in object_list.3 %}
+                                        <div class="sc-pro-area">
+
+                                            <div class="sc-pro-main clearfix"><a
+                                                    href="{% url 'app:detail' %}?pid={{ product.pid }}"
+                                                    target="_blank" class="p-img"><img
+                                                    src="/static/images/{{ product.image }}"
+                                            ></a>
+                                                <div class="tips-1 p-stock-tips" style="display: none;">限购件</div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{% url 'app:detail' %}?pid={{ product.pid }}"
+                                                           target="_blank"
+                                                           title="{{ product.name }}&nbsp;&nbsp;&nbsp;{{ product.desc }}"
+                                                           class="p-name"><!---->
+                                                            {{ product.name }}&nbsp;&nbsp;&nbsp;{{ product.desc }}</a>
+                                                        <!----> <!----></li>
+                                                    <li>
+                                                        <div class="p-price"><span>¥&nbsp;{{ product.price }}</span>
+                                                            <!----></div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="p-stock">
+                                                            {{ product.order.productnum }}
+                                                        </div>
+
+                                                    </li>
+                                                    <li class="p-price-total">¥&nbsp;{{ product.order.total }}
+                                                        <!----></li>
+                                                    <li>
+                                                        <a href="{% url 'app:shopping' %}?deletepid={{ product.pid }}&num={{ product.order.productnum }}&pid={{ product.pid }}"
+                                                           seed="cart-item-del" class="p-del">删除</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    {% endfor %}
                                 </div>
 
                             </div>
-                            <div>
-                                <div class="sc-pro-list clearfix"><label class="checkbox"><input readonly="readonly"
-                                                                                                 class="vam checked"
-                                                                                                 value="true"> </label>
-                                    <div class="sc-pro-area">
-                                        <div class="sc-pro-main clearfix"><a
-                                                href="https://www.vmall.com/product/10086102942203.html#10086407020352"
-                                                target="_blank" class="p-img"><img
-                                                src="{% static 'images/428_428_1555464685019mp.png' %}"
-                                                alt="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"></a>
-                                            <div class="tips-1 p-stock-tips" style="display: none;">限购件</div>
-                                            <ul>
-                                                <li>
-                                                    <a href="https://www.vmall.com/product/10086102942203.html#10086407020352"
-                                                       target="_blank"
-                                                       title="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"
-                                                       class="p-name"><!---->
-                                                        HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）</a>
-                                                    <!----> <!----></li>
-                                                <li>
-                                                    <div class="p-price"><span>¥&nbsp;4988.00</span> <!----></div>
-                                                </li>
-                                                <li>
-                                                    <div class="p-stock">
-                                                        <div class="p-stock-area"><input type="number"
-                                                                                         class="p-stock-text" value="1">
-                                                            <p class="p-stock-btn"><a href="javascript:;"
-                                                                                      class="disabled">−</a> <a
-                                                                    href="javascript:;" class="">+</a></p></div>
-                                                    </div>
-                                                </li>
-                                                <li class="p-price-total">¥&nbsp;4988.00
-                                                    <!----></li>
-                                                <li><a href="javascript:;" seed="cart-item-del" class="p-del">删除</a>
-                                                </li>
-                                            </ul>
-                                        </div>
 
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
+                        <input type="hidden" disabled="disabled" name="money" value="{{ object_list.4.0 }}">
                     </form>
                 </div>
                 <div id="total_tool"></div>
                 <div class="sc-total-fixed">
                     <div class="sc-total-tool layout clearfix ">
-                        <div class="sc-total-control"><label class="checkbox"><input readonly="readonly"
-                                                                                     class="vam checked" value="true">
-                            全选</label> <a href="javascript:;">删除</a></div>
-                        <div class="sc-total-btn "><a href="javascript:;">立即结算</a></div>
-                        <div class="sc-total-price"><p><label>总计：</label> <span>¥&nbsp; 8676.00</span>
-                            <em><b>不含运费</b></em></p>
-                            <div class="total-choose">已选择
-                                <em>2</em>件商品，优惠：
-                                <span>¥&nbsp;0.00</span></div>
-                        </div>
+
+                        {% if object_list.4.0 >= 0 %}
+                            <div class="sc-total-btn "><a href="{% url 'app:ali_buy' %}">立即结算</a></div>
+                            <div class="sc-total-price"><p><label>总计：</label>
+                                <span>¥&nbsp; {{ object_list.4.0 }} </span>
+                                <em><b>不含运费</b></em></p>
+                                <div class="total-choose">已选择
+                                    <em>{{ object_list.4.1 }}</em>种商品，优惠：
+                                    <span>¥&nbsp;{{ object_list.4.2 }}</span></div>
+                            </div>
+                        {% else %}
+                            <div class="sc-total-btn "><a href="{% url 'app:index' %}">商城首页</a></div>
+                            <div class="sc-total-price"><p><label>购物车为空 > </label>
+                                <em><b>不含运费</b></em></p>
+
+                            </div>
+                        {% endif %}
+
                     </div>
                 </div>
                 <div id="invalidItemList" style="display: none;">

@@ -1,0 +1,337 @@
+{% extends 'mycenter.html' %}
+{% load static %}
+{% block title %}
+    <title>个人中心 - 地址</title>
+{% endblock title %}
+
+
+
+{% block xinxi %}
+
+    <div id="base_index" class="mc-index">
+
+        <div class="hr-10"></div>
+        <div class="g">
+        </div>
+        <div class="hr-10"></div>
+
+        <div class="g">
+
+            <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+                <div class="section-header">
+                    <div class="fl">
+                        <h2><span>收货地址管理</span></h2>
+                    </div>
+                </div><!-- 20141212-栏目-end -->
+                <div class="hr-20"></div>
+                <!-- 20141216-我的收货地址-表单-编辑地址-start -->
+                <div class="myAddress-edit" id="myAddress-edit">
+                    <div class="form-edit-panels" id="form-edit-panels">
+                        <form id="myAddress-form" action="" autocomplete="off" method="post"
+                              onsubmit="return ec.member.myAddress.save(this)" data-type="add">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" id="id" value="">
+                            <input type="hidden" name="randomFlag" id="randomFlag" value="No need">
+                            <input type="hidden" name="needL4Addr" id="needL4Addr" value="">
+                            <input type="hidden" name="needL4AddrG" id="needL4AddrG" value="">
+
+                            <input type="hidden" name="province" value="">
+                            <input type="hidden" name="city" value="">
+                            <input type="hidden" name="district" value="" validator="validator21568978131238">
+                            <input type="hidden" name="street" value="">
+
+                            <input type="hidden" name="provinceG" value="">
+                            <input type="hidden" name="cityG" value="">
+                            <input type="hidden" name="districtG" value="">
+                            <input type="hidden" name="streetG" value="">
+
+                            <div class="form-edit-table">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <th><span class="required">*</span><label for="consignee">收货人：</label></th>
+                                        <td>
+                                            <input maxlength="20" type="text" name="consignee" id="consignee"
+                                                   class="text span-130" validator="validator11568978131238">
+                                            <label id="consignee-msg"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="required">*</span><label for="mobile">手机号码：</label></th>
+                                        <td>
+                                            <div class="inline-block vam">
+                                                <label style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                                       class="text span-130 ime-disabled"
+                                                       for="mobile">请输入11位手机号码</label><input maxlength="20" type="text"
+                                                                                             name="mobile"
+                                                                                             onblur="limitNum(event,this)"
+                                                                                             onchange="limitNum(event,this)"
+                                                                                             id="mobile"
+                                                                                             class="text span-130 ime-disabled"
+                                                                                             alt="tel-msg"
+                                                                                             validator="validator51568978131238"
+                                                                                             style="z-index: 1;">
+                                                <label class="titlebox" for="phone">备选号码：</label>
+                                            </div>
+                                            <div class="inline-block vam relative"><label
+                                                    style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                                    class="text span-310 ime-disabled"
+                                                    for="phone">固话或其他手机号码</label><input
+                                                    maxlength="50" type="text" name="phone" id="phone"
+                                                    class="text span-310 ime-disabled" alt="tel-msg"
+                                                    validator="validator61568978131238" style="z-index: 1;"></div>
+                                            <div><label id="tel-msg"></label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" class="selecte-vat"><span class="required">*</span><label
+                                                for="province">收货地址：</label></th>
+                                        <td class="relative">
+                                            <!--20170627  收货地址 start-->
+                                            <!--以下内容隐藏时添加class="hide"，显示去掉class="hide"-->
+                                            <div class="form-address">
+                                                <div id="current-address" class="form-address-detail">选择省-市-区-街道</div>
+                                                <!--有内容时添加class="form-address-detailcon"-->
+                                            </div>
+                                            <div id="address-tab" class="form-address selected hide">
+                                                <a href="javascript:;" class="btn-address-close">关闭</a>
+                                                <div id="form-address-choose-normal" class="form-address-choose">
+                                                    <div class="form-address-name">
+                                                        <div id="provice_info" class="form-address-name-tab clearfix">
+                                                            <!--已选择内容时添加class="current"-->
+                                                            <a id="provice" level-value="1" data-value="">请选择</a>
+                                                            <a id="city" level-value="2" data-value="">请选择</a>
+                                                            <a id="district" level-value="3" data-value="">请选择</a>
+                                                            <a id="street" level-value="4" class="hide"
+                                                               data-value="">请选择</a>
+                                                        </div>
+                                                        <div id="address_table" class="form-address-name-con">
+                                                        </div>
+                                                    </div>
+                                                    <div class="link-address"><a href="javascript:ec.address.change(1)">搜索地址快速定位&gt;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="address-search" class="form-address selected hide">
+                                                <a href="javascript:;" class="btn-address-close">关闭</a>
+                                                <div id="form-address-choose-search" class="form-address-choose">
+                                                    <div class="form-address-search">
+                                                        <div class="form-address-search-text"><a
+                                                                href="javascript:;">清除</a>
+                                                            <input type="text" placeholder="输入街道、乡镇、小区或商圈名称">
+                                                        </div>
+                                                        <p class="form-address-example">例如：<span>深圳 天安云谷</span></p>
+                                                        <div class="form-address-search-list">
+                                                            <div id="form-address-no" class="form-address-no hide">
+                                                                没有找到这个地方，试试通过城市名+地点名来搜索<br>例如：<span>深圳 天安云谷</span></div>
+                                                            <ul>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="link-address"><a href="javascript:ec.address.change(2)">直接选择地址&gt;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div id="myAddress-region" class="inline-block"></div> -->
+                                            <label id="myAddress-msg"></label>
+                                            <!--20170627  收货地址 end-->
+                                        </td>
+                                    </tr>
+                                    <tr class="tr-rel">
+                                        <td>
+                                            <div class="inline-block relative">
+                                                <label style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                                       class="textarea span-574"
+                                                       for="address">如选择不到您的地区，请在此处详细描述</label><textarea name="address"
+                                                                                                         id="address"
+                                                                                                         class="textarea span-574"
+                                                                                                         validator="validator31568978131238"
+                                                                                                         style="z-index: 1;"></textarea>
+                                            </div>
+                                            <label class="vat" id="address-msg"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="zipCode-add">邮编：</label></th>
+                                        <td>
+                                            <input maxlength="6" type="text" class="text span-130 ime-disabled"
+                                                   name="zipCode" id="zipCode" validator="validator41568978131238">
+                                            <label id="zipCode-msg"></label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <td>
+                                            <label class="inputbox"><input type="checkbox" class="checkbox"
+                                                                           name="defaultFlag" value="1"
+                                                                           id="myAddress-default"><span>设为默认收货地址</span></label>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr-action">
+                                        <th>&nbsp;</th>
+                                        <td>
+                                            <div id="form-edit-button">
+                                                <input type="submit" id="button-ok" class="button-action-ok"
+                                                       value="添加新地址"><a href="javascript:;" id="button-cancel"
+                                                                        class="button-action-cancel"
+                                                                        onclick="ec.member.myAddress.reset()"><span>清&nbsp;&nbsp;空</span></a>
+                                                <label class="label-info" id="submit-msg"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input name="CsrfToken" type="hidden"
+                                   value="19097664742767B640E83404B3297CBEBADAEE13AB0C53FD">
+                        </form>
+                    </div>
+                </div>
+                <!-- 20141216-我的收货地址-表单-编辑地址-end -->
+                <div class="hr-30"></div>
+                <!-- 20141216-我的收货地址-列表-start -->
+                <!--表单-我的收货地址 -->
+                <div class="myAddress-record hide" id="myAddress-record" style="display: block;">
+                    <div class="list-group-title">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <thead>
+                            <tr>
+                                <th class="col-name">收货人</th>
+                                <th class="col-address">收货地址</th>
+                                <th class="col-zip">邮编</th>
+                                <th class="col-tel">手机/电话</th>
+                                <th class="col-operate">操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="list-group" id="list-group">
+                        <div class="list-group-item" id="myAddress-area-75725244">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                <tr>
+                                    <td class="col-name">王海涛</td>
+                                    <td class="col-address">北京&nbsp;&nbsp;北京&nbsp;&nbsp;海淀区&nbsp;&nbsp;西三旗街道&nbsp;&nbsp;天丰利商城4层，千锋教育</td>
+                                    <td class="col-zip">100089</td>
+                                    <td class="col-tel"><p>13311259317</p></td>
+                                    <td class="col-operate"><p class="p-edit"><a class="edit" href="javascript:;"
+                                                                                 onclick="ec.member.myAddress.edit(75725244);"
+                                                                                 title="编辑"><span>编辑</span></a></p>
+                                        <p class="p-del"><a class="del" href="javascript:;"
+                                                            onclick="ec.member.myAddress.del(this,75725244);"
+                                                            title="删除"><span>删除</span></a></p>
+                                        <p class="p-state"><span class="default">默认地址</span></p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <textarea class="hide" id="success-tips">	&lt;!-- 20141219-我的地址-编辑成功-start --&gt;
+    &lt;div class="box-right-1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+</textarea>
+                <input type="hidden" id="gouldAddress" name="unionPaySwitch" value="1">
+                <script src="{% static 'mycenter_site/js/address_common.js' %}"></script>
+                <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                        src="{% static 'mycenter/js/jquery.js' %}"
+                        charset="utf-8"></script>
+                <script>(function () {
+                    var time = 0, el = document.getElementById('jsapi_loader7');
+                    if (!el || (el.readyState && 'complete' != el.readyState)) {
+                        if (time < 10) {
+                            setTimeout(arguments.callee, 30);
+                            time++;
+                        } else {
+                            logger.error('load the script of id jsapi_loader7 fail!');
+                        }
+                        return;
+                    }
+                    ol._setLoadStatus("jquery.form", "complete");
+                })();</script>
+                <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                        src="{% static 'mycenter_site/js/ajax.js' %}"
+                        charset="utf-8"></script>
+                <script>(function () {
+                    var time = 0, el = document.getElementById('jsapi_loader8');
+                    if (!el || (el.readyState && 'complete' != el.readyState)) {
+                        if (time < 10) {
+                            setTimeout(arguments.callee, 30);
+                            time++;
+                        } else {
+                            logger.error('load the script of id jsapi_loader8 fail!');
+                        }
+                        return;
+                    }
+                    ol._setLoadStatus("ajax", "complete");
+                })();</script>
+                <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
+                        src="{% static 'mycenter_site/js/bigInt.js' %}"></script>
+                <script>(function () {
+                    var time = 0, el = document.getElementById('jsapi_loader9');
+                    if (!el || (el.readyState && 'complete' != el.readyState)) {
+                        if (time < 10) {
+                            setTimeout(arguments.callee, 30);
+                            time++;
+                        } else {
+                            logger.error('load the script of id jsapi_loader9 fail!');
+                        }
+                        return;
+                    }
+                    ol._setLoadStatus("dh/bigInt.min.js", "complete");
+                })();</script>
+                <script src="{% static 'mycenter_site/js/address.js' %}"></script>
+            </div>
+
+            <div class="fl u-1-5">
+
+
+                <!-- 20170823-左边菜单-start -->
+                <div class="mc-menu-area">
+                    <div class="h"><a href="{% url 'app:mycenter' %}"><span>个人中心</span></a></div>
+                    <div class="b">
+                        <ul>
+                        <li>
+                            <h3 class="icon-mc-order"><span>订单中心</span></h3>
+                            <ol>
+                                <li id="li-order"><a
+                                        href="{% url 'app:mycenter_order' %}"><span>我的订单</span></a>
+                                </li>
+
+                                <li id="li-prdRemark"><a
+                                        href="{% url 'app:mycenter_evaluate' %}"><span>商品评价</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-asset"><span>我的资产</span></h3>
+                            <ol>
+                                <li id="li-newpoint"><a
+                                        href="{% url 'app:mycenter_score' %}"><span>我的积分</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-support"><span>购买支持</span></h3>
+                            <ol>
+                                <li id="li-myAddress"><a
+                                        href="{% url 'app:mycenter_site' %}"><span>收货地址管理</span></a>
+                                </li>
+                            </ol>
+                        </li>
+
+                    </ul>
+                    </div>
+                </div>
+                <!-- 20170823-左边菜单-end -->
+                <script src="{% static 'mycenter/js/leftMenu.js' %}"></script>
+            </div>
+
+        </div>
+        <div class="hr-80"></div>
+
+    </div>
+
+
+
+{% endblock xinxi %}
